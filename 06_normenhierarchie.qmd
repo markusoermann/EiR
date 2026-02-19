@@ -1,0 +1,132 @@
+---
+title: "Die Normenhierarchie: Der Stufenbau des Rechts"
+subtitle: "Einführung in das Recht – Einheit 6: Kollisionsregeln und die juristische Pyramide"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Ordnung im Chaos der Paragrafen
+
+In einer idealen Welt würde jedes Gesetz perfekt zu jedem anderen passen. In der Realität einer komplexen, mehrstufigen Rechtsordnung wie der deutschen existieren jedoch tausende Normen gleichzeitig, die von unterschiedlichsten Organen – von den EU-Institutionen in Brüssel bis zum Gemeinderat in Schweinfurt – erlassen werden. Widersprüche sind hier nicht die Ausnahme, sondern systemimmanent.
+
+Die **Normenhierarchie** ist der Algorithmus, der diese Konflikte auflöst. Sie stellt sicher, dass das Recht kein unvorhersehbarer Dschungel ist, sondern ein geordneter Stufenbau. Ohne diese Rangordnung wäre die Rechtssicherheit verloren: Wer müsste sich woran halten, wenn die Grundordnung der THWS dem Grundgesetz widerspräche?
+
+::: {.drag-exercise}
+Die Normenhierarchie dient als *Kollisionsregel*, um festzustellen, welche Regelung im Konfliktfall den *Vorrang* genießt.
+:::
+
+# Die drei klassischen Kollisionsregeln
+
+Wenn zwei Normen denselben Sachverhalt unterschiedlich regeln, nutzt die Rechtswissenschaft drei goldene Regeln, um den „Gewinner“ zu ermitteln. Diese lateinischen Grundsätze sind das Handwerkszeug jeder juristischen Prüfung.
+
+::: {.flip-card}
+#### Lex superior derogat legi inferiori
+**Das Rangprinzip:** Die höherrangige Norm verdrängt die niederrangige. Ein Verstoß führt in der Regel zur Nichtigkeit der niederrangigen Norm von Anfang an (*ex tunc*).
+:::
+
+::: {.flip-card}
+#### Lex posterior derogat legi priori
+**Das Zeitprinzip:** Die jüngere Regelung verdrängt die ältere, sofern beide auf derselben Hierarchiestufe stehen. Das Recht darf sich also weiterentwickeln.
+:::
+
+::: {.flip-card}
+#### Lex specialis derogat legi generali
+**Das Spezialitätsprinzip:** Die speziellere Regelung (die einen engeren Sachverhalt präziser regelt) geht der allgemeinen Regelung vor. Details schlagen das Grobe.
+:::
+
+# Die Pyramide der Rechtsordnung
+
+Stellen wir uns die Rechtsordnung als eine Pyramide vor. Jede Stufe wird durch die darüberliegende legitimiert und zugleich in ihren Schranken gehalten.
+
+Erkunden Sie die verschiedenen Ebenen des Stufenbaus zunächst interaktiv und im Anschluss anhand der nachfolgenden Ausführungen:
+
+<iframe src="widgets/kapitel-06/widget-normen-pyramide.html" 
+        width="100%" height="550px" frameborder="0"
+        title="Interaktive Rechtspyramide">
+</iframe>
+
+## Die Spitze: Supranationales Recht (EU-Recht)
+
+Das Recht der Europäischen Union steht heute faktisch an der Spitze. Durch den **Anwendungsvorrang** verdrängt EU-Recht nationales Recht, wenn es zu Kollisionen kommt. Das bedeutet nicht, dass deutsches Recht dadurch nichtig wird, es darf im konkreten Fall nur nicht angewendet werden.
+
+::: {.details}
+#### Exkurs: Die Reservekompetenz des BVerfG
+Das Bundesverfassungsgericht lässt Brüssel nicht völlig freie Hand. In den sog. „Solange“- und „Ultra-vires“-Entscheidungen behält es sich vor zu prüfen, ob EU-Akte die deutsche **Verfassungsidentität** (z. B. die Grundrechte oder das Demokratieprinzip) wahren. Vgl. dazu die konzisen Zusammenfassungen von L. Fischer zur sog. [Reservekompetenz](https://www.bpb.de/kurz-knapp/lexika/das-europalexikon/309447/solange-i-und-solange-ii-rechtsprechung-des-bundesverfassungsgerichts/){target="_blank"} und [Identitätskontrolle](https://www.bpb.de/kurz-knapp/lexika/das-europalexikon/309454/ultra-vires-und-identitaetskontrolle/){target="_blank"} durch das Bundesverfassungsgericht.
+:::
+
+## Das Fundament des Staates: Das Grundgesetz (GG)
+Das Grundgesetz ist die oberste geschriebene Norm Deutschlands. Es ist mehr als nur ein Gesetz; es ist die wertgebundene Grundordnung.
+
+*   **[Art. 1 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_1.html){target="_blank"}:** Die Grundrechte des Grundgesetzes binden Gesetzgebung, Verwaltung und Rechtsprechung unmittelbar.
+*   **[Art. 79 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_79.html){target="_blank"} (Ewigkeitsgarantie):** Selbst mit einer Zweidrittelmehrheit dürfen die Menschenwürde, die Demokratie und die föderale Gliederung nicht abgeschafft werden.
+
+## Völkerrecht, einfache Gesetze und sonstige hoheitliche allgemeinverbindliche Normen
+Völkerrechtliche Regeln ([Art. 25 GG](https://www.gesetze-im-internet.de/gg/art_25.html){target="_blank"}) stehen im Rang in der Regel gleichrangig mit „einfachen“ Gesetzen unter der Verfassung. Das liegt daran, dass völkerrechtliche Normen in Deutschland durch ein parlamentarisches Gesetz in nationales Recht umgesetzt werden müssen. 
+Darunter folgen die Parlamentsgesetze (formelle Gesetze), gefolgt von Rechtsverordnungen der Regierung und schließlich den Satzungen der Selbstverwaltung (wie die Prüfungsordnung der THWS).
+
+::: {.quick-check}
+Welchen Rang nehmen völkerrechtliche Verträge wie die Europäische Menschenrechtskonvention (EMRK) in der Regel im deutschen Recht ein?
+
+- Verfassungsrang
+- **Rang eines einfachen Bundesgesetzes**
+- Rang einer Rechtsverordnung
+:::
+
+# Bundesrecht vs. Landesrecht 
+
+Ein zentraler Satz prägt den deutschen Föderalismus im Bereich der Gesetzgebung und ist oft Gegenstand von Missverständnissen:
+
+> „Bundesrecht bricht Landesrecht.“ ([Art. 31 GG](https://www.gesetze-im-internet.de/gg/art_31.html){target="_blank"})
+
+Das bedeutet: Kollidiert eine Landesnorm mit einer Bundesnorm, geht das Bundesrecht vor – und zwar **unabhängig vom Rang**. Eine Bundesverordnung kann theoretisch eine Landesverfassung „brechen“, sofern der Bund für diesen Bereich die Kompetenz besitzt.
+
+
+::: {.case-study}
+#### Praxisbeispiel: Die Todesstrafe in Hessen
+Bis zum Jahr 2018 stand in Art. 21 der Hessischen Verfassung noch die Todesstrafe. In der Realität war sie jedoch seit 1949 unwirksam.
+
+::: {.solution}
+Durch [Art. 102 GG](https://www.gesetze-im-internet.de/gg/art_102.html){target="_blank"} („Die Todesstrafe ist abgeschafft“) wurde die hessische Regelung durch Bundesrecht überlagert. Gemäß [Art. 31 GG](https://www.gesetze-im-internet.de/gg/art_31.html){target="_blank"} war die Landesnorm unanwendbar, da das Grundgesetz (Bundesrecht) dem Landesverfassungsrecht vorging.
+:::
+:::
+
+# Wer kontrolliert die Einhaltung?
+
+Damit die Pyramide nicht einstürzt, wachen spezialisierte Hüter über die Grenzen:
+
+1.  **EuGH**: Wacht über die Einheit und den Vorrang des EU-Rechts.
+2.  **BVerfG**: Prüft im Wege der Normenkontrolle, ob Gesetze mit dem Grundgesetz vereinbar sind.
+3.  **Fachgerichte**: Prüfen, ob untergesetzliche Normen (Satzungen/Verordnungen) mit den Parlamentsgesetzen im Einklang stehen.
+
+::: {.quick-check}
+Was passiert mit einem Gesetz, das gegen das Grundgesetz verstößt, wenn das BVerfG dies feststellt?
+
+- Es bleibt für Altfälle gültig.
+- **Es wird in der Regel für nichtig erklärt (ex tunc).**
+- Es wird nur für die Zukunft geändert.
+:::
+
+# Checkliste zur Selbstkontrolle
+
+Können Sie diese Fragen nach der Einheit beantworten?
+
+*   [ ] Können Sie die „Pyramide“ der Rechtsnormen von der Satzung bis zum EU-Recht skizzieren?
+*   [ ] Wissen Sie, was passiert, wenn eine Satzung gegen ein Bundesgesetz verstößt?
+*   [ ] Können Sie die drei lateinischen Kollisionsregeln (lex superior, lex posterior, lex specialis) erklären?
+
+Der Stufenbau stellt sicher, dass das Recht eine Einheit bleibt. In der nächsten Einheit beschäftigen wir uns damit, wie Gesetze in die Welt kommen. Es geht um die erste der drei Staatsgewalten: Die Gesetzgebung.

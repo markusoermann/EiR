@@ -1,0 +1,155 @@
+---
+title: "Grundstrukturen des Strafrechts"
+subtitle: "Einheit 11: Von Schuld und Strafe"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Das schärfste Schwert des Staates: Das Strafrecht
+
+Nachdem wir uns im Zivilrecht mit dem Ausgleich zwischen Bürger/-innenn beschäftigt haben, wechseln wir nun die Perspektive radikal. Wir verlassen das Koordinationsverhältnis "Bürger gegen Bürger" und betreten das Subordinationsverhältnis: **Staat gegen Bürger**. 
+
+Das Strafrecht ist das schärfste Schwert des Staates. Denn hier sind REchtsfolgen bis zum Entzug der Freiheit möglich. Da dies der intensivste Eingriff in die Grundrechte ist, ist dieses Rechtsgebiet von extrem strengen Regeln und verfassungsrechtlichen Leitplanken umgeben.
+
+## Was schützt das Strafrecht? (Die Rechtsgüterlehre)
+
+Strafrecht ist kein Selbstzweck. Wir bestrafen nicht, weil wir moralisch empört sind, sondern um **Rechtsgüter** zu schützen.
+
+*   **Individualrechtsgüter:** Das, was dem Einzelnen gehört (Leib, Leben, Freiheit, Eigentum, Ehre).
+*   **Universalrechtsgüter:** Das, was für das Funktionieren der Gesellschaft nötig ist (Sicherheit des Straßenverkehrs, Funktionsfähigkeit der Justiz, Bestand des Staates).
+
+::: {.drag-exercise}
+Das Strafrecht dient dem Schutz von *Rechtsgütern*. Die Strafe ist dabei die *Ultima Ratio* – das letzte Mittel.
+:::
+
+## Der Zweck der Strafe: Warum wir (nicht) Rache üben
+
+In einem modernen Rechtsstaat ist Strafe keine Rache. Wir folgen heute einem Mix aus verschiedenen Theorien:
+
+1.  **Spezialprävention:** Wir wollen den Täter bessern (Resozialisierung) oder ihn davon abhalten, es wieder zu tun (Abschreckung).
+2.  **Generalprävention:** Wir senden ein Signal an die Allgemeinheit. Die Bürger sollen sehen, dass das Recht siegt (Vertrauen) und potenzielle Täter sollen abgeschreckt werden.
+3.  **Befriedung:** Der soziale Konflikt soll durch ein staatliches Urteil beendet werden.
+
+# Die "Magna Charta des Verbrechers" (Art. 103 Abs. 2 GG)
+
+Klingt zunächst paradox, ist aber für jeden Rechtsstaat ganz grundlegend: Das Strafrecht und das Verfassungsrecht schützen auch den Täter – nämlich davor, willkürlich bestraft zu werden. In [Art. 103 Abs. 2 GG](https://www.gesetze-im-internet.de/gg/art_103.html){target="_blank"} (und [§ 1 StGB](https://www.gesetze-im-internet.de/stgb/__1.html){target="_blank"}) ist das eherne Gesetz verankert: **"Nulla poena sine lege"** (Keine Strafe ohne Gesetz).
+
+Daraus ergeben sich vier zwingende Verbote für den Staat, die Sie hier interaktiv erkunden können:
+
+<iframe src="widgets/kapitel-11/widget-nulla-poena.html" 
+        width="100%" height="420px" frameborder="0"
+        title="Interaktive Übersicht: Die 4 Verbote des Gesetzmäßigkeitsprinzips">
+</iframe>
+
+::: {.details}
+
+#### Die vier Säulen der Rechtsstaatlichkeit
+1.  **Schriftlichkeitsgebot (*nullum crimen sine lege scripta*):** Strafbarkeit muss in einem Parlamentsgesetz stehen. Gewohnheitsrecht reicht nicht.
+2.  **Bestimmtheitsgebot (*nullum crimen sine lege certa*):** Das Gesetz muss präzise sein. "Sei kein böser Mensch" wäre als Straftatbestand verfassungswidrig. Man muss vorher wissen, was verboten ist.
+3.  **Analogieverbot (*nullum crimen sine lege stricta*):** Wenn eine Lücke im Gesetz besteht, darf man sie nicht einfach durch "ähnliche Anwendung" schließen, um den Täter doch noch zu bestrafen.
+4.  **Rückwirkungsverbot (*nullum crimen sine lege praevia*):** Man darf nicht heute ein Gesetz erlassen und jemanden für etwas bestrafen, das er gestern getan hat, als es noch erlaubt war.
+:::
+
+# Der Alogrithmus: Wie man eine Straftat prüft
+
+Ein Urteil fällt nicht einfach vom Himmel. Wir prüfen jede Straftat in einem strengen dreistufigen Schema. Nur wenn alle drei Stufen bejaht werden, ist die Person strafbar.
+
+<iframe src="widgets/kapitel-11/widget-straftat-checker.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Interaktive Prüfung: Das 3-Stufen-Modell der Straftat">
+</iframe>
+
+
+1.  **Tatbestandsmäßigkeit:** Passt das Verhalten auf die Beschreibung im Gesetz? (Objektiv: Was ist passiert? Subjektiv: Wollte der Täter das?)
+2.  **Rechtswidrigkeit:** Gab es eine gesetztliche Norm, die das Verhalten rechtfertigt? (War es vielleicht Notwehr?)
+3.  **Schuld:** Ist der Täter persönlich verantwortlich? (War er vielleicht schuldunfähig wegen Alter oder Krankheit?)
+
+## Vorsatz oder Fahrlässigkeit? ([§ 15 StGB](https://www.gesetze-im-internet.de/stgb/__15.html){target="_blank"})
+
+Dies ist eine der wichtigsten Weichenstellungen. Grundsätzlich ist im Strafrecht nur vorsätzliches Handeln strafbar.
+
+*   **Vorsatz:** Wissen und Wollen der Tat. Man will das Ergebnis herbeiführen oder nimmt es zumindest billigend in Kauf.
+*   **Fahrlässigkeit:** Man hat "nicht aufgepasst" (Sorgfaltspflicht verletzt).
+
+> **Wichtig:** Fahrlässigkeit ist nur strafbar, wenn das Gesetz es explizit sagt (z. B. fahrlässige Tötung, [§ 222 StGB](https://www.gesetze-im-internet.de/stgb/__222.html){target="_blank"}). Eine "fahrlässige Sachbeschädigung" z.B. gibt es im Strafrecht nicht!
+
+::: {.quick-check}
+Stellen Sie sich vor: A wirft aus Unachtsamkeit eine teure Vase bei B um. Hat A eine Sachbeschädigung gemäß [§ 303 StGB](https://www.gesetze-im-internet.de/stgb/__303.html){target="_blank"} begangen?
+
+- Ja, er hat die Vase ja kaputt gemacht.
+- **Nein, da [§ 303 StGB](https://www.gesetze-im-internet.de/stgb/__303.html){target="_blank"} nur vorsätzliches Handeln bestraft und keine fahrlässige Variante kennt.**
+- Nur, wenn die Vase mehr als 1.000 Euro wert war.
+:::
+
+## Täterschaft, Teilnahme und Versuch
+
+Nicht nur wer selbst zusticht, wird bestraft. Das StGB differenziert hier fein:
+
+*   **Täterschaft ([§ 25 StGB](https://www.gesetze-im-internet.de/stgb/__25.html){target="_blank"}):** Wer die Tat als "eigene" will und beherrscht.
+*   **Anstiftung ([§ 26 StGB](https://www.gesetze-im-internet.de/stgb/__26.html){target="_blank"}):** Wer den Täter zur Tat überredet ("bestimmt"). Strafe wie der Täter!
+*   **Beihilfe ([§ 27 StGB](https://www.gesetze-im-internet.de/stgb/__27.html){target="_blank"}):** Wer nur unterstützt (Schmiere stehen). Die Strafe wird gemildert.
+
+Und was ist mit dem **Versuch ([§ 22 StGB](https://www.gesetze-im-internet.de/stgb/__22.html){target="_blank"})**? Das "unmittelbare Ansetzen" zur Tat reicht oft schon aus. Bei **Verbrechen** (Mindeststrafe 1 Jahr, z. B. Raub oder Mord) ist der Versuch *immer* strafbar. Bei **Vergehen** (Mindeststrafe unter 1 Jahr, z. B. Diebstahl) nur, wenn es im Gesetz steht.
+
+# Der "Katalog des Bösen": Der Besondere Teil (StGB BT)
+
+Hier finden wir die konkreten Delikte. Es folgt eine kleine Auswahl wichtiger udn bekannter Straftatbestände. Wir teilen sie nach den geschützten Rechtsgütern ein:
+
+### Delikte gegen das Leben und den Körper
+*   **Mord ([§ 211 StGB](https://www.gesetze-im-internet.de/stgb/__211.html){target="_blank"}):** Tötung mit besonderen Grausamkeits- oder Motivmerkmalen (z. B. Habgier, Heimtücke). Rechtsfolge: Lebenslang.
+*   **Totschlag ([§ 212 StGB](https://www.gesetze-im-internet.de/stgb/__212.html){target="_blank"}):** Vorsätzliche Tötung ohne diese Mordmerkmale.
+*   **Körperverletzung ([§ 223 StGB](https://www.gesetze-im-internet.de/stgb/__223.html){target="_blank"}):** Jede vorsätzliche körperliche Misshandlung oder Gesundheitsschädigung.
+
+### Delikte gegen das Vermögen
+*   **Diebstahl ([§ 242 StGB](https://www.gesetze-im-internet.de/stgb/__242.html){target="_blank"}):** Die Wegnahme einer fremden beweglichen Sache.
+*   **Betrug ([§ 263 StGB](https://www.gesetze-im-internet.de/stgb/__263.html){target="_blank"}):** Wer andere täuscht, um sich zu bereichern und dem anderen schadet.
+*   **Raub ([§ 249 StGB](https://www.gesetze-im-internet.de/stgb/__249.html){target="_blank"}):** Die Kombination aus Diebstahl und Gewalt gegen eine Person.
+
+# Der Weg zum Urteil: Das Strafverfahren (StPO)
+
+Das materielle Recht (StGB) sagt uns, was strafbar ist. Das formelle Strafprozessrecht (StPO) sagt uns, wie man den Täter findet und verurteilt.
+
+## Die Säulen des Verfahrens
+*   **Offizialprinzip:** Der Staat klagt an, nicht das Opfer. Die Staatsanwaltschaft ist "Herrin des Ermittlungsverfahrens".
+*   **Legalitätsprinzip:** Die Staatsanwaltschaft *muss* ermitteln, wenn sie einen begründeten Anfangsverdacht hat. Sie darf nicht einfach wegschauen.
+*   **Unschuldsvermutung:** Jeder gilt als unschuldig, bis das Gegenteil bewiesen ist (*in dubio pro reo* – Im Zweifel für den Angeklagten).
+*   **Recht auf Aussageverweigerung:** Niemand muss sich selbst belasten (*Nemo tenetur*). Man darf die Aussage verweigern.
+
+## Der Ablauf
+
+Der Weg von der ersten Anzeige bis zum rechtskräftigen Urteil folgt einem festen prozessualen Ablauf, den wir in vier Phasen unterteilen:
+
+<iframe src="widgets/kapitel-11/widget-prozess-stufen.html" 
+        width="100%" height="480px" frameborder="0"
+        title="Strafprozess-Navigator: Die Phasen des Verfahrens">
+</iframe>
+
+::: {.details}
+#### Berufung vs. Revision in der StPO
+Gegen Urteile des Amtsgerichts gibt es die **Berufung** (neue Beweise möglich). Gegen Urteile des Landgerichts meist nur die **Revision** (nur Prüfung auf Rechtsfehler).
+:::
+
+::: {.quick-check}
+Wer entscheidet am Ende des Ermittlungsverfahrens darüber, ob Anklage erhoben wird?
+
+- Die Polizei
+- **Die Staatsanwaltschaft**
+- Das Opfer
+:::
+
+Damit sind wir am Ende dieser Lerneinheit zum Strafrecht und auch am Ende des Kurses "Einführung ins Recht" angelangt. Mir bleibt nur noch, Ihnen viel Erfolg bei der Prüfung zu wünschen. Bleiben Sie (straf-)rechtstreu!

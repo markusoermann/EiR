@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lückenfüllungs-Navigator</title>
+    <style>
+        :root {
+            --thws-blue: #005A9B;
+            --thws-orange: #F39100;
+            --thws-light: #f4f6f8;
+            --thws-dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: transparent;
+            color: var(--thws-dark);
+            display: flex;
+            justify-content: center;
+        }
+
+        .widget-container {
+            width: 100%;
+            max-width: 500px;
+            background: var(--white);
+            border-radius: 12px;
+            border: 1px solid #ddd;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            text-align: center;
+        }
+
+        .step-indicator {
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .question {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--thws-blue);
+            margin-bottom: 25px;
+            min-height: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .option-btn {
+            padding: 15px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            background: var(--white);
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.2s;
+            text-align: left;
+        }
+
+        .option-btn:hover {
+            border-color: var(--thws-orange);
+            background: #fff9f0;
+        }
+
+        .result-screen {
+            display: none;
+            padding: 20px;
+            border-radius: 8px;
+            background: var(--thws-light);
+            border: 2px solid var(--thws-blue);
+        }
+
+        .result-title {
+            color: var(--thws-blue);
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+
+        .result-desc {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .reset-btn {
+            background: var(--thws-blue);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="widget-container" id="main-container">
+        <div id="quiz-part">
+            <div class="step-indicator" id="step-id">Schritt 1 von 3</div>
+            <div class="question" id="question-text">Gibt es für den Sachverhalt eine ausdrückliche gesetzliche
+                Regelung?</div>
+
+            <div class="options">
+                <button class="option-btn" onclick="nextStep(false)">Nein, das Gesetz schweigt dazu.</button>
+                <button class="option-btn" onclick="nextStep(true)">Ja, der Fall ist im Wortlaut geregelt.</button>
+            </div>
+        </div>
+
+        <div id="result-part" class="result-screen">
+            <div class="result-title" id="res-title">Analogie</div>
+            <div class="result-desc" id="res-desc">Hier liegt eine planwidrige Regelungslücke vor. Da die Interessenlage
+                vergleichbar ist, wenden wir die Norm analog an.</div>
+            <button class="reset-btn" onclick="reset()">Neu starten</button>
+        </div>
+    </div>
+
+    <script>
+        let step = 1;
+        let answers = [];
+
+        const flow = [
+            {
+                q: "Gibt es für den Sachverhalt eine ausdrückliche gesetzliche Regelung?",
+                options: [
+                    { text: "Nein, das Gesetz schweigt dazu.", next: 2 },
+                    { text: "Ja, der Fall ist im Wortlaut geregelt.", result: "Keine Lücke", desc: "Wenn das Gesetz den Fall regelt, brauchen wir keine Lückenfüllung. Wir wenden die Norm direkt an (ggf. nach Auslegung)." }
+                ]
+            },
+            {
+                q: "Ist das Schweigen des Gesetzgebers eine 'unbewusste Lücke'?",
+                options: [
+                    { text: "Ja, er hat diesen Fall einfach nicht bedacht.", next: 3 },
+                    { text: "Nein, er wollte diesen Fall bewusst nicht regeln.", result: "Umkehrschluss", desc: "Wenn der Gesetzgeber bewusst geschwiegen hat, gilt das 'Argumentum e contrario': Die Regelung soll hier gerade nicht gelten." }
+                ]
+            },
+            {
+                q: "Ist die Interessenlage im Vergleich zu geregelten Fällen ähnlich?",
+                options: [
+                    { text: "Ja, die Ratio der Norm passt auch hier.", result: "Analogie", desc: "Planwidrige Lücke + vergleichbare Interessenlage = Analogie. Die Norm wird auf den ungeregelten Fall erstreckt." },
+                    { text: "Nein, der Fall ist grundlegend anders.", result: "Keine Analogie", desc: "Ohne vergleichbare Interessenlage darf nicht analog angewendet werden. Der Fall bleibt ungeregelt." }
+                ]
+            }
+        ];
+
+        function nextStep(isA) {
+            const currentData = flow[step - 1];
+            const selected = isA ? currentData.options[1] : currentData.options[0];
+
+            if (selected.result) {
+                showResult(selected.result, selected.desc);
+            } else {
+                step = selected.next;
+                updateUI();
+            }
+        }
+
+        function updateUI() {
+            const data = flow[step - 1];
+            document.getElementById('step-id').innerText = `Schritt ${step} von 3`;
+            document.getElementById('question-text').innerText = data.q;
+            const btns = document.querySelectorAll('.option-btn');
+            btns[0].innerText = data.options[0].text;
+            btns[1].innerText = data.options[1].text;
+        }
+
+        function showResult(title, desc) {
+            document.getElementById('quiz-part').style.display = 'none';
+            document.getElementById('result-part').style.display = 'block';
+            document.getElementById('res-title').innerText = title;
+            document.getElementById('res-desc').innerText = desc;
+        }
+
+        function reset() {
+            step = 1;
+            document.getElementById('quiz-part').style.display = 'block';
+            document.getElementById('result-part').style.display = 'none';
+            updateUI();
+        }
+    </script>
+
+</body>
+
+</html>

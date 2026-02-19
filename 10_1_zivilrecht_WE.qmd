@@ -1,0 +1,180 @@
+---
+title: "Zivilrecht - Basics"
+subtitle: "Einheit 10.1: Willenserklärung, Vertragsschluss und Anfechtung"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Das Fundament: Die Willenserklärung (WE)
+
+Das BGB ist ein Kind des Liberalismus. Es vertraut darauf, dass der Einzelne am besten weiß, was gut für ihn ist - respektive die Einzelne rational für sich selbst entscheiden kann. Diese Freiheit, seine Rechtsverhältnisse eigenverantwortlich zu gestalten, nennen wir **Privatautonomie**. Das zentrale rechtliche Instrument, um von dieser Autonomie Gebrauch zu machen, ist die Willenserklärung. Ohne sie geht im Zivilrecht (fast) nichts.
+
+## Definition und Elemente
+
+**Eine Willenserklärung ist die Äußerung eines Willens, der unmittelbar auf die Herbeiführung eines Rechtserfolges gerichtet ist.** Wer "Ja" sagt, will meistens auch die Konsequenzen – oder sollte sie zumindest kennen. Damit eine WE wirksam ist, sezieren wir sie in zwei Hälften: das, was die anderen Beteiligten am Rechtsverkehr sehen (objektiv), und das, was im Kopf passiert (subjektiv).
+
+### Der objektive Erklärungstatbestand
+
+Hier fragen wir: Würde ein vernünftiger Dritter in der Situation des Empfängers glauben, dass hier gerade jemand eine rechtlich verbindliche Erklärung abgibt?
+
+*   **Ausdrücklich:** Das klassische "Ich kaufe das Brot" (oder die Mail mit "Hiermit kündige ich").
+
+*   **Konkludent (schlüssig):** Taten sagen mehr als Worte. Wer sein Obst auf das Kassenband legt oder wortlos in einen Bus einsteigt, erklärt durch sein Handeln einen Rechtsbindungswillen.
+
+*   **Schweigen:** Im Recht ist Schweigen grundsätzlich ein "Nullum" – also ein Nichts. Wer nicht antwortet, sagt nicht "Ja".
+    *   *Ausnahme:* Nur wenn das Gesetz es explizit vorsieht (z.B. das kaufmännische Bestätigungsschreiben, [§ 362 Abs. 1 HGB](https://www.gesetze-im-internet.de/hgb/__362.html){target="_blank"}) oder die Parteien es vereinbart haben.
+
+### Der subjektive Tatbestand
+
+Was passiert im Kopf des Erklärenden? Wir unterscheiden drei Schichten:
+
+1.  **Handlungswille:** Der elementare Wille, sich überhaupt physisch zu bewegen. Wer im Schlaf um sich schlägt oder im Reflex zuckt, gibt keine WE ab.
+
+2.  **Erklärungsbewusstsein:** Das Wissen, dass man gerade *irgendetwas* rechtlich Relevantes tut.
+
+3.  **Geschäftswille:** Das Ziel, genau *dieses* konkrete Geschäft (z.B. Kauf von 100 Apple-Aktien zum Preis X) abzuschließen.
+
+Das folgende Cockpit illustriert das Zusammenspiel dieser Elemente. Experimentieren Sie mit den Reglern, um zu sehen, wie sich das Fehlen einzelner Komponenten auf die Wirksamkeit der WE auswirkt.
+
+<iframe src="widgets/kapitel-10/widget-we-analyzer.html" 
+        width="100%" height="500px" frameborder="0"
+        title="Interaktive Analyse der Willenserklärung">
+</iframe>
+
+
+::: {.details}
+#### Der klassische Fall der unbemerkten Gebotsabgabe ("Die Trierer Weinversteigerung")
+Was passiert, wenn man einem Freund bei einer Versteigerung zuwinkt, ohne zu realisieren, dass man damit ein Gebot abgibt, und plötzlich Höchstbietender für einen Auktionsgegenstand ist? Hier fehlt das **Erklärungsbewusstsein**.
+Die herrschende Meinung sagt: Eine WE liegt trotzdem vor, wenn der Erklärende bei Anwendung der im Verkehr erforderlichen Sorgfalt hätte erkennen können, dass sein Verhalten als WE gedeutet wird (potenzielles Erklärungsbewusstsein). Der "Winker" ist also gebunden, darf aber wegen Irrtums anfechten – und muss dann ggf. Schadensersatz leisten. Dazu gleich mehr.
+:::
+
+## Wirksamwerden: Abgabe und Zugang
+
+Eine Willenserklärung ist wie eine Pistolenkugel: Sie muss abgefeuert werden (Abgabe) und das Ziel treffen (Zugang), um wirksam zu werden.
+
+*   **Abgabe:** Die willentliche Entäußerung in den Rechtsverkehr, sodass unter normalen Umständen mit dem Zugang gerechnet werden kann.
+
+*   **Zugang ([§ 130 BGB](https://www.gesetze-im-internet.de/bgb/__130.html){target="_blank"}):** Eine WE unter Abwesenden wird wirksam, wenn sie so in den Machtbereich des Empfängers gelangt ist, dass dieser unter normalen Umständen davon Kenntnis nehmen kann. Ein Brief im Briefkasten am Sonntagnachmittag gilt also erst am Montagmorgen als zugegangen.
+
+::: {.drag-exercise}
+Die *Abgabe* ist das Absenden, der *Zugang* ist das Erreichen des Machtbereichs des Empfängers.
+:::
+
+# Der Vertragsschluss
+
+Ein Vertrag ist ein mehrseitiges Rechtsgeschäft. Er entsteht durch mindestens zwei inhaltlich übereinstimmende Willenserklärungen: **Angebot** und **Annahme**. Ganz wichtig in der Praxis ist dabei die Erkenntnis, dass für diese beiden Willenserklärungen grundsätzlich die gleichen Wirksamkeitsvoraussetzungen gelten. Das heißt, dass sowohl für das Angebot als auch für die Annahme die Wirksamkeitsvoraussetzungen der Willenserklärung gegeben sein müssen. Und zudem solten Sie sich merken, dass es in der Regel keiner besonderen Form bedarf: Auch der Handschlag oder der Austausch von E-Mails kann also einen Vertrag begründen.
+
+## Das Angebot ([§ 145 BGB](https://www.gesetze-im-internet.de/bgb/__145.html){target="_blank"})
+
+Ein Angebot (oder "Antrag") ist eine WE, die alle wesentlichen Vertragsbestandteile (*essentialia negotii*) enthält: Wer verkauft was an wen zu welchem Preis? Es muss so formuliert sein, dass der andere nur noch "Ja" sagen muss. Davon abzugrenzen ist die bloße Aufforderung zur Abgabe eines Angebots, die sogenannte **Invitatio ad offerendum**.
+
+::: {.flip-card}
+#### Invitatio ad offerendum
+Die bloße Aufforderung zur Abgabe eines Angebots. Wer Werbeanzeigen schaltet oder Waren im Schaufenster ausstellt, macht noch kein verbindliches Angebot. Er will sich seine Vertragspartner aussuchen können (z.B. wegen Bonität oder Lagerbestand).
+:::
+
+## Die Annahme
+
+Die Annahme ist das vorbehaltlose "Ja". Wer das Angebot abändert ("Ja, aber 10 Euro billiger"), lehnt das ursprüngliche Angebot ab. Rechtlich gilt dies als neues Angebot ([§ 150 Abs. 2 BGB](https://www.gesetze-im-internet.de/bgb/__150.html){target="_blank"}).
+
+::: {.case-study}
+#### Der Preisfehler
+Ein Online-Händler bietet Sneaker für 1 Euro statt 100 Euro an (Tippfehler). Ein Kunde bestellt sofort 10 Stück. Muss der Online-Händler die Sneaker zu dem Gesamtpreis von 10 Euro liefern, weil ein Kaufvertrag wirksam zustande gekommen ist?
+
+::: {.solution}
+1. Die Website ist nur eine *invitatio ad offerendum*.
+
+2. Die Bestellung des Kunden ist das *Angebot*.
+
+3. Die automatische Bestätigungs-Mail ist meist nur eine Bestätigung des Eingangs, keine *Annahme*.
+Die Annahme erfolgt erst durch den Versand oder eine explizite Bestätigung durch den Händler.
+:::
+:::
+
+# Willensmängel und Anfechtung
+
+Irren ist menschlich, kann aber teuer werden. Das Anfechtungsrecht ([§§ 119 ff. BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"}) erlaubt es, Erklärungen unter bestimmten Bedingungen "aus der Welt zu schaffen".
+
+## Das Grundprinzip: Ex-tunc-Nichtigkeit
+
+Wird eine WE erfolgreich angefochten, gilt sie als von Anfang an nichtig (**ex tunc**, [§ 142 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__142.html){target="_blank"}). Das Geschäft wird so behandelt, als hätte es nie existiert. Bereits erbrachte Leistungen werden nach dem Bereicherungsrecht ([§§ 812 ff. BGB](https://www.gesetze-im-internet.de/bgb/__812.html){target="_blank"}) rückabgewickelt.
+
+## Anfechtungsgründe: Wann darf ich raus?
+
+Nicht jeder Irrtum zählt. Wer sich über den künftigen Preis einer Aktie irrt ("Motivirrtum"), hat Pech gehabt. Das BGB schützt nur spezifische kognitive Fehler:
+
+1.  **Inhaltsirrtum ([§ 119 I 1. Fall BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"}):** Man weiß, was man sagt, aber nicht, was es bedeutet. (Bsp.: "Halver Hahn" in Köln – man erwartet gegrilltes Geflügel, bekommt aber ein Käsebrötchen).
+
+2.  **Erklärungsirrtum ([§ 119 I 2. Fall BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"}):** Man verschreibt, vertippt oder verspricht sich. (Bsp.: 3600 Rollen Toilettenpapier statt 25 "Gros").
+
+3.  **Eigenschaftsirrtum ([§ 119 II BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"}):** Irrtum über eine verkehrswesentliche Eigenschaft (z.B. Echtheit eines Gemäldes, Unfallfreiheit eines Autos).
+
+4.  **Arglistige Täuschung & Drohung ([§ 123 BGB](https://www.gesetze-im-internet.de/bgb/__123.html){target="_blank"}):** Wer belogen oder bedroht wurde, genießt den stärksten Schutz.
+
+## Prüfungsschema der Anfechtung
+
+1.  **Zulässigkeit:** Die Anfechtung darf nicht durch speziellere Regeln (wie Mängelgewährleistung) ausgeschlossen sein.
+
+2.  **Anfechtungsgrund:** Liegt ein Irrtum ([§ 119 BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"}) oder eine Täuschung/Drohung ([§ 123 BGB](https://www.gesetze-im-internet.de/bgb/__123.html){target="_blank"}) vor?
+
+3.  **Anfechtungserklärung ([§ 143 BGB](https://www.gesetze-im-internet.de/bgb/__143.html){target="_blank"}):** Der Wille, das Geschäft nicht gelten zu lassen, muss gegenüber dem Partner deutlich werden.
+
+4.  **Anfechtungsfrist:**
+    *   Bei Irrtum: **Unverzüglich** ([§ 121 BGB](https://www.gesetze-im-internet.de/bgb/__121.html){target="_blank"}) nach Entdeckung.
+    *   Bei Täuschung: Innerhalb von **einem Jahr** ([§ 124 BGB](https://www.gesetze-im-internet.de/bgb/__124.html){target="_blank"}).
+
+## Die "Kehrseite": Schadensersatz ([§ 122 BGB](https://www.gesetze-im-internet.de/bgb/__122.html){target="_blank"})
+
+Wer wegen eines Irrtums anficht, zerstört das Vertrauen des Gegenübers in die Gültigkeit des Vertrages. Das Gesetz verlangt dafür eine Kompensation: Den Ersatz des **Vertrauensschadens** (negatives Interesse). 
+
+Der Anfechtende muss den Partner so stellen, wie dieser stünde, wenn er nie von dem Geschäft gehört hätte. Wenn der Partner also im Vertrauen auf den Vertrag andere günstige Gelegenheiten ausgeschlagen hat, muss der Anfechtende diesen Schaden ersetzen.
+
+Experimentieren Sie mit dem folgenden Rechner, um die Deckelung des Schadensersatzes durch das Erfüllungsinteresse zu verstehen:
+
+<iframe src="widgets/kapitel-10/widget-anfechtung-calculator.html" 
+        width="100%" height="550px" frameborder="0"
+        title="Schadensersatz-Rechner gemäß § 122 BGB">
+</iframe>
+
+
+> **Wichtig:** Bei Täuschung oder Drohung gibt es keinen Schadensersatzanspruch für den Gegner – wer betrügt oder droht, ist nicht schutzwürdig!
+
+::: {.quick-check}
+Welche Rechtsfolge hat eine wirksame Anfechtung?
+
+- Das Geschäft wird erst ab dem Zeitpunkt der Anfechtung ungültig (ex nunc).
+- **Das Geschäft ist von Anfang an als nichtig anzusehen (ex tunc).**
+- Das Geschäft bleibt wirksam, aber der Preis wird angepasst.
+:::
+
+::: {.quick-check}
+Wann muss bei einer Anfechtung wegen Irrtums Schadensersatz nach [§ 122 BGB](https://www.gesetze-im-internet.de/bgb/__122.html){target="_blank"} geleistet werden?
+
+- **Wenn der Anfechtende einen Irrtum nach [§ 119 BGB](https://www.gesetze-im-internet.de/bgb/__119.html){target="_blank"} geltend macht.**
+- Wenn der Anfechtende arglistig getäuscht wurde ([§ 123 BGB](https://www.gesetze-im-internet.de/bgb/__123.html){target="_blank"}).
+- Nie, die Anfechtung ist immer kostenlos.
+:::
+
+# Wiederholungsfragen für den Selbsttest
+1. Warum stellt das bloße Ausstellen von Ware im Schaufenster noch kein Angebot dar? (Stichwort: Invitatio ad offerendum)
+
+2. Was unterscheidet den Erklärungsirrtum vom Inhaltsirrtum?
+
+3. Was bedeutet die Rechtsfolge „ex tunc“?
+
+4. Warum muss man bei einem Irrtum Schadensersatz leisten, bei einer Anfechtung wegen Täuschung aber nicht?

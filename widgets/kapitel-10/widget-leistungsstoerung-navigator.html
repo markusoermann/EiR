@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leistungsstörungs-Navigator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 25px;
+            flex-wrap: wrap;
+        }
+
+        button {
+            padding: 10px 15px;
+            border: 1px solid #eeeeee;
+            border-radius: 6px;
+            background: #f9f9f9;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        button.active {
+            background: #ff6a00;
+            color: white;
+            border-color: #ff6a00;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .card {
+            border: 1px solid #eeeeee;
+            border-radius: 8px;
+            padding: 15px;
+            background: #fdfdfd;
+        }
+
+        .card-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: #999;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .card-value {
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ff6a00;
+            min-height: 2.5rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .explanation {
+            margin-top: 10px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="controls">
+            <button onclick="update(0)" id="btn0">Unmöglichkeit</button>
+            <button onclick="update(1)" id="btn1">Verzug</button>
+            <button onclick="update(2)" id="btn2">Mangel</button>
+        </div>
+
+        <div class="grid">
+            <div class="card">
+                <div class="card-title">1. Leistungsgefahr</div>
+                <div class="card-value" id="q1">...</div>
+                <div class="explanation" id="e1">...</div>
+            </div>
+            <div class="card">
+                <div class="card-title">2. Preisgefahr</div>
+                <div class="card-value" id="q2">...</div>
+                <div class="explanation" id="e2">...</div>
+            </div>
+            <div class="card">
+                <div class="card-title">3. Schadensersatz</div>
+                <div class="card-value" id="q3">...</div>
+                <div class="explanation" id="e3">...</div>
+            </div>
+            <div class="card">
+                <div class="card-title">4. Rücktritt</div>
+                <div class="card-value" id="q4">...</div>
+                <div class="explanation" id="e4">...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                q1: "Erlischt (§ 275 I)",
+                e1: "Wer nicht mehr leisten kann, wird von der Pflicht befreit.",
+                q2: "Entfällt (§ 326 I)",
+                e2: "Ohne Leistung kein Gegenanspruch auf das Geld.",
+                q3: "Ja (§§ 280, 283)",
+                e3: "Wenn der Schuldner die Unmöglichkeit zu vertreten hat.",
+                q4: "Ja (§ 326 V)",
+                e4: "Keine Fristsetzung nötig, da Leistung eh unmöglich."
+            },
+            {
+                q1: "Besteht fort",
+                e1: "Der Schuldner muss weiterhin leisten, solange es möglich ist.",
+                q2: "Besteht fort",
+                e2: "Der Gläubiger muss zahlen, bekommt aber auch die Leistung.",
+                q3: "Verzugsschaden (§ 280 II)",
+                e3: "Ersatz des Schadens, der durch die Verspätung entstanden ist.",
+                q4: "Nach Fristablauf (§ 323 I)",
+                e4: "Zuerst muss meist eine angemessene Frist gesetzt werden."
+            },
+            {
+                q1: "Nacherfüllung (§ 439)",
+                e1: "Anspruch wandelt sich in Anspruch auf Reparatur/Austausch.",
+                q2: "Besteht fort (Minderung möglich)",
+                e2: "Zahlungspflicht bleibt, kann aber reduziert werden (§ 441).",
+                q3: "Statt der Leistung",
+                e3: "Wenn die Nacherfüllung scheitert oder abgelehnt wird.",
+                q4: "Nach Fristablauf (§ 323)",
+                e4: "Rücktritt setzt erfolglose Fristsetzung voraus."
+            }
+        ];
+
+        function update(idx) {
+            document.querySelectorAll('button').forEach((b, i) => {
+                b.className = (i === idx) ? 'active' : '';
+            });
+
+            const item = data[idx];
+            document.getElementById('q1').textContent = item.q1;
+            document.getElementById('e1').textContent = item.e1;
+            document.getElementById('q2').textContent = item.q2;
+            document.getElementById('e2').textContent = item.e2;
+            document.getElementById('q3').textContent = item.q3;
+            document.getElementById('e3').textContent = item.e3;
+            document.getElementById('q4').textContent = item.q4;
+            document.getElementById('e4').textContent = item.e4;
+        }
+
+        update(0);
+    </script>
+</body>
+
+</html>

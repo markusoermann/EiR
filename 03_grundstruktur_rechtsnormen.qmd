@@ -1,0 +1,127 @@
+---
+title: "Die Grundstruktur von Rechtsnormen"
+subtitle: "Einführung in das Recht – Einheit 3: Rechtsquellen, Tatbestand und Rechtsfolge"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: moodle-html
+---
+
+# Vom System zum Detail: Die Mikro-Ebene
+
+Nachdem wir uns in der letzten Einheit durch die Architektur des Rechtssystems – das Privatrecht, das Öffentliche Recht und das Strafrecht – bewegt haben, zoomen wir heute tiefer hinein. Wir verlassen die Makro-Perspektive der großen Rechtsbereiche und schauen uns an, wie eine einzelne Rechtsnorm im Detail aufgebaut ist. 
+
+Wenn das Recht das Betriebssystem der Gesellschaft ist, dann sind die einzelnen Paragraphen die Zeilen im Sourcecode. Wir lernen heute, diesen Code zu lesen und seine logische Struktur zu verstehen. Bevor wir jedoch die Mechanik einer Norm zerlegen, müssen wir klären, woher diese "Anweisungen" eigentlich stammen.
+
+# Woher kommt das Recht? Die Quellen der Ordnung
+
+In Deutschland herrscht das Prinzip des **geschriebenen Rechts**. Das klingt banaler, als es ist: Es bedeutet, dass wir uns (größtenteils) darauf verlassen können, dass das, was gilt, auch irgendwo nachlesbar ist. Das schafft Orientierungssicherheit und begrenzt staatliche Willkür. 
+
+Doch nicht jede Zeile Text hat das gleiche Gewicht. Wir unterscheiden verschiedene Typen von Rechtsquellen, die in einer hierarchischen Beziehung zueinander stehen.
+
+::: {.flip-card}
+#### Europäisches Recht
+Die "Supranationale" Ebene. Wir unterscheiden das **Primärrecht** (die Verträge wie der AEUV, quasi die "Verfassung" der EU) und das **Sekundärrecht** (Verordnungen, die direkt gelten, und Richtlinien, die erst in nationales Recht umgesetzt werden müssen).
+:::
+
+::: {.flip-card}
+#### Verfassungsrecht (Grundgesetz)
+Die "deutschlandinterne" Spitze der Pyramide. Das Grundgesetz (GG) ist die oberste Norm in Deutschland. Jedes andere Gesetz muss mit ihm vereinbar sein.
+:::
+
+::: {.flip-card}
+#### Parlamentsgesetze (Formelle Gesetze)
+Der "Klassiker". Vom Bundestag oder den Landtagen in einem geregelten Verfahren verabschiedet. Beispiele sind das BGB, das StGB oder das HGB.
+:::
+
+::: {.flip-card}
+#### Rechtsverordnungen & Satzungen
+Recht "aus zweiter Hand". Die Exekutive (Regierung/Ministerien) oder Selbstverwaltungskörperschaften (wie die THWS oder Kommunen) erlassen diese Regeln auf Basis einer gesetzlichen Ermächtigung.
+:::
+
+::: {.details}
+#### Exkurs: Das ungeschriebene Recht
+Auch wenn wir Jurist/-innen das geschriebene Recht lieben, gibt es noch das **Gewohnheitsrecht**. Es entsteht durch eine langandauernde, gleichmäßige Übung und die allgemeine Überzeugung, dass dieses Verhalten rechtlich geboten ist. In einer modernen, dynamischen Gesellschaft wie der unseren spielt es jedoch eine immer geringere Rolle gegenüber dem "agileren" Gesetzgeber.
+:::
+
+# Die Anatomie der Norm: Wenn-Dann-Logik
+
+Jede Rechtsnorm – egal ob im Strafrecht oder im Zivilrecht – folgt einer strikten logischen Struktur. Sie ist im Kern eine **Konditionalprogrammierung**. Wer diese Struktur beherrscht, kann jedes beliebige Gesetz analysieren.
+
+::: {.drag-exercise}
+Die Rechtsnorm besteht aus dem *Tatbestand*, der die Voraussetzungen beschreibt ("Wenn"), und der *Rechtsfolge*, die die Konsequenz festlegt ("Dann").
+:::
+
+## Der Tatbestand (Die Voraussetzungen)
+Dies ist die "Wenn"-Seite. Er beschreibt die Lebenssituation, auf die das Gesetz reagieren will. Er besteht meist aus mehreren **Tatbestandsmerkmalen (TBM)**. In der Rechtsanwendung gilt: Grundsätzlich müssen **alle** Merkmale erfüllt sein, damit die Rechtsfolge eintritt. Man kann sich das wie eine logische UND-Verknüpfung vorstellen. Anders ist es nur, wenn die TBM durch "oder" miteinander verknüpft sind. Dann reicht es, wenn eine der Alternativen erfüllt ist.
+
+*   **Persönlicher Anwendungsbereich:** Wer ist betroffen? (z.B. "Wer...", "Der Eigentümer...", "Ein Beamter...").
+*   **Sachlicher Anwendungsbereich:** Was muss genau passiert sein? (z.B. "...eine fremde Sache beschädigt").
+
+## Die Rechtsfolge (Die Konsequenz)
+Dies ist die "Dann"-Seite. Sie beschreibt die Wirkung des Gesetzes. 
+*   Im **Strafrecht** ist dies meist eine Strafe (z.B. "wird mit Freiheitsstrafe bestraft").
+*   Im **Zivilrecht** ist dies oft ein Anspruch (z.B. "ist zum Ersatz des Schadens verpflichtet").
+
+---
+
+# Anatomie am lebenden Objekt: [§ 223 StGB](https://www.gesetze-im-internet.de/stgb/__223.html){target="_blank"}
+
+Schauen wir uns das Standardbeispiel für eine klare Struktur an: Die einfache Körperverletzung.
+
+> **[§ 223 Abs. 1 StGB](https://www.gesetze-im-internet.de/stgb/__223.html){target="_blank"}:** „Wer eine andere Person körperlich misshandelt oder an der Gesundheit schädigt, wird mit Freiheitsstrafe bis zu fünf Jahren oder mit Geldstrafe bestraft.“
+
+| Gesetzestext | Strukturelement | Detailanalyse |
+| :--- | :--- | :--- |
+| **„Wer...“** | TBM 1 (Subjekt) | JEDER Mensch (Tiere können keine Täter sein). |
+| **„...eine andere Person...“** | TBM 2 (Objekt) | Es muss ein anderer Mensch sein (Selbstverletzung ist nicht strafbar). |
+| **„...körperlich misshandelt oder an der Gesundheit schädigt...“** | TBM 3 (Handlung) | Hier gibt es zwei Varianten. Eine reicht aus (ODER-Verknüpfung). |
+| **„...wird mit Freiheitsstrafe [...] bestraft.“** | **Rechtsfolge** | Die staatliche Sanktion. |
+
+Wichtig zu wissen ist, dass sich die Tatbestandsmerkmale im Gesetz nicht immer so klar voneinander abgrenzen lassen. Manchmal müssen sie erst interpretiert werden. Zudem müssen oft viele gesetzliche Normen zusammen betrachtet werden, um den Tatbestand vollständig zu erfassen und damit einen Fall zu lösen. Das werden wir in den nächsten Einheiten noch näher betrachten.
+
+# Die Werkstatt: Übung macht den Meister
+
+Um den Blick für den Code zu schärfen, müssen wir ihn in verschiedenen Gesetzen identifizieren. 
+
+::: {.case-study}
+#### Fall: Die kaputte Fensterscheibe 
+„Wer rechtswidrig eine fremde Sache beschädigt oder zerstört, wird mit Freiheitsstrafe bis zu zwei Jahren oder mit Geldstrafe bestraft.“ (§ 303 Abs. 1StGB)
+
+**Aufgabe:** Identifizieren Sie die Tatbestandsmerkmale.
+
+::: {.solution}
+
+1. **Wer:** Täter (Subjekt).
+
+2. **Fremde Sache:** Objekt (darf nicht dem Täter allein gehören).
+
+3. **Beschädigen oder Zerstören:** Die Tathandlung.
+
+4. **Rechtswidrig:** Ein allgemeines Merkmal (darf nicht gerechtfertigt sein).
+
+**Rechtsfolge:** Freiheitsstrafe oder Geldstrafe.
+:::
+:::
+
+# Ausblick: Von der Norm zum Urteil
+
+Die Trennung von Tatbestand und Rechtsfolge ist kein juristischer Selbstzweck. Sie ist die zwingende Voraussetzung für das, was wir in der nächsten Einheit lernen: Die **Subsumtion**. 
+
+Dabei prüfen wir in einem logischen Dreischritt (dem Syllogismus), ob ein konkreter Lebenssachverhalt (z.B. "Anton schlägt Berta") die abstrakten Merkmale einer Norm ("Wer eine andere Person...") erfüllt. 
+
+> **Ihre Hausaufgabe:**
+> Nehmen Sie sich eine einfache Norm (z.B. § 303 StGB oder [§ 90 BGB](https://www.gesetze-im-internet.de/bgb/__90.html){target="_blank"}) und markieren Sie konsequent mit zwei Farben: **Grün** für den Tatbestand (alle Voraussetzungen) und **Rot** für die Rechtsfolge. Wer den Code nicht exakt markieren kann, wird ihn später auch nicht richtig anwenden können.

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strafprozess-Navigator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .timeline {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .phase {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+            padding: 15px;
+            border: 1px solid #eeeeee;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            background: #fdfdfd;
+        }
+
+        .phase:hover {
+            border-color: #ff6a00;
+            transform: translateX(5px);
+        }
+
+        .phase.active {
+            border-left: 5px solid #ff6a00;
+            background: #fff9f5;
+        }
+
+        .phase-number {
+            background: #ff6a00;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+            font-size: 0.9rem;
+        }
+
+        .phase-info {
+            flex-grow: 1;
+        }
+
+        .phase-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .phase-details {
+            font-size: 0.85rem;
+            color: #666;
+            display: none;
+            margin-top: 10px;
+            padding-top: 10px;
+            border-top: 1px dashed #ddd;
+        }
+
+        .phase.active .phase-details {
+            display: block;
+        }
+
+        .actor-tag {
+            display: inline-block;
+            background: #eeeeee;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="timeline">
+            <div class="phase active" onclick="toggle(this)">
+                <div class="phase-number">1</div>
+                <div class="phase-info">
+                    <div class="phase-name">Ermittlungsverfahren</div>
+                    <div class="actor-tag">Staatsanwaltschaft & Polizei</div>
+                    <div class="phase-details">
+                        Sammeln von belastenden und entlastenden Beweisen. <br>
+                        <strong>Abschluss:</strong> Entweder Anklageerhebung oder Einstellung des Verfahrens.
+                    </div>
+                </div>
+            </div>
+            <div class="phase" onclick="toggle(this)">
+                <div class="phase-number">2</div>
+                <div class="phase-info">
+                    <div class="phase-name">Zwischenverfahren</div>
+                    <div class="actor-tag">Gericht</div>
+                    <div class="phase-details">
+                        Das Gericht prüft die Anklageschrift der Staatsanwaltschaft. <br>
+                        <strong>Ziel:</strong> Entscheidung über die Eröffnung der Hauptverhandlung.
+                    </div>
+                </div>
+            </div>
+            <div class="phase" onclick="toggle(this)">
+                <div class="phase-number">3</div>
+                <div class="phase-info">
+                    <div class="phase-name">Hauptverfahren</div>
+                    <div class="actor-tag">Gericht, StA, Verteidigung</div>
+                    <div class="phase-details">
+                        Mündliche Beweisaufnahme (Zeugen, Gutachter, Urkunden) vor Gericht. <br>
+                        <strong>Ende:</strong> Das Urteil (Freispruch oder Verurteilung).
+                    </div>
+                </div>
+            </div>
+            <div class="phase" onclick="toggle(this)">
+                <div class="phase-number">4</div>
+                <div class="phase-info">
+                    <div class="phase-name">Vollstreckungsverfahren</div>
+                    <div class="actor-tag">Staatsanwaltschaft / JVA</div>
+                    <div class="phase-details">
+                        Wenn das Urteil (ggf. nach Berufung/Revision) rechtskräftig ist, wird die Strafe vollzogen (z.
+                        B. Ladung zum Strafantritt).
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggle(el) {
+            document.querySelectorAll('.phase').forEach(p => p.classList.remove('active'));
+            el.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schadensersatz § 122 BGB</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .input-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        input[type="range"] {
+            width: 100%;
+            accent-color: #ff6a00;
+        }
+
+        .val {
+            float: right;
+            color: #ff6a00;
+        }
+
+        .chart-container {
+            display: flex;
+            align-items: flex-end;
+            height: 200px;
+            gap: 20px;
+            margin-top: 30px;
+            border-bottom: 2px solid #ccc;
+            padding-bottom: 5px;
+        }
+
+        .bar {
+            flex: 1;
+            background: #eee;
+            position: relative;
+            transition: height 0.3s;
+            min-height: 2px;
+        }
+
+        .bar-label {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .bar-name {
+            position: absolute;
+            bottom: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.7rem;
+            color: #666;
+        }
+
+        .primary {
+            background: #ff6a00;
+        }
+
+        .secondary {
+            background: #00bcd4;
+        }
+
+        .cap {
+            border-top: 3px dashed #f44336;
+        }
+
+        #summary {
+            margin-top: 50px;
+            padding: 15px;
+            background: #fff8e1;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-group">
+            <label>Vertrauensschaden (Negatives Interesse) <span class="val" id="neg-val">500 €</span></label>
+            <input type="range" id="neg-slider" min="0" max="2000" value="500" step="50">
+        </div>
+        <div class="input-group">
+            <label>Erfüllungsinteresse (Positives Interesse) <span class="val" id="pos-val">1000 €</span></label>
+            <input type="range" id="pos-slider" min="0" max="2000" value="1000" step="50">
+        </div>
+
+        <div class="chart-container">
+            <div id="bar-neg" class="bar primary">
+                <div class="bar-label">500 €</div>
+                <div class="bar-name">Negatives Int.</div>
+            </div>
+            <div id="bar-pos" class="bar secondary">
+                <div class="bar-label">1000 €</div>
+                <div class="bar-name">Positives Int.</div>
+            </div>
+            <div id="bar-res" class="bar cap">
+                <div class="bar-label">500 €</div>
+                <div class="bar-name">Ersatzpflicht</div>
+            </div>
+        </div>
+
+        <div id="summary">
+            Gemäß <strong>§ 122 I BGB</strong> ist der Vertrauensschaden zu ersetzen, jedoch begrenzt durch das
+            Erfüllungsinteresse.
+        </div>
+    </div>
+
+    <script>
+        const negS = document.getElementById('neg-slider');
+        const posS = document.getElementById('pos-slider');
+        const negV = document.getElementById('neg-val');
+        const posV = document.getElementById('pos-val');
+        const barNeg = document.getElementById('bar-neg');
+        const barPos = document.getElementById('bar-pos');
+        const barRes = document.getElementById('bar-res');
+
+        function update() {
+            const neg = parseInt(negS.value);
+            const pos = parseInt(posS.value);
+            const res = Math.min(neg, pos);
+
+            negV.textContent = neg + " €";
+            posV.textContent = pos + " €";
+
+            const max = 2000;
+            barNeg.style.height = (neg / max * 100) + "%";
+            barPos.style.height = (pos / max * 100) + "%";
+            barRes.style.height = (res / max * 100) + "%";
+
+            barNeg.querySelector('.bar-label').textContent = neg + " €";
+            barPos.querySelector('.bar-label').textContent = pos + " €";
+            barRes.querySelector('.bar-label').textContent = res + " €";
+
+            if (neg > pos) {
+                barRes.style.background = "#f44336";
+            } else {
+                barRes.style.background = "#ff6a00";
+            }
+        }
+
+        negS.oninput = posS.oninput = update;
+        update();
+    </script>
+</body>
+
+</html>

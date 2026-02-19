@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EU Institutionelles Dreieck</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 450px;
+        }
+
+        .widget-container {
+            width: 100%;
+            max-width: 600px;
+            position: relative;
+        }
+
+        .triangle-container {
+            width: 100%;
+            height: 300px;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .node {
+            position: absolute;
+            width: 140px;
+            padding: 15px;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 12px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 10;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        .node:hover {
+            border-color: #ff6a00;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(255, 106, 0, 0.15);
+        }
+
+        .node.active {
+            border-color: #ff6a00;
+            background: #fff;
+            box-shadow: 0 0 15px rgba(255, 106, 0, 0.2);
+        }
+
+        .node h4 {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #ff6a00;
+        }
+
+        .node span {
+            font-size: 0.75rem;
+            color: #666;
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Positions */
+        #kommission {
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        #parlament {
+            bottom: 0;
+            left: 0;
+        }
+
+        #rat {
+            bottom: 0;
+            right: 0;
+        }
+
+        /* Connections */
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+            pointer-events: none;
+        }
+
+        line {
+            stroke: #eee;
+            stroke-width: 2;
+            stroke-dasharray: 5;
+        }
+
+        line.active {
+            stroke: #ff6a00;
+            stroke-width: 3;
+            stroke-dasharray: 0;
+            transition: all 0.5s;
+        }
+
+        .info-panel {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            border-left: 4px solid #ff6a00;
+            min-height: 80px;
+        }
+
+        .info-panel p {
+            margin: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="triangle-container">
+            <svg>
+                <line x1="50%" y1="70" x2="15%" y2="230" id="l1"></line>
+                <line x1="50%" y1="70" x2="85%" y2="230" id="l2"></line>
+                <line x1="15%" y1="230" x2="85%" y2="230" id="l3"></line>
+            </svg>
+
+            <div class="node" id="kommission" onclick="showInfo('kommission')">
+                <h4>EU-Kommission</h4>
+                <span>"Motor der EU"</span>
+            </div>
+            <div class="node" id="parlament" onclick="showInfo('parlament')">
+                <h4>EU-Parlament</h4>
+                <span>Bürgerkammer</span>
+            </div>
+            <div class="node" id="rat" onclick="showInfo('rat')">
+                <h4>Rat der EU</h4>
+                <span>Staatenkammer</span>
+            </div>
+        </div>
+
+        <div class="info-panel">
+            <p id="infoText">Klicken Sie auf ein Organ, um dessen Rolle im "Institutionellen Dreieck" zu erfahren.</p>
+        </div>
+    </div>
+
+    <script>
+        const info = {
+            kommission: {
+                text: "Die <strong>EU-Kommission</strong> hat das alleinige <strong>Initiativrecht</strong>. Nur sie darf neue Gesetzesvorschläge machen. Sie vertritt das Gesamtinteresse der Union.",
+                lines: ['l1', 'l2']
+            },
+            parlament: {
+                text: "Das <strong>Europäische Parlament</strong> wird direkt von den Bürgern gewählt. Es fungiert als Mitgesetzgeber und muss den meisten Vorschlägen zustimmen, damit sie Gesetz werden.",
+                lines: ['l1', 'l3']
+            },
+            rat: {
+                text: "Im <strong>Rat der EU</strong> (Ministerrat) sind die Fachminister der Mitgliedstaaten vertreten. Er entscheidet gemeinsam mit dem Parlament über die Annahme von Rechtsakten.",
+                lines: ['l2', 'l3']
+            }
+        };
+
+        function showInfo(id) {
+            // Update Text
+            const panel = document.getElementById('infoText');
+            panel.innerHTML = info[id].text;
+
+            // Update Nodes
+            document.querySelectorAll('.node').forEach(node => {
+                node.classList.toggle('active', node.id === id);
+            });
+
+            // Update Lines
+            document.querySelectorAll('line').forEach(line => {
+                line.classList.toggle('active', info[id].lines.includes(line.id));
+            });
+        }
+    </script>
+</body>
+
+</html>

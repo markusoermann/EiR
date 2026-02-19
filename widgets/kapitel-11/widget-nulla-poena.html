@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strafrechts-Garantien</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .ban-card {
+            border: 2px solid #eeeeee;
+            border-radius: 12px;
+            padding: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .ban-card:hover {
+            border-color: #ff6a00;
+            background: #fff9f5;
+        }
+
+        .ban-card.active {
+            border-color: #ff6a00;
+            background: #ff6a00;
+            color: white;
+        }
+
+        .ban-title {
+            font-weight: bold;
+            font-size: 0.9rem;
+            margin-bottom: 5px;
+        }
+
+        .ban-latin {
+            font-size: 0.7rem;
+            font-style: italic;
+            opacity: 0.8;
+        }
+
+        .explanation {
+            margin-top: 25px;
+            background: #fdfdfd;
+            border: 1px solid #eeeeee;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 100px;
+        }
+
+        .example-box {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px dashed #ddd;
+            font-size: 0.85rem;
+        }
+
+        .example-label {
+            font-weight: bold;
+            color: #ff6a00;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .ban-card.active .example-label {
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="grid">
+            <div class="ban-card active" onclick="show(0, this)">
+                <div class="ban-title">Schriftlichkeit</div>
+                <div class="ban-latin">lege scripta</div>
+            </div>
+            <div class="ban-card" onclick="show(1, this)">
+                <div class="ban-title">Bestimmtheit</div>
+                <div class="ban-latin">lege certa</div>
+            </div>
+            <div class="ban-card" onclick="show(2, this)">
+                <div class="ban-title">Analogieverbot</div>
+                <div class="ban-latin">lege stricta</div>
+            </div>
+            <div class="ban-card" onclick="show(3, this)">
+                <div class="ban-title">Rückwirkungsverbot</div>
+                <div class="ban-latin">lege praevia</div>
+            </div>
+        </div>
+
+        <div class="explanation">
+            <div id="text">...</div>
+            <div class="example-box">
+                <span class="example-label">Konsequenz für den Staat</span>
+                <div id="example">...</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const data = [
+            {
+                text: "Strafrechtliche Verbote müssen in einem vom Parlament verabschiedeten Gesetz stehen.",
+                example: "Gewohnheitsrecht ('Das haben wir schon immer bestraft') reicht nicht aus, um jemanden einzusperren."
+            },
+            {
+                text: "Gesetze müssen so präzise sein, dass jeder Bürger im Voraus erkennen kann, was verboten ist.",
+                example: "Ein Gesetz, das 'unmoralisches Verhalten' unter Strafe stellt, wäre zu unbestimmt und damit verfassungswidrig."
+            },
+            {
+                text: "Lücken im Strafgesetz dürfen nicht zulasten des Täters durch 'passende' Auslegung geschlossen werden.",
+                example: "Wenn das Gesetz nur den Diebstahl von 'Sachen' bestraft, durfte früher der Diebstahl von Strom (Energie) nicht einfach 'mitbestraft' werden (dafür brauchte es ein neues Gesetz)."
+            },
+            {
+                text: "Ein Verhalten kann nur bestraft werden, wenn es zur Zeit der Tat bereits gesetzlich verboten war.",
+                example: "Der Staat darf nicht heute das Tragen von gelben Socken verbieten und alle verhaften, die gestern gelbe Socken trugen."
+            }
+        ];
+
+        function show(idx, el) {
+            document.querySelectorAll('.ban-card').forEach(c => c.classList.remove('active'));
+            el.classList.add('active');
+
+            document.getElementById('text').textContent = data[idx].text;
+            document.getElementById('example').textContent = data[idx].example;
+        }
+
+        show(0, document.querySelector('.ban-card'));
+    </script>
+</body>
+
+</html>

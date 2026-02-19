@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zuordnung Rechtsgebiete</title>
+    <style>
+        :root {
+            --thws-orange: #f39200;
+            --thws-darkblue: #003865;
+            --thws-gray: #f4f4f4;
+            --thws-white: #ffffff;
+            --correct: #28a745;
+            --incorrect: #dc3545;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--thws-white);
+            color: var(--thws-darkblue);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 800px;
+        }
+
+        h2 {
+            color: var(--thws-darkblue);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 3px solid var(--thws-orange);
+            padding-bottom: 10px;
+        }
+
+        .drop-zones {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .drop-zone {
+            background-color: var(--thws-gray);
+            border: 2px dashed #ccc;
+            border-radius: 8px;
+            min-height: 200px;
+            padding: 10px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .drop-zone.over {
+            border-color: var(--thws-orange);
+            background-color: #fff9f0;
+        }
+
+        .drop-zone h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-top: 0;
+            text-align: center;
+            color: var(--thws-darkblue);
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .items-pool {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            border: 1px solid #eee;
+        }
+
+        .draggable-item {
+            background-color: var(--thws-darkblue);
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            cursor: grab;
+            font-size: 0.9rem;
+            user-select: none;
+            transition: transform 0.2s, background-color 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .draggable-item:active {
+            cursor: grabbing;
+        }
+
+        .draggable-item.dragging {
+            opacity: 0.5;
+            transform: scale(0.95);
+        }
+
+        .draggable-item.correct {
+            background-color: var(--correct) !important;
+        }
+
+        .draggable-item.incorrect {
+            background-color: var(--incorrect) !important;
+        }
+
+        .controls {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            transition: all 0.2s;
+        }
+
+        .btn-check {
+            background-color: var(--thws-orange);
+            color: white;
+        }
+
+        .btn-check:hover {
+            background-color: #d68100;
+        }
+
+        .btn-reset {
+            background-color: #6c757d;
+            color: white;
+        }
+
+        #feedback {
+            margin-top: 15px;
+            text-align: center;
+            font-weight: bold;
+            min-height: 24px;
+        }
+
+        @media (max-width: 600px) {
+            .drop-zones {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Interaktives Mapping: Rechtsgebiete</h2>
+    
+    <div class="drop-zones">
+        <div class="drop-zone" id="privatrecht" data-type="privat">
+            <h3>Privatrecht</h3>
+        </div>
+        <div class="drop-zone" id="oeffentliches" data-type="oeffentlich">
+            <h3>Öffentliches Recht</h3>
+        </div>
+        <div class="drop-zone" id="strafrecht" data-type="straf">
+            <h3>Strafrecht</h3>
+        </div>
+    </div>
+
+    <div class="items-pool" id="pool">
+        <!-- Items will be shuffled and added here -->
+    </div>
+
+    <div id="feedback"></div>
+
+    <div class="controls">
+        <button class="btn-check" onclick="checkAnswers()">Überprüfen</button>
+        <button class="btn-reset" onclick="resetWidget()">Zurücksetzen</button>
+    </div>
+</div>
+
+<script>
+    const data = [
+        { id: 1, text: "Bürgerliches Recht (BGB)", type: "privat" },
+        { id: 2, text: "Handelsrecht (HGB)", type: "privat" },
+        { id: 3, text: "Arbeitsrecht", type: "privat" },
+        { id: 4, text: "Staatsrecht (GG)", type: "oeffentlich" },
+        { id: 5, text: "Verwaltungsrecht", type: "oeffentlich" },
+        { id: 6, text: "Steuerrecht", type: "oeffentlich" },
+        { id: 7, text: "Kernstrafrecht (StGB)", type: "straf" },
+        { id: 8, text: "Betäubungsmittelrecht", type: "straf" },
+        { id: 9, text: "Urheberrecht", type: "privat" },
+        { id: 10, text: "Polizeirecht", type: "oeffentlich" }
+    ];
+
+    const pool = document.getElementById('pool');
+    const zones = document.querySelectorAll('.drop-zone');
+    const feedback = document.getElementById('feedback');
+
+    function shuffle(array) {
+        return array.sort(() => Math.random() - 0.5);
+    }
+
+    function init() {
+        const shuffled = shuffle([...data]);
+        shuffled.forEach(item => {
+            const el = document.createElement('div');
+            el.className = 'draggable-item';
+            el.draggable = true;
+            el.textContent = item.text;
+            el.dataset.id = item.id;
+            el.dataset.type = item.type;
+            
+            el.addEventListener('dragstart', () => el.classList.add('dragging'));
+            el.addEventListener('dragend', () => el.classList.remove('dragging'));
+            
+            pool.appendChild(el);
+        });
+
+        zones.forEach(zone => {
+            zone.addEventListener('dragover', e => {
+                e.preventDefault();
+                zone.classList.add('over');
+            });
+
+            zone.addEventListener('dragleave', () => zone.classList.remove('over'));
+
+            zone.addEventListener('drop', e => {
+                e.preventDefault();
+                zone.classList.remove('over');
+                const dragging = document.querySelector('.dragging');
+                if (dragging) {
+                    zone.appendChild(dragging);
+                    feedback.textContent = "";
+                    dragging.classList.remove('correct', 'incorrect');
+                }
+            });
+        });
+    }
+
+    function checkAnswers() {
+        let correctCount = 0;
+        let totalAssigned = 0;
+        const items = document.querySelectorAll('.draggable-item');
+        
+        items.forEach(item => {
+            const parent = item.parentElement;
+            if (parent.classList.contains('drop-zone')) {
+                totalAssigned++;
+                if (item.dataset.type === parent.dataset.type) {
+                    item.classList.add('correct');
+                    item.classList.remove('incorrect');
+                    correctCount++;
+                } else {
+                    item.classList.add('incorrect');
+                    item.classList.remove('correct');
+                }
+            }
+        });
+
+        if (totalAssigned === 0) {
+            feedback.textContent = "Bitte ordnen Sie zuerst einige Gebiete zu!";
+            feedback.style.color = "orange";
+        } else if (correctCount === data.length) {
+            feedback.textContent = "Perfekt! Alle Rechtsgebiete sind korrekt zugeordnet.";
+            feedback.style.color = "var(--correct)";
+        } else {
+            feedback.textContent = `${correctCount} von ${totalAssigned} zugeordneten Gebieten sind korrekt.`;
+            feedback.style.color = "var(--thws-darkblue)";
+        }
+    }
+
+    function resetWidget() {
+        const items = document.querySelectorAll('.draggable-item');
+        items.forEach(item => {
+            item.classList.remove('correct', 'incorrect');
+            pool.appendChild(item);
+        });
+        feedback.textContent = "";
+        // Optional: shuffle again
+    }
+
+    init();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bote vs. Vertreter</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .widget-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .toggle-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .option-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px;
+            background: #f9f9f9;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+        }
+
+        .option-card.active {
+            background: #fff3e0;
+            border-color: #ff6a00;
+        }
+
+        .option-info strong {
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .option-info span {
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        .result-panel {
+            padding: 20px;
+            border-radius: 8px;
+            background: #333;
+            color: white;
+            min-height: 120px;
+        }
+
+        .result-head {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6a00;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .result-body {
+            font-size: 0.9rem;
+            line-height: 1.4;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            font-weight: bold;
+            margin-top: 5px;
+            background: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="toggle-container">
+            <div id="opt-will" class="option-card active" onclick="toggle('will')">
+                <div class="option-info">
+                    <strong>Eigener Entscheidungsspielraum</strong>
+                    <span>"Such mir was Schönes aus" statt "Kauf genau X"</span>
+                </div>
+                <div class="status-icon">✓</div>
+            </div>
+            <div id="opt-capacity" class="option-card active" onclick="toggle('capacity')">
+                <div class="option-info">
+                    <strong>Mind. beschränkt geschäftsfähig</strong>
+                    <span>Der Handelnde ist mindestens 7 Jahre alt</span>
+                </div>
+                <div class="status-icon">✓</div>
+            </div>
+        </div>
+
+        <div class="result-panel">
+            <span id="res-title" class="result-head">Stellvertreter (§ 164 BGB)</span>
+            <div id="res-body" class="result-body">
+                Gibt eine eigene Willenserklärung ab. Die Rechtsfolgen treffen den Vertretenen direkt. Erfordert eigene
+                Geschäftsfähigkeit, da ein eigener Wille gebildet wird.
+            </div>
+            <div id="res-badge" class="badge">Eigene WE</div>
+        </div>
+    </div>
+
+    <script>
+        let state = {
+            will: true,
+            capacity: true
+        };
+
+        function toggle(key) {
+            state[key] = !state[key];
+            document.getElementById('opt-' + key).classList.toggle('active');
+            document.getElementById('opt-' + key).querySelector('.status-icon').textContent = state[key] ? '✓' : '✗';
+            update();
+        }
+
+        function update() {
+            const title = document.getElementById('res-title');
+            const body = document.getElementById('res-body');
+            const badge = document.getElementById('res-badge');
+
+            if (state.will) {
+                if (state.capacity) {
+                    title.textContent = "Stellvertreter (§ 164 BGB)";
+                    body.textContent = "Gibt eine eigene Willenserklärung ab. Die Rechtsfolgen treffen den Vertretenen direkt. Erfordert mindestens beschränkte Geschäftsfähigkeit (§ 165 BGB).";
+                    badge.textContent = "Eigene WE";
+                } else {
+                    title.textContent = "Unwirksame Vertretung";
+                    body.textContent = "Ein Geschäftsunfähiger (unter 7 J.) kann kein Vertreter sein (§ 165 BGB). Das Rechtsgeschäft kommt nicht wirksam durch Vertretung zustande.";
+                    badge.textContent = "Mangel: § 165";
+                }
+            } else {
+                title.textContent = "Bote (Erklärungsbote)";
+                body.textContent = "Überbringt lediglich eine fremde, fertige Willenserklärung. Er fungiert als bloßes Übermittlungsmedium ('sprechendes Fax'). Benötigt keine eigene Geschäftsfähigkeit.";
+                badge.textContent = "Fremde WE";
+            }
+        }
+    </script>
+</body>
+
+</html>

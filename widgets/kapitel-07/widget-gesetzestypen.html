@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesetzestypen im Vergleich</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+
+        .widget-container {
+            width: 100%;
+            max-width: 700px;
+        }
+
+        .toggle-container {
+            display: flex;
+            background: #eee;
+            border-radius: 8px;
+            padding: 5px;
+            margin-bottom: 25px;
+        }
+
+        .toggle-btn {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-weight: 600;
+            border-radius: 6px;
+            transition: all 0.2s;
+            color: #666;
+        }
+
+        .toggle-btn.active {
+            background: #fff;
+            color: #ff6a00;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .comparison-card {
+            background: #fff;
+            border: 2px solid #ff6a00;
+            border-radius: 12px;
+            padding: 25px;
+            min-height: 250px;
+            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .veto-badge {
+            position: absolute;
+            top: 20px;
+            right: -35px;
+            background: #ff6a00;
+            color: white;
+            padding: 5px 40px;
+            transform: rotate(45deg);
+            font-weight: bold;
+            font-size: 0.8rem;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .card-header {
+            margin-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .card-header h3 {
+            margin: 0;
+            color: #ff6a00;
+            font-size: 1.3rem;
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 0;
+        }
+
+        li {
+            margin-bottom: 12px;
+            line-height: 1.4;
+        }
+
+        .highlight {
+            font-weight: bold;
+            color: #ff6a00;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="toggle-container">
+            <button class="toggle-btn active" onclick="showType('zustimmung')">Zustimmungsgesetz</button>
+            <button class="toggle-btn" onclick="showType('einspruch')">Einspruchsgesetz</button>
+        </div>
+
+        <div class="comparison-card" id="typeCard">
+            <div class="veto-badge" id="vetoType">Absolut</div>
+            <div class="card-header">
+                <h3 id="typeName">Zustimmungsgesetz</h3>
+            </div>
+            <ul id="typeList">
+                <li>Berühren besonders <span class="highlight">Länderinteressen</span> (z.B. Finanzen, Verwaltung).</li>
+                <li>Müssen im Grundgesetz ausdrücklich als zustimmungspflichtig genannt sein.</li>
+                <li>Bei Ablehnung durch den Bundesrat ist das Gesetz <span class="highlight">endgültig
+                        gescheitert</span>.</li>
+                <li>Vermittlungsausschuss kann von allen angerufen werden.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const types = {
+            zustimmung: {
+                name: "Zustimmungsgesetz",
+                veto: "Absolut",
+                list: [
+                    "Berühren besonders <span class='highlight'>Länderinteressen</span> (z.B. Finanzen, Verwaltung).",
+                    "Müssen im Grundgesetz ausdrücklich als zustimmungspflichtig genannt sein.",
+                    "Bei Ablehnung durch den Bundesrat ist das Gesetz <span class='highlight'>endgültig gescheitert</span>.",
+                    "Vermittlungsausschuss kann von allen angerufen werden."
+                ]
+            },
+            einspruch: {
+                name: "Einspruchsgesetz",
+                veto: "Suspensiv",
+                list: [
+                    "Der <span class='highlight'>Regelfall</span>: Alle Gesetze, die keine Zustimmungsgesetze sind.",
+                    "Der Bundesrat kann Einspruch einlegen, aber das Gesetz nicht final stoppen.",
+                    "Ein Einspruch kann vom Bundestag mit einer Mehrheit <span class='highlight'>überstimmt</span> werden.",
+                    "Der Bundesrat muss zwingend den Vermittlungsausschuss anrufen, bevor er Einspruch einlegt."
+                ]
+            }
+        };
+
+        function showType(typeId) {
+            const type = types[typeId];
+            document.getElementById('typeName').textContent = type.name;
+            document.getElementById('vetoType').textContent = type.veto;
+
+            const list = document.getElementById('typeList');
+            list.innerHTML = type.list.map(item => `<li>${item}</li>`).join('');
+
+            // Toggle active button
+            const btns = document.querySelectorAll('.toggle-btn');
+            btns.forEach(btn => {
+                btn.classList.toggle('active', btn.textContent.toLowerCase().includes(typeId.slice(0, 5)));
+            });
+
+            // Animation effect
+            const card = document.getElementById('typeCard');
+            card.style.transform = 'scale(0.98)';
+            setTimeout(() => card.style.transform = 'scale(1)', 100);
+        }
+    </script>
+</body>
+
+</html>

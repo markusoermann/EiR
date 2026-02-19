@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drei-Phasen-Modell der Leistungsstörung</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .widget-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .phases {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .phases::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: #eeeeee;
+            z-index: 1;
+        }
+
+        .phase-step {
+            width: 30%;
+            padding: 20px 10px;
+            background: white;
+            border: 2px solid #eeeeee;
+            border-radius: 8px;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .phase-step.active {
+            border-color: #ff6a00;
+            box-shadow: 0 4px 12px rgba(255, 106, 0, 0.15);
+            transform: translateY(-5px);
+        }
+
+        .phase-number {
+            font-size: 0.8rem;
+            color: #999;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .phase-title {
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .description-box {
+            background: #fdfdfd;
+            border: 1px solid #eeeeee;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .phase-content {
+            display: none;
+        }
+
+        .phase-content.active {
+            display: block;
+            animation: fadeIn 0.4s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 8px;
+            background: #ff6a00;
+            color: white;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="phases">
+            <div class="phase-step active" id="step1" onclick="showPhase(1)">
+                <div class="phase-number">PHASE 1</div>
+                <div class="phase-title">Primärpflicht</div>
+            </div>
+            <div class="phase-step" id="step2" onclick="showPhase(2)">
+                <div class="phase-number">PHASE 2</div>
+                <div class="phase-title">Nacherfüllung</div>
+            </div>
+            <div class="phase-step" id="step3" onclick="showPhase(3)">
+                <div class="phase-number">PHASE 3</div>
+                <div class="phase-title">Sekundärrechte</div>
+            </div>
+        </div>
+
+        <div class="description-box">
+            <div id="content1" class="phase-content active">
+                <div class="tag">NORMALBETRIEB</div>
+                <p>Der Vertrag wird regulär erfüllt. Der Gläubiger hat einen Anspruch auf die vereinbarte Leistung.</p>
+            </div>
+            <div id="content2" class="phase-content">
+                <div class="tag">DIE ZWEITE CHANCE</div>
+                <p>Bei Mängeln oder Verzögerung muss dem Schuldner meist eine <strong>Frist gesetzt</strong> werden. Er
+                    darf den "Fehler" korrigieren.</p>
+            </div>
+            <div id="content3" class="phase-content">
+                <div class="tag">TERMINAL-PHASE</div>
+                <p>Nach Fristablauf (oder bei Unmöglichkeit) greifen die "harten" Rechte: <strong>Rücktritt</strong>
+                    oder <strong>Schadensersatz statt der Leistung</strong>.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function showPhase(num) {
+            // Update steps
+            document.querySelectorAll('.phase-step').forEach(el => el.classList.remove('active'));
+            document.getElementById('step' + num).classList.add('active');
+
+            // Update content
+            document.querySelectorAll('.phase-content').forEach(el => el.classList.remove('active'));
+            document.getElementById('content' + num).classList.add('active');
+        }
+    </script>
+</body>
+
+</html>

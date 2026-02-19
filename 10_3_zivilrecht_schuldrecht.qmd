@@ -1,0 +1,167 @@
+---
+title: "Zivilrecht - Schuldrecht"
+subtitle: "Einheit 10.3: Schuldverhältnisse und Leistungsstörungen"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Einordnung und Struktur
+
+Nachdem wir uns mit der Willenserklärung und dem Vertragsschluss beschäftigt haben, schauen wir uns nun an, was passiert, wenn der Vertrag erst einmal "lebt". Wir betreten das **Schuldrecht**, geregelt im 2. Buch des BGB. Wenn der Vertrag der Bauplan ist, dann ist das Schuldrecht die Hausordnung der laufenden Geschäftsbeziehung.
+
+Das Schuldrecht ist im BGB zweigeteilt – eine klassische juristische Architektur, die wir als "Klammertechnik" bezeichnen:
+
+1.  **Allgemeines Schuldrecht ([§§ 241–432 BGB](https://www.gesetze-im-internet.de/bgb/index.html#BJNR001950896BJNE023202377){target="_blank"}):** Hier stehen die Regeln, die für *alle* Schuldverhältnisse gelten. Egal ob Sie ein Brötchen kaufen oder die Investoren für ihr KI-Startup gewinnen: Wie man eine Schuld erfüllt oder was bei Verspätung passiert, steht hier.
+2.  **Besonderes Schuldrecht ([§§ 433–853 BGB](https://www.gesetze-im-internet.de/bgb/index.html#BJNR001950896BJNE042602377){target="_blank"}):** Hier finden wir die Spezialregeln für konkrete Vertragstypen (z.B. Kauf, Miete, Werkvertrag) sowie gesetzliche Ansprüche, die ganz ohne Vertrag entstehen (z. B. Schadensersatz nach einem Unfall).
+
+# Das Schuldverhältnis: Wer schuldet wem was?
+
+Ein Schuldverhältnis ist eine rechtliche Sonderverbindung. Kraft dieser Verbindung ist der Gläubiger berechtigt, vom Schuldner eine Leistung zu fordern ([§ 241 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__241.html){target="_blank"}).
+
+## Entstehungsgründe: Woher kommen die Pflichten?
+
+Warum muss ich überhaupt etwas tun? Das Gesetz kennt drei Wege:
+
+1.  **Rechtsgeschäftlich (Vertrag):** Der Klassiker. Man einigt sich ([§ 433 BGB](https://www.gesetze-im-internet.de/bgb/__433.html){target="_blank"}).
+2.  **Gesetzlich:** Das Gesetz ordnet eine Pflicht an, auch wenn man sich nie geeinigt hat. Wer jemanden fahrlässig anrempelt, schuldet Schadensersatz ([§ 823 BGB](https://www.gesetze-im-internet.de/bgb/__823.html){target="_blank"}), ohne vorher einen "Anrempel-Vertrag" geschlossen zu haben.
+3.  **Rechtsgeschäftsähnlich:** Das ist die Vorstufe zum Vertrag. Schon wer einen Laden betritt, um nur mal zu schauen, tritt in ein Schutzverhältnis ein ([§ 311 Abs. 2 BGB](https://www.gesetze-im-internet.de/bgb/__311.html){target="_blank"}).
+
+::: {.details}
+#### Der Sturz auf dem Salatblatt
+Ein Kunde rutscht im Supermarkt auf einem zerquetschten Salatblatt aus und bricht sich den Arm. Ein Kaufvertrag ist noch nicht zustande gekommen. Dennoch haftet der Ladeninhaber wegen der Verletzung von Schutzpflichten aus dem vorvertraglichen Schuldverhältnis gem. [§§ 280 Abs. 1, 311 Abs. 2, 241 Abs. 2 BGB](https://www.gesetze-im-internet.de/bgb/__280.html){target="_blank"}.
+:::
+
+## Die Pflichten im Detail ([§ 241 BGB](https://www.gesetze-im-internet.de/bgb/__241.html){target="_blank"})
+
+Nicht jede Pflicht wiegt gleich schwer. Wir sezieren das Schuldverhältnis in zwei Schichten:
+
+### 1. Leistungspflichten ([§ 241 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__241.html){target="_blank"})
+*   **Hauptleistungspflichten:** Sie geben dem Vertrag sein Gesicht (*essentialia negotii*). Beim Kauf: Die Ware gegen das Geld.
+*   **Nebenleistungspflichten:** Sie flankieren die Hauptleistung (z. B. die Bedienungsanleitung beim komplexen Gerät oder die ordentliche Verpackung).
+
+### 2. Rücksichtnahmepflichten ([§ 241 Abs. 2 BGB](https://www.gesetze-im-internet.de/bgb/__241.html){target="_blank"})
+Dies ist die "Etikette" des Zivilrechts. Man muss auf die Rechte und Interessen des anderen Rücksicht nehmen. Der Malermeister muss zwar die Wand streichen (Hauptpflicht), darf aber dabei nicht das Parkett ruinieren (Rücksichtnahmepflicht).
+
+Testen Sie Ihr Verständnis: Können Sie die verschiedenen Pflichten korrekt zuordnen?
+
+<iframe src="widgets/kapitel-10/widget-pflichten-checker.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Interaktiver Pflichten-Check nach § 241 BGB">
+</iframe>
+
+
+> **Wichtig:** Diese Pflichten fließen oft aus dem Generalklausel-Gefäß von **Treu und Glauben** ([§ 242 BGB](https://www.gesetze-im-internet.de/bgb/__242.html){target="_blank"}). Es ist das moralische Rückgrat des Schuldrechts.
+
+# Das Ende der Reise: Die Erfüllung
+
+Das Ziel jedes Schuldverhältnisses ist sein "Tod" durch Erfüllung ([§ 362 BGB](https://www.gesetze-im-internet.de/bgb/__362.html){target="_blank"}). Wenn die Leistung bewirkt wird, erlischt das Schuldverhältnis – der Fall ist erledigt.
+
+Dabei stellt das Gesetz klare Regeln auf, sofern die Parteien nichts anderes vereinbart haben:
+*   **Wann?** Im Zweifel sofort ([§ 271 BGB](https://www.gesetze-im-internet.de/bgb/__271.html){target="_blank"}).
+*   **Wo?** Wenn nichts vereinbart ist beim Schuldner ([§ 269 BGB](https://www.gesetze-im-internet.de/bgb/__269.html){target="_blank"}).
+*   **Wie?** Mittlere Art und Güte ([§ 243 BGB](https://www.gesetze-im-internet.de/bgb/__243.html){target="_blank"}).
+
+::: {.drag-exercise}
+Die *Erfüllung* nach [§ 362 BGB](https://www.gesetze-im-internet.de/bgb/__362.html){target="_blank"} führt zum *Erlöschen* des Schuldverhältnisses.
+:::
+
+# Wenn es schiefgeht: Das Leistungsstörungsrecht
+
+Was aber, wenn Fehler gemacht werden? Wenn nicht, nicht rechtzeitig oder mangelhaft geleistet wird? Das BGB fasst dies unter den Oberbegriff der **Pflichtverletzung**.
+
+Dazu stellen wir uns vier fundamentale Fragen:
+
+1.  **Leistungsgefahr:** Muss der Schuldner noch liefern oder ist es unmöglich geworden? ([§ 275 BGB](https://www.gesetze-im-internet.de/bgb/__275.html){target="_blank"})
+2.  **Preisgefahr:** Muss der Gläubiger noch bezahlen, wenn er nichts bekommt? ([§ 326 BGB](https://www.gesetze-im-internet.de/bgb/__326.html){target="_blank"})
+3.  **Schadensersatz:** Gibt es Geld für Verluste? ([§§ 280 ff. BGB](https://www.gesetze-im-internet.de/bgb/__280.html){target="_blank"})
+4.  **Rücktritt:** Kann ich den ganzen Vertrag einfach rückgängig machen? ([§§ 323 ff. BGB](https://www.gesetze-im-internet.de/bgb/__323.html){target="_blank"})
+
+Der folgende Navigator hilft Ihnen, die Antworten auf diese vier Fragen für verschiedene Störungsszenarien am Beispiel eines Kaufs schnell zu finden:
+
+<iframe src="widgets/kapitel-10/widget-leistungsstoerung-navigator.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Leistungsstörungs-Navigator: Die 4 Grundfragen">
+</iframe>
+
+
+## Arten der Störung
+*   **Unmöglichkeit:** Es geht einfach nicht mehr (z. B. das verkaufte Unikat ist verbrannt).
+*   **Verzögerung (Verzug):** Es ginge zwar, kommt aber zu spät.
+*   **Schlechtleistung:** Es kommt, ist aber "kaputt" oder "falsch" (z. B. Sachmangel gem. [§ 434 BGB](https://www.gesetze-im-internet.de/bgb/__434.html){target="_blank"}).
+
+# Das Drei-Phasen-Modell: Die Chronologie der Rettung
+
+Das BGB ist kein Freund von voreiligen Scheidungen. Es versucht, den Vertrag zu retten, wann immer es geht. Wir denken in drei Phasen:
+
+<iframe src="widgets/kapitel-10/widget-3-phasen-modell.html" 
+        width="100%" height="400px" frameborder="0"
+        title="Interaktive Visualisierung des Drei-Phasen-Modells">
+</iframe>
+
+
+*   **Phase 1: Primärpflichten:** Hier läuft alles nach Plan. Der Anspruch auf Leistung steht fest.
+*   **Phase 2: Die zweite Chance (Nacherfüllung):** Wenn etwas schiefgeht, muss der Gläubiger dem Schuldner meistens eine **Frist setzen**, um die Leistung doch noch zu erbringen ([§ 281 BGB](https://www.gesetze-im-internet.de/bgb/__281.html){target="_blank"}, [§ 323 BGB](https://www.gesetze-im-internet.de/bgb/__323.html){target="_blank"}). Der Schuldner hat ein "Recht zur zweiten Andienung".
+*   **Phase 3: Sekundärrechte:** Erst wenn die Frist abgelaufen ist oder sinnlos wäre (z. B. bei Unmöglichkeit), darf man zurücktreten oder Schadensersatz *statt* der Leistung verlangen.
+
+::: {.quick-check}
+Wann ist eine Fristsetzung zur Nacherfüllung in der Regel entbehrlich?
+
+- Wenn der Schuldner nur ein bisschen zu spät ist.
+- **Wenn die Leistung unmöglich geworden ist ([§ 275 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__275.html){target="_blank"}).**
+- Wenn der Gläubiger einfach keine Lust mehr hat.
+:::
+
+# Fallstudie: Der zerstörte Porsche
+
+Exemplarisch für die Systematik betrachten wir einen Klassiker:
+
+::: {.case-study}
+#### Der Porsche-Totalschaden
+P verkauft K seinen gebrauchten Porsche (Einzelstück/Stückschuld), behält ihn aber noch in seinem Besitz. Kurz vor der geplanten Übergabe baut P durch Unachtsamkeit (Fahrlässigkeit) einen Unfall. Der Wagen ist Schrott.
+
+::: {.solution}
+1. **Muss P noch liefern?** Nein. Unmöglichkeit gem. [§ 275 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__275.html){target="_blank"}. Der Anspruch erlischt.
+2. **Muss K noch bezahlen?** Nein. Gemäß [§ 326 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__326.html){target="_blank"} entfällt bei Unmöglichkeit der Gegenleistung auch der Anspruch auf den Kaufpreis.
+3. **Schadensersatz?** Ja. Da P fahrlässig gehandelt hat, hat er die Unmöglichkeit zu vertreten. K kann Schadensersatz statt der Leistung verlangen ([§§ 280 Abs. 1, 3, 283 BGB](https://www.gesetze-im-internet.de/bgb/__280.html){target="_blank"}). Dies könnte etwa der Gewinn sein, den K mit dem Porsche bei einem Weiterverkauf hätte erzielen können.
+4. **Rücktritt?** Möglich, aber meist gar nicht nötig, da die Zahlungspflicht eh entfällt. Rein rechtlich steht K der Rücktritt gem. [§ 326 Abs. 5 BGB](https://www.gesetze-im-internet.de/bgb/__326.html){target="_blank"} offen.
+:::
+:::
+
+# Vertiefung: Vertretenmüssen
+
+Für Schadensersatz brauchen wir fast immer ein **Vertretenmüssen** ([§ 276 BGB](https://www.gesetze-im-internet.de/bgb/__276.html){target="_blank"}). Man haftet für Vorsatz und Fahrlässigkeit.
+
+*   **Vorsatz:** Wissen und Wollen des Erfolgs.
+*   **Fahrlässigkeit:** Das Außer-Acht-Lassen der im Verkehr erforderlichen Sorgfalt.
+
+::: {.details}
+#### "Statt" vs. "Neben" der Leistung
+Unterscheiden Sie scharf:
+*   **Neben der Leistung:** Der Schaden bleibt, auch wenn man jetzt noch liefert (z. B. der Mietwagen, während man auf das neue Auto wartet).
+*   **Statt der Leistung:** Der Schadensersatz tritt an die Stelle der Leistung (z. B. die Mehrkosten, weil man das Auto jetzt teurer bei einem anderen Händler kaufen muss).
+:::
+
+::: {.quick-check}
+Welcher Maßstab gilt für Fahrlässigkeit im Zivilrecht gemäß § 276 Abs. 2 BGB?
+
+- Das individuelle Unvermögen des Schuldners.
+- **Das Außer-Acht-Lassen der im Verkehr erforderlichen Sorgfalt.**
+- Nur die grobe Unachtsamkeit.
+:::
+
+Wissen Sie, was das Beste ist? In der nächsten Einheit wird es noch dramatischer: Wir verlassen die Welt des Geldes und der Verträge und schauen uns das Strafrecht an. Dort geht es nicht mehr um Schadensersatz, sondern um Schuld und Sanktionen. Bis dahin: Bleiben Sie rechtskonform!

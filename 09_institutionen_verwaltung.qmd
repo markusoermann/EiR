@@ -1,0 +1,177 @@
+---
+title: "Institutionen des Rechts III – Die Verwaltung"
+subtitle: "Einheit 09: Die Exekutive – Wenn der Staat konkret wird"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Einleitung und Verortung
+
+Nachdem wir uns mit der Entwicklung der Gesetze (Legislative) und deren Kontrolle durch die Justiz (Judikative) befasst haben, betreten wir nun den Bereich der Exekutive, der sich mit der konkreten Ausführung der Gesetze befasst: die **Verwaltung**. Sie ist der Teil der Exekutive, der nicht nur politisch steuert, sondern im Alltag ganz konkret handelt.
+
+Ob Sie einen Personalausweis beantragen, ein Knöllchen wegen Falschparkens erhalten oder BAföG beziehen – in all diesen Momenten begegnet Ihnen die Staatsgewalt in ihrer aktivsten Form. In dieser Einheit klären wir, warum die Verwaltung nicht tun darf, was sie will, wie sie organisiert ist und mit welchen Instrumenten sie arbeitet.
+
+::: {.drag-exercise}
+Die Verwaltung ist die *gesetzesausführende* Gewalt, die durch *konkrete Maßnahmen* das gesellschaftliche Zusammenleben gestaltet. Sie ist von Rechtsprechung, Gesetzgebung und Regierung zu unterscheiden. 
+:::
+
+# Verfassungsrechtliche Grundlagen
+
+Die Verwaltung agiert nicht im rechtsfreien Raum. In einem Rechtsstaat wie Deutschland ist sie an die "Kette" des Rechts gelegt. Dies dient vor allem der Verhinderung staatlicher Willkür.
+
+## Bindung an Recht und Gesetz ([Art. 20 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_20.html){target="_blank"})
+
+Dank [Art. 20 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_20.html){target="_blank"} ist die Verwaltung strikt an die Rechtsordnung gebunden. Wir fassen das in zwei griffige Formeln zusammen:
+
+1.  **Vorrang des Gesetzes:** „Kein Handeln gegen das Gesetz“. Die Verwaltung darf nicht im Widerspruch zu bestehenden gesetzlichen Normen entscheiden.
+2.  **Vorbehalt des Gesetzes:** „Kein Handeln ohne Gesetz“. Insbesondere wenn der Staat die Bürger in der Ausübung ihrer Grundrechte einschränkt (Eingriffsverwaltung), braucht er dafür eine Erlaubnis vom Gesetzgeber – die sogenannte *Ermächtigungsgrundlage*.
+
+::: {.details}
+#### Exkurs: Der Vorbehalt des Gesetzes
+Früher (im Absolutismus) durfte die dem Monarchen unterstellte Verwaltung alles tun, was nicht verboten war. Heute ist es umgekehrt: Ohne gesetzliches "Go" darf eine Behörde nicht in Ihre Freiheit oder Ihr Eigentum eingreifen und darf Sie zudem nicht ohne zureichenden sachliuchen Grund anders behandeln als andere Bürgerinnen und Bürger. Das schützt uns vor staatlicher Willkür.
+:::
+
+## Die unmittelbare Grundrechtsbindung
+
+Anders als wir Privatpersonen, die sich im Rahmen der von Gesetzen definierten Leitplanken fast alles gegenseitig versprechen oder antun können, ist die Verwaltung gemäß [Art. 1 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_1.html){target="_blank"} unmittelbar an die Grundrechte gebunden.
+
+-   **Abwehrrechte:** Sie können sich wehren, wenn die Behörde Ihnen ein Verhalten untersagt oder erschwert. Ist ihr Verhalten nicht gesetzlich geregelt, muss die Behörde Ihnen das Verhalten gestatten. Denn zu Ihren Gunsten greift jedenfalls die allgemeine Handlungsfreiheit aus [Art. 2 Abs. 1 GG](https://www.gesetze-im-internet.de/gg/art_2.html){target="_blank"}. In unserer liberalen Rechtsordnung gilt: "Was nicht verboten ist, ist erlaubt".
+
+-   **Drittwirkung:** Die Grundrechte binden den Staat immer – sogar dann, wenn er wie ein Privater auftritt. Der Staat kann seine Grundrechtsbindung nicht durch eine Flucht ins Privatrecht ablegen und muss zudem auch bei der Gestaltung des Privatrechts die Grundrechte beachten. Das gilt auch, wenn Gerichte über Streitigkeiten unter Privatpersonen entscheiden. Das Grundgesetz ist die "Verfassung des Staates", aber es ist auch die "Verfassung für die Bürger/-innen und der Gesellschaft insgesamt".
+
+# Organisation der Verwaltung
+
+Wer ist "der Staat" eigentlich, wenn wir von Verwaltung sprechen?
+
+## Öffentliches Recht vs. Privatrecht
+
+Die Verwaltung kann in zwei "Uniformen" auftreten:
+
+1.  **Hoheitlich (Öffentliches Recht):** Der Staat tritt mit Befehlsgewalt auf (z.B. Steuerbescheid: "Du musst zahlen!").
+
+2.  **Privatrechtlich:** Der Staat agiert wie ein normaler Geschäftspartner (z.B. Mieten von Büroräumen).
+
+::: {.flip-card}
+#### Sonderrechtstheorie
+Eine Norm ist öffentlich-rechtlich, wenn sie ausschließlich einen *Träger öffentlicher Gewalt* in seiner Funktion als solchen berechtigt oder verpflichtet.
+:::
+
+## Der Verwaltungsaufbau
+
+Der deutsche Verwaltungsapparat ist komplex gegliedert. Wir unterscheiden vor allem zwischen **unmittelbarer** und **mittelbarer** Verwaltung. Die folgende Übersicht zeigt die verschiedenen Organisationsformen im Detail:
+
+| Form | Erklärung | Beispiele |
+| :--- | :--- | :--- |
+| **Unmittelbar** | Der Staat handelt durch eigene Behörden selbst. | Finanzamt, Polizei, Bundeswehr |
+| **Mittelbar** | Der Staat überträgt Aufgaben an rechtlich selbstständige Einheiten. | Gemeinden, THWS, TÜV |
+
+Innerhalb der mittelbaren Verwaltung gibt es spannende Konstruktionen:
+-   **Körperschaften:** Haben Mitglieder (z.B. die Einwohner einer Gemeinde, die Studierenden der THWS).
+-   **Anstalten:** Haben Nutzer (z.B. der Bayerische Rundfunk).
+-   **Beliehene:** Private, die für einen Moment "Staat spielen" dürfen (z.B. der Schornsteinfeger bei der Brandstättenschau).
+
+# Ein Instrument, dass Sie kennen sollten: Der Verwaltungsakt (VA)
+
+Der Verwaltungsakt (VA) ist das zentrale Handlungsinstrument von Behörden im Verhältnis zu den Bürger/-innen. Mit einem VA regelt die Behörde einen Einzelfall mit unmittelbarer Rechtswirkung nach außen. Ob eine Maßnahme ein VA ist, entscheidet sich entlang der sechs Merkmale des [§ 35 VwVfG](https://www.gesetze-im-internet.de/vwvfg/__35.html){target="_blank"}:
+
+<iframe src="widgets/kapitel-09/widget-va-checker.html" 
+        width="100%" height="520px" frameborder="0"
+        title="Checkliste: Die 6 Merkmale des Verwaltungsakts">
+</iframe>
+
+::: {.details}
+#### Die sechs Merkmale des VA ([§ 35 VwVfG](https://www.gesetze-im-internet.de/vwvfg/__35.html){target="_blank"}) im Detail
+Ein VA liegt vor bei:
+
+1.  **Hoheitlicher Maßnahme:** Handeln einer Behörde in Ausübung ihrer öffentlichen Gewalt.
+
+2.  **Behörde:** Jede Stelle, die Verwaltungsaufgaben wahrnimmt.
+
+3.  **Regelung:** Es muss eine Rechtsfolge gesetzt werden (ein reiner Rat ist kein VA).
+
+4.  **Einzelfall:** Konkret-individuell (z.B. "Herr Meier, reißen Sie Ihre Mauer ab!").
+
+5.  **Öffentliches Recht:** Die Ermächtigung muss dem öffentlichen Recht angehören.
+
+6.  **Außenwirkung:** Die Wirkung muss gegenüber einer Person außerhalb der Verwaltung eintreten.
+:::
+
+::: {.quick-check}
+Ist ein Verkehrsschild ein Verwaltungsakt?
+
+- Nein, das ist ein Gesetz.
+- **Ja, es ist eine Allgemeinverfügung (ein Spezialfall des VA für einen großen Personenkreis, vgl. [§ 35 S. 2 VwVfG](https://www.gesetze-im-internet.de/vwvfg/__35.html){target="_blank"}).**
+- Nein, das ist nur eine Information.
+:::
+
+## Ermessen und Spielräume
+
+Nicht immer sagt das Gesetz exakt voraus, was die Behörde tun muss.
+
+-   **Gebundene Entscheidung:** "Wenn A, dann muss die Behörde B tun." (z.B. BAföG bewilligen bei Erfüllung der Kriterien).
+
+-   **Ermessen:** "Wenn A, dann kann die Behörde entscheiden, ob sie B oder C tut."
+    -   *Wichtig:* Das Gericht prüft hier nicht, ob die Entscheidung "schlau" war, sondern nur, ob sie rechtmäßig im Sinne von ermessensfehlerfrei war. Das heißt, ob die Behörde die Grenzen des Ermessens eingehalten hat. Dass bedeutet, dass Bürger-innen Behördenentscheidungen, die auf Ermessen beruhen, nicht nur mit dem Argument angreifen können, dass eine andere Entscheidung sinnvoller oder rationaler wäre.
+
+# Rechtsschutz: Wie wehrt man sich?
+
+Gegen staatliches Handeln ist man nicht machtlos. [Art. 19 Abs. 4 GG](https://www.gesetze-im-internet.de/gg/art_19.html){target="_blank"} garantiert immer den Rechtsweg.
+
+## Der Widerspruch: Die zweite Chance
+
+Bevor man vor Gericht zieht, gibt es oft das **Widerspruchsverfahren** ([§ 68 VwGO](https://www.gesetze-im-internet.de/vwgo/__68.html){target="_blank"}). Man gibt der Behörde einen Monat Zeit, die eigene Entscheidung noch einmal zu überdenken (Selbstkontrolle).
+
+## Klagearten vor dem Verwaltungsgericht
+
+Je nachdem, was Sie erreichen wollen, wählen Sie das passende Werkzeug. Zwei besonders wichtige Klagearten betreffen Situationen, in denen Sie mit einem Verwaltungsakt nicht einverstanden sind oder die Behörde etwas in Form eines VA tun soll, was sie bisher abgelehnt hat.
+
+::: {.flip-card}
+#### Anfechtungsklage
+Ziel: Die Aufhebung eines belastenden VA (z.B. das Bußgeld soll weg).
+:::
+
+::: {.flip-card}
+#### Verpflichtungsklage
+Ziel: Die Behörde soll einen begünstigenden VA erlassen, den sie bisher abgelehnt hat (z.B. "Ich will meine Baugenehmigung!").
+:::
+
+Aber auch, wenn die Behörde nicht in Form eines VA handelt oder handeln soll, stehen Sie nie ohne Rechtsschutz da. Es gibt auch für oder gegen andere Handlungsformen des Staates entsprechende Klagearten wie etwa die allgemeine Leistungsklage.
+
+# Übung zur Anwendung
+
+Stellen Sie sich vor, das Ordnungsamt verbietet Ihnen per Bescheid das Grillen auf Ihrem Balkon, weil der Rauch die Nachbarn belästigt.
+
+::: {.case-study}
+#### Der Grill-Fall
+1. Handelt es sich um einen Verwaltungsakt?
+2. Welchen Rechtsschutz haben Sie?
+
+::: {.solution}
+1. Ja: Es ist eine hoheitliche Maßnahme einer Behörde zur Regelung eines Einzelfalls (Ihr Balkon!) auf dem Gebiet des öffentlichen Rechts mit Außenwirkung.
+2. Sie müssen zunächst **Widerspruch** einlegen. Bleibt dieser erfolglos, ist die **Anfechtungsklage** das richtige Mittel, um das Verbot aufzuheben.
+:::
+:::
+
+# Checkliste
+
+- [ ] Können Sie den Unterschied zwischen Vorrang und Vorbehalt des Gesetzes erklären?
+- [ ] Wissen Sie, was eine Körperschaft von einer Anstalt unterscheidet?
+- [ ] Können Sie die 6 Merkmale des Verwaltungsakts auf einen Fall anwenden und so erkennen, ob ein VA vorliegt?
+- [ ] Wissen Sie, wann man eine Anfechtungs- und wann eine Verpflichtungsklage erhebt?
+
+Denken Sie daran: Die Verwaltung ist das "Interface" des Staates für den Bürger. Das Verwaltungsrecht sorgt dafür, dass dieses Interface fair und transparent funktioniert und sichert so eine verlässliche UX. Bis zur nächsten Einheit!

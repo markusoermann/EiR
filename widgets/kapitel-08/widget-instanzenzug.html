@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instanzenzug Simulator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #333;
+        }
+
+        .widget-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .instanz-step {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+            opacity: 0.3;
+            transition: all 0.5s ease;
+            position: relative;
+        }
+
+        .instanz-step.active {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+
+        .number-circle {
+            width: 40px;
+            height: 40px;
+            background: #ff6a00;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 15px;
+            z-index: 2;
+        }
+
+        .content-card {
+            background: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 15px;
+            border-radius: 8px;
+            flex-grow: 1;
+            text-align: left;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        .content-card h3 {
+            margin: 0 0 5px 0;
+            font-size: 1rem;
+            color: #ff6a00;
+        }
+
+        .content-card p {
+            margin: 0;
+            font-size: 0.85rem;
+        }
+
+        .connection-line {
+            position: absolute;
+            left: 20px;
+            top: 40px;
+            width: 2px;
+            height: calc(100% - 20px);
+            background: #ddd;
+            z-index: 1;
+        }
+
+        .controls {
+            margin-top: 30px;
+        }
+
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            margin: 0 5px;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        .tag-tatsache {
+            background: #e3f2fd;
+            color: #1976d2;
+        }
+
+        .tag-recht {
+            background: #fbe9e7;
+            color: #d84315;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div id="steps">
+            <div class="instanz-step active" id="step-1">
+                <div class="number-circle">1</div>
+                <div class="connection-line"></div>
+                <div class="content-card">
+                    <h3>1. Instanz (z.B. Amtsgericht)</h3>
+                    <p>Hier beginnt der Prozess. Zeugen werden gehört, Beweise gesichtet.</p>
+                    <div class="tag tag-tatsache">Tatsachen & Recht</div>
+                </div>
+            </div>
+            <div class="instanz-step" id="step-2">
+                <div class="number-circle">2</div>
+                <div class="connection-line"></div>
+                <div class="content-card">
+                    <h3>2. Instanz (Berufung)</h3>
+                    <p>Der Fall wird faktisch neu aufgerollt. Neue Beweise sind möglich.</p>
+                    <div class="tag tag-tatsache">Tatsachen & Recht</div>
+                </div>
+            </div>
+            <div class="instanz-step" id="step-3">
+                <div class="number-circle">3</div>
+                <div class="content-card">
+                    <h3>3. Instanz (Revision)</h3>
+                    <p>Keine neuen Zeugen! Nur Prüfung auf Form- und Rechtsfehler.</p>
+                    <div class="tag tag-recht">Nur Recht</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button id="prevBtn" onclick="changeStep(-1)" disabled>← Zurück</button>
+            <button id="nextBtn" onclick="changeStep(1)">Weiter →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const totalSteps = 3;
+
+        function changeStep(delta) {
+            currentStep += delta;
+            if (currentStep < 1) currentStep = 1;
+            if (currentStep > totalSteps) currentStep = totalSteps;
+
+            updateUI();
+        }
+
+        function updateUI() {
+            for (let i = 1; i <= totalSteps; i++) {
+                const el = document.getElementById(`step-${i}`);
+                if (i <= currentStep) {
+                    el.classList.add('active');
+                } else {
+                    el.classList.remove('active');
+                }
+            }
+
+            document.getElementById('prevBtn').disabled = currentStep === 1;
+            document.getElementById('nextBtn').disabled = currentStep === totalSteps;
+        }
+    </script>
+</body>
+
+</html>

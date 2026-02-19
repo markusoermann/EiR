@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gesetzgebungsprozess Deutschland</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            color: #333;
+            background: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 400px;
+        }
+        .widget-container {
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+        }
+        .step-container {
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+            margin-bottom: 40px;
+            padding: 0 10px;
+        }
+        .step-container::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            right: 50px;
+            height: 2px;
+            background: #eee;
+            z-index: 1;
+        }
+        .progress-line {
+            position: absolute;
+            top: 20px;
+            left: 50px;
+            height: 2px;
+            background: #ff6a00;
+            z-index: 2;
+            transition: width 0.3s ease;
+            width: 0%;
+        }
+        .step {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #eee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+            z-index: 3;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        .step.active {
+            border-color: #ff6a00;
+            background: #ff6a00;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(255, 106, 0, 0.3);
+        }
+        .step.completed {
+            border-color: #ff6a00;
+            background: #fff;
+            color: #ff6a00;
+        }
+        .content-box {
+            background: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            min-height: 120px;
+            margin-bottom: 20px;
+            border-left: 4px solid #ff6a00;
+            text-align: left;
+        }
+        .content-box h3 {
+            margin-top: 0;
+            color: #ff6a00;
+            font-size: 1.1rem;
+        }
+        .content-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+        button:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+        }
+        button:hover:not(:disabled) {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="step-container">
+            <div class="progress-line" id="progressLine"></div>
+            <div class="step active" data-step="0">1</div>
+            <div class="step" data-step="1">2</div>
+            <div class="step" data-step="2">3</div>
+            <div class="step" data-step="3">4</div>
+        </div>
+        
+        <div class="content-box" id="contentBox">
+            <h3 id="stepTitle">Phase 1: Gesetzesinitiative</h3>
+            <p id="stepText">Wer darf den Entwurf einbringen? Die Bundesregierung (Mehrheitsfall), der Bundesrat oder der Bundestag (eine Fraktion oder 5% der Abgeordneten).</p>
+        </div>
+        
+        <div class="controls">
+            <button id="prevBtn" disabled>Zurück</button>
+            <button id="nextBtn">Weiter</button>
+        </div>
+    </div>
+
+    <script>
+        const steps = [
+            {
+                title: "Phase 1: Gesetzesinitiative (Art. 76 GG)",
+                text: "Wer darf den Entwurf einbringen? Die Bundesregierung (ca. 74% der Vorlagen), der Bundesrat oder der Bundestag (eine Fraktion oder 5% der Abgeordneten)."
+            },
+            {
+                title: "Phase 2: Parlamentarisches Verfahren",
+                text: "Beratung im Bundestag: Drei Lesungen und Detailarbeit in den Fachausschüssen. Am Ende steht der Gesetzesbeschluss durch den Bundestag."
+            },
+            {
+                title: "Phase 3: Beteiligung des Bundesrates",
+                text: "Der Bundesrat muss beteiligt werden. Bei Zustimmungsgesetzen ist sein Ja obligatorisch (Veto-Recht). Bei Einspruchsgesetzen kann er überstimmt werden."
+            },
+            {
+                title: "Phase 4: Abschluss & Verkündung",
+                text: "Gegenzeichnung durch Kanzler/Minister, Ausfertigung durch den Bundespräsidenten und Verkündung im Bundesgesetzblatt. Das Gesetz tritt meist am 14. Tag danach in Kraft."
+            }
+        ];
+
+        let currentStep = 0;
+        const stepDivs = document.querySelectorAll('.step');
+        const progressLine = document.getElementById('progressLine');
+        const stepTitle = document.getElementById('stepTitle');
+        const stepText = document.getElementById('stepText');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+
+        function updateWidget() {
+            // Update steps
+            stepDivs.forEach((div, index) => {
+                div.classList.remove('active', 'completed');
+                if (index === currentStep) div.classList.add('active');
+                else if (index < currentStep) div.classList.add('completed');
+            });
+
+            // Update line
+            const progress = (currentStep / (steps.length - 1)) * 100;
+            progressLine.style.width = `calc(${progress}% - ${currentStep === 0 ? 0 : 40}px)`;
+            if (currentStep > 0) {
+                progressLine.style.left = '50px';
+                progressLine.style.width = `calc(${progress}% * 0.82)`;
+            }
+
+            // Update content
+            stepTitle.textContent = steps[currentStep].title;
+            stepText.textContent = steps[currentStep].text;
+
+            // Update buttons
+            prevBtn.disabled = currentStep === 0;
+            nextBtn.disabled = currentStep === steps.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentStep > 0) {
+                currentStep--;
+                updateWidget();
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentStep < steps.length - 1) {
+                currentStep++;
+                updateWidget();
+            }
+        });
+    </script>
+</body>
+</html>
