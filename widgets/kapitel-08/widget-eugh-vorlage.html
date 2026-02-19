@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vorabentscheidungsverfahren EuGH</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+            color: #333;
+        }
+
+        .widget-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .flow-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+            margin-top: 40px;
+            padding: 20px 0;
+        }
+
+        .actor {
+            width: 150px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: bold;
+            background: #f9f9f9;
+            z-index: 5;
+        }
+
+        .actor.active {
+            border-color: #ff6a00;
+            background: rgba(255, 106, 0, 0.05);
+        }
+
+        .arrow-container {
+            flex-grow: 1;
+            height: 40px;
+            position: relative;
+        }
+
+        .arrow {
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            width: 80%;
+            height: 4px;
+            background: #ddd;
+            transform: translateY(-50%);
+        }
+
+        .arrow::after {
+            content: '';
+            position: absolute;
+            right: -10px;
+            top: -6px;
+            border: 8px solid transparent;
+            border-left: 12px solid #ddd;
+        }
+
+        .arrow.active {
+            background: #ff6a00;
+        }
+
+        .arrow.active::after {
+            border-left-color: #ff6a00;
+        }
+
+        .arrow.reverse {
+            transform: translateY(-50%) rotate(180deg);
+        }
+
+        .action-label {
+            position: absolute;
+            top: -25px;
+            width: 100%;
+            text-align: center;
+            font-size: 0.75rem;
+            font-style: italic;
+            color: #666;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .action-label.active {
+            opacity: 1;
+        }
+
+        .description-box {
+            margin-top: 30px;
+            padding: 15px;
+            background: #f0f0f0;
+            border-radius: 8px;
+            min-height: 60px;
+            font-size: 0.9rem;
+            border-top: 4px solid #ff6a00;
+        }
+
+        .controls {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="flow-container">
+            <div class="actor active" id="national-court">Nationales Gericht</div>
+
+            <div class="arrow-container">
+                <div class="action-label" id="label-1">Vorlagefrage (Art. 267 AEUV)</div>
+                <div class="arrow" id="arrow-1"></div>
+            </div>
+
+            <div class="actor" id="eugh">EuGH (Luxemburg)</div>
+
+            <div class="arrow-container">
+                <div class="action-label" id="label-2">Auslegungsurteil</div>
+                <div class="arrow" id="arrow-2"></div>
+            </div>
+
+            <div class="actor" id="decision">Nationales Gericht</div>
+        </div>
+
+        <div class="description-box" id="desc">
+            Klicken Sie auf "Start", um den Ablauf des Vorabentscheidungsverfahrens zu sehen.
+        </div>
+
+        <div class="controls">
+            <button onclick="nextStep()" id="stepBtn">Start →</button>
+        </div>
+    </div>
+
+    <script>
+        let step = 0;
+        const steps = [
+            {
+                desc: "Ein nationales Gericht (z.B. das Verwaltungsgericht Würzburg) hat Zweifel an der Auslegung von EU-Recht.",
+                highlights: ['national-court'],
+                arrows: []
+            },
+            {
+                desc: "Das nationale Gericht setzt das Verfahren aus und legt dem EuGH eine konkrete Rechtsfrage vor.",
+                highlights: ['national-court', 'eugh'],
+                arrows: ['arrow-1', 'label-1']
+            },
+            {
+                desc: "Der EuGH prüft die Frage und erlässt ein Urteil zur Auslegung der EU-Verträge oder Richtlinien.",
+                highlights: ['eugh'],
+                arrows: ['arrow-1']
+            },
+            {
+                desc: "Der EuGH sendet die Auslegung zurück. Das nationale Gericht ist an diese Auslegung gebunden.",
+                highlights: ['eugh', 'national-court'],
+                arrows: ['arrow-2', 'label-2']
+            },
+            {
+                desc: "Das nationale Gericht nimmt das Verfahren wieder auf und entscheidet den konkreten Fall basierend auf der EuGH-Antwort.",
+                highlights: ['decision'],
+                arrows: []
+            }
+        ];
+
+        function nextStep() {
+            step++;
+            if (step >= steps.length) step = 0;
+
+            const current = steps[step];
+
+            // Actors
+            document.querySelectorAll('.actor').forEach(a => a.classList.remove('active'));
+            current.highlights.forEach(id => document.getElementById(id).classList.add('active'));
+
+            // Arrows & Labels
+            document.querySelectorAll('.arrow, .action-label').forEach(el => el.classList.remove('active'));
+            current.arrows.forEach(id => document.getElementById(id).classList.add('active'));
+
+            // Text
+            document.getElementById('desc').textContent = current.desc;
+            document.getElementById('stepBtn').textContent = step === 0 ? "Start →" : "Weiter →";
+        }
+    </script>
+</body>
+
+</html>

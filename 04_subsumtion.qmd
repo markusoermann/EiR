@@ -1,0 +1,138 @@
+---
+title: "Methoden der Rechtsanwendung: Die Subsumtion"
+subtitle: "Einführung in das Recht – Einheit 4: Syllogismus, Gutachtenstil und Definitionen"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Das Herzstück der juristischen Arbeit
+
+Nachdem wir uns in den vorangegangenen Einheiten mit der Landkarte des Rechts (Rechtsbereiche) und der Anatomie der Normen (Normstruktur) beschäftigt haben, betreten wir nun den Maschinenraum. Die Frage ist nicht mehr nur, *was* im Sourcecode des Rechts steht, sondern *wie* wir diesen Logik-Code auf die chaotische, oft widersprüchliche Wirklichkeit anwenden.
+
+Die **Subsumtion** ist das Werkzeug, das den Graben zwischen der „Welt des Seins“ (dem, was passiert ist) und der „Welt des Sollens“ (dem, was das Recht verlangt) überbrückt. In Zeiten der algorithmischen Entscheidungsfindung stellt sich hier eine drängende Frage: Kann ein System die menschliche Wertung, die oft in der Subsumtion steckt, ersetzen? Wir werden sehen, dass Juristerei weit mehr ist als bloße Datenverarbeitung – es ist eine Kunst der Feststellung des für den Einzelfall Wesentlichen und der logischen Schlussfolgerung.
+
+# Die Logik der Subsumtion: Der Syllogismus
+
+Jede professionelle Rechtsanwendung folgt einem logischen Grundmodell, das bereits die antiken Philosophen kannten: dem **Syllogismus**. Es handelt sich um ein klassifikatorisches Dreischritt-Verfahren, das sicherstellt, dass unsere Schlussfolgerungen nicht aus dem Bauch heraus entstehen, sondern zwingend aus unseren Prämissen folgen.
+
+::: {.flip-card}
+#### Obersatz (Major-Prämisse)
+Die allgemeine Regel oder Hypothese. Er benennt die Voraussetzungen, die erfüllt sein müssen, damit eine bestimmte Rechtsfolge eintritt. Kurz: „*Wer das tut, dem passiert das.*“
+:::
+
+::: {.flip-card}
+#### Untersatz (Minor-Prämisse)
+Die Feststellung des konkreten Sachverhalts. Wir prüfen, ob der reale Fall die Bedingungen des Obersatzes erfüllt. Kurz: „*X hat genau das getan.*“
+:::
+
+::: {.flip-card}
+#### Schluss (Konklusion)
+Die notwendige Folge. Wenn der Untersatz unter den Obersatz passt, tritt die Rechtsfolge ein. Kurz: „*Also passiert X das.*“
+:::
+
+> **Merke:** Juristische Arbeit ist im Kern die Prüfung, ob ein Lebenssachverhalt die abstrakten Merkmale einer Rechtsnorm erfüllt.
+
+# Der Dreischritt in der Praxis: Präzision durch Definition
+
+Gesetze sind oft vage. Begriffe wie „Eigentum“, „Sache“ oder „körperliche Misshandlung“ schreien nach Konkretisierung. Bevor wir also einen Fall unter eine Norm „schieben“ (subsumieren) können, müssen wir die Begriffe dieser Norm scharfstellen. Der Dreischritt wird so zur Präzisionsarbeit.
+
+::: {.details}
+#### Exkurs: Definitionen als Weichensteller
+In der juristischen Praxis ist die Definition die Brücke zwischen Gesetzestext und Sachverhalt. Eine Definition muss so präzise sein, dass sie zweifelsfrei klärt, ob ein Verhalten erfasst wird oder nicht. Hier zeigt sich die Qualität juristischen Arbeitens: Nicht im bloßen Behaupten, sondern im präzisen Bestimmen.
+:::
+
+## Fallbeispiel: Ein Schlag und seine Folgen
+
+Stellen wir uns vor: Jana schlägt Peter. Ist das eine Körperverletzung im Sinne von [§ 223 Abs. 1 StGB](https://www.gesetze-im-internet.de/stgb/__223.html){target="_blank"}?
+
+::: {.case-study}
+#### Fall: Die Auseinandersetzung
+Jana versetzt Peter im Streit eine schallende Ohrfeige. Peter erleidet Schmerzen und eine Rötung der Wange. Hat Jana Peter körperlich misshandelt?
+
+::: {.solution}
+1. **Obersatz:** Jana müsste Peter körperlich misshandelt haben ([§ 223 Abs. 1 StGB](https://www.gesetze-im-internet.de/stgb/__223.html){target="_blank"}).
+2. **Definition:** Eine *körperliche Misshandlung* ist jede üble, unangemessene Behandlung, durch die das Opfer in seinem körperlichen Wohlbefinden oder seiner körperlichen Unversehrtheit nicht nur unerheblich beeinträchtigt wird.
+3. **Untersatz:** Das Versetzen einer Ohrfeige führt zu Schmerzen und einer sichtbaren Rötung. Dies ist eine üble Behandlung, die das körperliche Wohlbefinden mehr als nur unerheblich beeinträchtigt.
+4. **Schluss:** Jana hat Peter körperlich misshandelt.
+:::
+:::
+
+## Die Funktion der Subsumtion
+
+::: {.drag-exercise}
+Die Subsumtion verbindet das *abstrakte Gesetz* mit dem *konkreten Sachverhalt* durch eine logische *Schlussfolgerung*.
+:::
+
+# Gutachten- vs. Urteilsstil: Der Weg oder das Ziel?
+
+Je nachdem, in welcher Rolle man sich befindet, ändert sich die Art, wie man diesen Dreischritt darstellt. 
+
+## Der Gutachtenstil
+Im juristischen Studium und in der Anwaltschaft wissen wir zu Beginn oft noch nicht, wie die Sache ausgeht. Wir prüfen ergebnisoffen. Wir fragen: „Könnte es sein, dass...?“
+- **Charakter:** Hypothetisch, suchend, detailliert.
+- **Reihenfolge:** Frage $\rightarrow$ Definition $\rightarrow$ Subsumtion $\rightarrow$ Ergebnis.
+
+## Der Urteilsstil
+Eine Richterin oder ein Beamter entscheidet. Das Ergebnis steht am Anfang, die Begründung folgt.
+- **Charakter:** Feststellend, indikativ, begründend.
+- **Reihenfolge:** Ergebnis $\rightarrow$ Begründung $\rightarrow$ Gesetzliche Grundlage.
+
+::: {.quick-check}
+Welcher Stil wird typischerweise in einer juristischen Klausur verlangt?
+
+- Urteilsstil
+- **Gutachtenstil**
+- Essaystil
+:::
+
+# Falltraining: Jetzt sind Sie gefragt
+
+Nutzen Sie Ihre Gesetzessammlung (z.B. dtv IT- und Computerrecht oder das BGB) für die folgenden Übungen. Achten Sie strikt auf den Dreischritt und den Gutachtenstil.
+
+::: {.case-study}
+#### Fall: Der Rempler
+A rempelt B auf der Straße so unglücklich an, dass B stürzt und sein Smartphone zerbricht. Hat B gegen A einen Anspruch auf Schadersatz wegen einer Eigentumsverletzung nach [§ 823 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__823.html){target="_blank"}?
+*(Tipp: Prüfen Sie nur das Tatbestandsmerkmal „Eigentum verletzt“).*
+
+::: {.solution}
+**Lösungsskizze:**
+1. **Obersatz:** B könnte gegen A einen Anspruch auf Schadensersatz aus [§ 823 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__823.html){target="_blank"} haben. Dazu müsste A das Eigentum des B verletzt haben.
+2. **Definition:** Eine *Eigentumsverletzung* liegt vor, wenn die Substanz der Sache zerstört oder beschädigt oder die bestimmungsgemäße Nutzung aufgehoben wird.
+3. **Untersatz:** Das Smartphone ist eine Sache im Eigentum des B. Durch den Sturz ist das Display zerbrochen, die Substanz ist also beschädigt.
+4. **Schluss:** A hat das Eigentum des B verletzt. (Hinweis: Die weiteren Merkmale wie Verschulden müssten im Vollgutachten folgen).
+:::
+:::
+
+::: {.case-study}
+#### Fall: Die Sachbeschädigung
+C sprüht mit Graffiti ein Bild auf die Hauswand von D. D möchte das Graffiti entfernt haben, da es die Optik stört, auch wenn die Wand statisch nicht beeinträchtigt ist. Hat C sich wegen Sachbeschädigung gem. [§ 303 Abs. 1 StGB](https://www.gesetze-im-internet.de/stgb/__303.html){target="_blank"} strafbar gemacht?
+
+::: {.solution}
+**Lösungsskizze:**
+1. **Obersatz:** C könnte sich wegen Sachbeschädigung gemäß [§ 303 Abs. 1 StGB](https://www.gesetze-im-internet.de/stgb/__303.html){target="_blank"} strafbar gemacht haben.
+2. **Definition:** Eine *Beschädigung* ist eine nicht ganz unerhebliche Einwirkung auf die Substanz dergestalt, dass die Brauchbarkeit der Sache gemindert ist oder ihr äußeres Erscheinungsbild nicht nur vorübergehend verändert wurde ([§ 303 Abs. 2 StGB](https://www.gesetze-im-internet.de/stgb/__303.html){target="_blank"}).
+3. **Untersatz:** Durch das Aufsprühen der Farbe wurde das äußere Erscheinungsbild der Hauswand dauerhaft verändert.
+4. **Schluss (Konklusion):** C hat eine Sachbeschädigung begangen.
+:::
+:::
+
+# Ausblick: Wenn bloße Logik an Grenzen stößt
+
+Die Subsumtion funktioniert perfekt, solange wir uns über die Definitionen einig sind. Aber was, wenn der Wortlaut des Gesetzes allein nicht verrät, was gemeint ist? Wenn sich Jurist/-innen darüber streiten, wie eine Norm „richtig“ zu verstehen ist, verlassen wir die reine Logik und betreten das Feld der **Auslegung**. 
+
+In der nächsten Einheit lernen wir den klassischen Kanon kennen: Von der Grammatik über die Geschichte bis hin zur Frage, welchen Sinn und Zweck ein Gesetz heute in einer digitalen Gesellschaft eigentlich noch erfüllt.

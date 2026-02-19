@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verwaltungsaufbau Navigator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .box {
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-align: center;
+            min-width: 140px;
+            background: #f9f9f9;
+        }
+
+        .box:hover {
+            border-color: #ff6a00;
+            transform: translateY(-2px);
+        }
+
+        .box.active {
+            border-color: #ff6a00;
+            background: #fff5f0;
+            box-shadow: 0 4px 10px rgba(255, 106, 0, 0.1);
+        }
+
+        .title {
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .subtitle {
+            font-size: 0.75rem;
+            color: #666;
+        }
+
+        .description-panel {
+            padding: 20px;
+            background: #eee;
+            border-radius: 12px;
+            border-top: 4px solid #ff6a00;
+            min-height: 100px;
+        }
+
+        #desc-title {
+            font-weight: bold;
+            color: #ff6a00;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        #desc-text {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="box" onclick="show('unmittelbar')">
+                <div class="title">Unmittelbar</div>
+                <div class="subtitle">Handeln durch eigene Behörden</div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="box" onclick="show('koerper')">
+                <div class="title">Körperschaften</div>
+                <div class="subtitle">Mittelbar (Mitgliedschaftlich)</div>
+            </div>
+            <div class="box" onclick="show('anstalt')">
+                <div class="title">Anstalten</div>
+                <div class="subtitle">Mittelbar (Sachmittel)</div>
+            </div>
+            <div class="box" onclick="show('stiftung')">
+                <div class="title">Stiftungen</div>
+                <div class="subtitle">Mittelbar (Vermögen)</div>
+            </div>
+            <div class="box" onclick="show('beliehene')">
+                <div class="title">Beliehene</div>
+                <div class="subtitle">Mittelbar (Private)</div>
+            </div>
+        </div>
+        <div class="description-panel">
+            <div id="desc-title">Verwaltungsorganisation</div>
+            <div id="desc-text">Wählen Sie eine Organisationsform aus, um Details zu erfahren.</div>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            unmittelbar: {
+                title: "Unmittelbare Staatsverwaltung",
+                text: "Der Staat (Bund oder Land) handelt durch eigene Behörden direkt. Hier gibt es keine rechtliche Trennung zwischen dem Staat und der handelnden Behörde. <br><b>Beispiele:</b> Finanzämter, Polizei, Bundeswehr, Ministerien."
+            },
+            koerper: {
+                title: "Körperschaften des öffentlichen Rechts",
+                text: "Rechtlich selbstständige Einheiten mit Mitgliedern. Sie verwalten sich im Rahmen der Gesetze selbst.<br><b>Beispiele:</b> Gemeinden (Gebietskörperschaften), Hochschulen wie die THWS (Personalkörperschaften), IHK."
+            },
+            anstalt: {
+                title: "Anstalten des öffentlichen Rechts",
+                text: "Zusammenfassung von Personal und Sachmitteln für einen bestimmten Zweck. Sie haben keine Mitglieder, sondern Nutzer.<br><b>Beispiele:</b> Rundfunkanstalten (BR, ZDF), Sparkassen, Studentenwerke."
+            },
+            stiftung: {
+                title: "Stiftungen des öffentlichen Rechts",
+                text: "Rechtlich verselbstständigte Vermögensmassen, die einem bestimmten öffentlichen Zweck dienen.<br><b>Beispiele:</b> Stiftung Preußischer Kulturbesitz, Stiftung Buchkunst."
+            },
+            beliehene: {
+                title: "Beliehene",
+                text: "Privatpersonen oder Unternehmen, denen durch Gesetz hoheitliche Befugnisse zur eigenständigen Wahrnehmung übertragen wurden.<br><b>Beispiele:</b> TÜV-Prüfer, Bezirksschornsteinfeger, Flugkapitäne (bei Sicherheitsmaßnahmen)."
+            }
+        };
+
+        function show(key) {
+            document.querySelectorAll('.box').forEach(b => b.classList.remove('active'));
+            event.currentTarget.classList.add('active');
+
+            document.getElementById('desc-title').textContent = data[key].title;
+            document.getElementById('desc-text').innerHTML = data[key].text;
+        }
+    </script>
+</body>
+
+</html>

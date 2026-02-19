@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3-Stufen-Modell der Straftat</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .flow {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 40px 0;
+            position: relative;
+        }
+
+        .flow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 5%;
+            right: 5%;
+            height: 2px;
+            background: #eeeeee;
+            z-index: 1;
+        }
+
+        .step {
+            width: 80px;
+            height: 80px;
+            background: white;
+            border: 3px solid #eeeeee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            z-index: 2;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1.2rem;
+        }
+
+        .step.active {
+            border-color: #ff6a00;
+            background: #ff6a00;
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .step-label {
+            position: absolute;
+            top: 90px;
+            width: 120px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 0.8rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .step-wrapper {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .info-card {
+            background: #fdfdfd;
+            border: 1px solid #eeeeee;
+            padding: 25px;
+            border-radius: 12px;
+            min-height: 150px;
+            margin-top: 20px;
+            text-align: left;
+            animation: fadeIn 0.4s ease;
+        }
+
+        .card-title {
+            color: #ff6a00;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .checklist li::before {
+            content: '✓';
+            color: #ff6a00;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="flow">
+            <div class="step-wrapper">
+                <div class="step active" id="s1" onclick="show(1)">1</div>
+                <div class="step-label">Tatbestand</div>
+            </div>
+            <div class="step-wrapper">
+                <div class="step" id="s2" onclick="show(2)">2</div>
+                <div class="step-label">Rechtswidrigkeit</div>
+            </div>
+            <div class="step-wrapper">
+                <div class="step" id="s3" onclick="show(3)">3</div>
+                <div class="step-label">Schuld</div>
+            </div>
+        </div>
+
+        <div class="info-card" id="card">
+            <div class="card-title" id="title">Stufe 1: Tatbestandsmäßigkeit</div>
+            <p id="desc">Hier prüfen wir, ob das menschliche Verhalten die Merkmale erfüllt, die im Gesetz (z. B. § 242
+                StGB) beschrieben sind.</p>
+            <ul class="checklist" id="list">
+                <li>Objektiver Tatbestand (Handlung, Erfolg, Kausalität)</li>
+                <li>Subjektiver Tatbestand (Vorsatz)</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const content = {
+            1: {
+                title: "Stufe 1: Tatbestandsmäßigkeit",
+                desc: "Passt das Geschehene auf die Norm? Wir unterscheiden zwischen dem, was 'draußen' passiert ist und dem, was im Kopf des Täters vorging.",
+                items: ["Objektiver Tatbestand (z. B. Wegnahme einer Sache)", "Subjektiver Tatbestand (Wissen und Wollen = Vorsatz)"]
+            },
+            2: {
+                title: "Stufe 2: Rechtswidrigkeit",
+                desc: "Das Vorliegen des Tatbestands indiziert die Rechtswidrigkeit. Wir prüfen hier nur, ob ausnahmsweise ein Rechtfertigungsgrund vorliegt.",
+                items: ["Notwehr (§ 32 StGB)", "Rechtfertigender Notstand (§ 34 StGB)", "Einwilligung (bei Körperverletzung)"]
+            },
+            3: {
+                title: "Stufe 3: Schuld",
+                desc: "Kann man dem Täter die Tat persönlich vorwerfen? Hier geht es um die individuelle Verantwortlichkeit.",
+                items: ["Schuldfähigkeit (Alter > 14 Jahre)", "Keine Entschuldigungsgründe (z.B. Entschuldigender Notstand, § 35 StGB)"]
+            }
+        };
+
+        function show(num) {
+            document.querySelectorAll('.step').forEach(s => s.classList.remove('active'));
+            document.getElementById('s' + num).classList.add('active');
+
+            const data = content[num];
+            document.getElementById('title').textContent = data.title;
+            document.getElementById('desc').textContent = data.desc;
+
+            const list = document.getElementById('list');
+            list.innerHTML = '';
+            data.items.forEach(item => {
+                const li = document.createElement('li');
+                li.textContent = item;
+                list.appendChild(li);
+            });
+        }
+    </script>
+</body>
+
+</html>

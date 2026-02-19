@@ -1,0 +1,163 @@
+---
+title: "Institutionen des Rechts I – Gesetzgebung"
+subtitle: "Wer macht das Recht? Von Berlin bis Brüssel"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Einleitung: Die Fabrik der Normen
+
+Nachdem wir uns in der letzten Einheit mit dem statischen Gerüst – der Normenhierarchie – vertraut gemacht haben, stellen wir uns heute die dynamische Frage: Wer bedient eigentlich die Hebel? Wir verlassen die Theorie der „Stufen“ und betreten die Maschinenräume der Macht. Es geht um die Gesetzgebung. 
+
+Dabei werfen wir einen Blick auf die deutsche Bundesgesetzgebung und das supranationale Gefüge der Europäischen Union. Denn wer heute Recht verstehen will, darf nicht nur ins Bundesgesetzblatt schauen; er muss auch die Brüsseler Dynamiken begreifen, die – oft unbemerkt, aber wirkungsvoll – unseren digitalen und analogen Alltag prägen.
+
+# Staatsrechtliche Grundlagen in Deutschland
+
+Das Fundament unserer Rechtsordnung ist das Grundgesetz (GG). Entstanden 1949 als Gegenentwurf zur Unrechtsherrschaft der Nationalsozialisten, ist es mehr als nur ein bloßer Text; es ist die DNA unseres Staates. 
+
+## Die Verfassungsprinzipien
+
+In [Art. 20 GG](https://www.gesetze-im-internet.de/gg/art_20.html){target="_blank"} sind die fünf Staatsstrukturprinzipien festgeschrieben, die so fundamental sind, dass sie selbst durch eine Verfassungsänderung nicht angetastet werden dürfen (die sogenannte *Ewigkeitsgarantie* des [Art. 79 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_79.html){target="_blank"}).
+
+::: {.drag-exercise}
+Deutschland ist eine *Republik*, ein *demokratischer* und *sozialer* *Bundesstaat* sowie ein *Rechtsstaat*.
+:::
+
+## Die zentralen Akteure
+
+Gesetzgebung ist in Deutschland ein komplexes Zusammenspiel verschiedener Verfassungsorgane.
+
+::: {.flip-card}
+#### Deutscher Bundestag
+Die einzige direkt vom Volk gewählte Volksvertretung auf Bundesebene. Er ist das Herz der Demokratie (Legislative) und zuständig für die Gesetzgebung, die Wahl des Bundeskanzlers und die Kontrolle der Regierung.
+:::
+
+::: {.flip-card}
+#### Bundesrat
+Das föderative Organ, in dem die Regierungen der Länder sitzen. Er stellt sicher, dass der Bund nicht über die Köpfe der Länder hinweg regiert. 
+:::
+
+::: {.flip-card}
+#### Bundesregierung
+Besteht aus Kanzler und Ministern (Exekutive). Sie ist der "Motor" der Gesetzgebung: Die große Mehrheit der Gesetzentwürfe stammt aus den Ministerien und wird nach einem Kabinettsbeschluss als Regierungsentwurf in den Bundestag eingebracht.
+:::
+
+# Das Gesetzgebungsverfahren im Bund
+
+Der Weg von der ersten Idee bis zum gedruckten Gesetz im Bundesgesetzblatt ist präzise in den [Art. 76 ff. GG](https://www.gesetze-im-internet.de/gg/art_76.html){target="_blank"} geregelt. Es ist ein Verfahren der kleinen Schritte und großen Debatten.
+
+Der folgende interaktive Ablauf visualisiert die einzelnen Phasen, die ein Entwurf durchläuft, bis er schließlich als geltendes Recht verkündet wird:
+
+<iframe src="widgets/kapitel-07/widget-gesetzgebung-prozess.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Interaktiver Gesetzgebungsprozess">
+</iframe>
+
+## Phase 1: Die Initiative ([Art. 76 GG](https://www.gesetze-im-internet.de/gg/art_76.html){target="_blank"})
+Das Initiativrecht liegt bei der Bundesregierung, dem Bundesrat oder dem Bundestag (hier: eine Fraktion oder 5 % der Abgeordneten). Einzelne Abgeordnete, Bundeskanzler oder gar Bundespräsident können dagegen keine Gesetzesentwürfe einbringen.
+
+## Phase 2: Das Parlamentarische Verfahren
+Der Entwurf landet im Bundestag. Hier wird er in drei Lesungen debattiert. Die eigentliche Detailarbeit findet jedoch in den Fachausschüssen statt. Hier sitzen die Expertinnen und Experten der Fraktionen, die um jedes Komma ringen.
+
+## Phase 3: Der Bundesrat
+Nachdem der Bundestag das Gesetz beschlossen hat, geht es in den Bundesrat. Hier entscheidet sich das Schicksal der Vorlage. Wir unterscheiden zwei Typen:
+
+1.  **Zustimmungsgesetze**: Diese berühren die Interessen der Länder so massiv (z. B. Finanzen, Verwaltung), dass der Bundesrat ausdrücklich „Ja“ sagen muss. Sagt er „Nein“, ist das Gesetz gescheitert (**Absolutes Veto**).
+2.  **Einspruchsgesetze**: Dies ist der Regelfall. Der Bundesrat kann zwar Einspruch einlegen, aber der Bundestag kann diesen mit Mehrheitsvotum überstimmen (**Suspensives Veto**).
+
+In der folgenden Übersicht können Sie die entscheidenden Unterschiede zwischen diesen beiden Gesetzestypen und die damit verbundene Macht des Bundesrates noch einmal interaktiv vergleichen:
+
+<iframe src="widgets/kapitel-07/widget-gesetzestypen.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Interaktiver Vergleich der Gesetzestypen">
+</iframe>
+
+
+## Phase 4: Abschluss
+- Gegenzeichnung des Gesetzesentwurfs durch Kanzler/Minister.
+- Ausfertigung und Verkündung im Bundesgesetzblatt durch den Bundespräsidenten.
+
+::: {.quick-check}
+Welche Aussage zum Vermittlungsausschuss ist korrekt?
+
+- Er wird nur bei Verfassungsänderungen aktiv.
+- **Er dient dazu, bei Meinungsverschiedenheiten zwischen Bundestag und Bundesrat einen Kompromiss zu finden.**
+- Er ersetzt die dritte Lesung im Bundestag.
+:::
+
+# Die Europäische Union und ihre Rechtsetzung
+
+Die EU ist kein Staat, aber auch keine internationale Organisation wie viele andere. Sie ist ein *Supranationaler Staatenverbund*. Das bedeutet: Die Mitgliedstaaten haben Kompetenzen an die EU übertragen. 
+
+## Kompetenzverteilung und Subsidiarität
+Die EU darf nicht einfach alles regeln. Es gilt das „Prinzip der begrenzten Einzelermächtigung“. Nur wenn die Verträge (EUV, AEUV) eine Rechtsgrundlage bieten, darf Brüssel tätig werden. Zudem gilt das *Subsidiaritätsprinzip*: Die EU soll nur dann handeln, wenn ein Ziel auf nationaler Ebene nicht effizient erreicht werden kann.
+
+## Die Instrumente des Sekundärrechts
+
+::: {.details}
+#### Art. 288 AEUV: Die Werkzeugkiste der EU
+Die EU nutzt verschiedene Rechtsakte, um ihre Ziele zu erreichen:
+1. **Verordnungen**: Sie wirken wie nationale Gesetze – unmittelbar und für jeden Bürger verbindlich (z. B. die DSGVO).
+2. **Richtlinien**: Sie geben das Ziel vor, lassen den Nationalstaaten aber Freiheit bei der Umsetzung ins eigene Recht.
+:::
+
+## Das Gesetzgebungsverfahren (Ordentliches Verfahren)
+Das Verfahren ist ein „Institutionelles Dreieck“:
+
+-   **EU-Kommission**: Sie hat das alleinige Initiativrecht („Motor der EU“).
+
+-   **Europäisches Parlament**: Die Bürgerkammer.
+
+-   **Rat der EU**: Die Staatenkammer, in der die Regierungen der Mitgliedstaaten auf Ministerebene vertreten sind (nicht zu verwechseln mit dem Europäischen Rat der Staats- und Regierungschefs!).
+
+In der Praxis beschleunigt man das Verfahren oft durch „Triloge“ – inoffizielle Treffen von Kommission, Parlament und Rat, um frühzeitig Einigkeit zu erzielen. Ein hocheffizientes, wenn auch manchmal wenig transparentes Verfahren.
+
+Klicken Sie in der folgenden Grafik auf die einzelnen Akteure, um mehr über ihre spezifische Rolle und ihr Zusammenwirken im „Institutionellen Dreieck“ der EU zu erfahren:
+
+<iframe src="widgets/kapitel-07/widget-eu-dreieck.html" 
+        width="100%" height="520px" frameborder="0"
+        title="Interaktives EU-Institutionendreieck">
+</iframe>
+
+
+# Übungsfall: Das EU-Abitur
+
+::: {.case-study}
+#### Der Fall "Zentralabitur aus Brüssel"
+Sachverhalt: Die EU-Kommission plant eine Verordnung für ein einheitliches "EU-Abitur" inklusive zentraler Aufgabenstellung durch eine neue EU-Agentur. Sie begründet dies mit der notwendigen Vergleichbarkeit der Bildungssysteme im Binnenmarkt.
+
+::: {.solution}
+1. **Rechtsakt**: Eine Verordnung wäre unmittelbar geltendes Recht.
+2. **Kompetenzprüfung**: Die EU benötigt eine Rechtsgrundlage (begrenzte Einzelermächtigung). 
+3. **Ergebnis**: Gemäß Art. 165 AEUV hat die EU im Bereich der Bildung lediglich eine unterstützende und ergänzende Zuständigkeit. Eine Harmonisierung der Rechtsvorschriften ist ausdrücklich untersagt. Zudem ist Bildung im deutschen Verfassungsgefüge (Kulturhoheit der Länder) ein hochemotionales und national geschütztes Gut. Der Vorschlag wäre mangels Kompetenz **rechtswidrig**.
+:::
+:::
+
+# Vertiefungsfragen
+
+::: {.quick-check}
+Welches Organ entspricht funktional am ehesten dem Bundesrat auf EU-Ebene?
+
+- EU-Kommission
+- Europäisches Parlament
+- **Rat der Europäischen Union (Ministerrat)**
+:::
+
+> "Gesetzgebung ist kein bloßer formaler Akt, sondern das Ringen um die Regeln unseres Zusammenlebens. Wer die Prozesse kennt, versteht die Mechanik der Macht."
+
+Haben Sie schon einmal darüber nachgedacht, was passiert, wenn ein EU-Gesetz gegen deutsches Grundrecht verstößt? Wer hat dann das letzte Wort? Wir werden dies in der nächsten Einheit klären, wenn wir über den Rechtsschutz und die Gerichte sprechen.

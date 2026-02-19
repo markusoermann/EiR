@@ -1,0 +1,153 @@
+---
+title: "Zivilrecht - Basics"
+subtitle: "Einheit 10.2: Stellvertretung, Form, Verbraucherschutz & AGB"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Die Stellvertretung ([§§ 164 ff. BGB](https://www.gesetze-im-internet.de/bgb/__164.html){target="_blank"})
+
+In einer arbeitsteiligen Wirtschaft kann nicht jeder alles selbst erledigen. Das Recht der Stellvertretung ermöglicht es, dass eine Person (Vertreter) handelt, die Rechtsfolgen aber eine andere Person (Vertretener) treffen - ob das jetzt eine natürliche Person ist oder eine juristische Person wie eine GmbH. Es ist die rechtliche Delegation von Entscheidungsmacht.
+
+## Das Grundkonzept
+
+Der Stellvertreter gibt eine **eigene Willenserklärung** ab, tut dies aber **im Namen des Vertretenen**. Das Ergebnis: Der Vertrag kommt direkt zwischen dem Vertretenen und dem Dritten zustande. Der Vertreter selbst bleibt im Idealfall rechtlich unsichtbar – er wird nicht Vertragspartner und schuldet somit auch keine eigene Leistung.
+
+### Abgrenzung: Bote vs. Stellvertreter
+
+Diese Abgrenzung ist ein absoluter Klassiker:
+
+*   **Stellvertreter:** Bildet einen eigenen Willen und hat Entscheidungsspielraum (z. B. im Rahmen des Auftrags „Kauf mir ein schönes Geschenk bis 50 Euro“). Wer "wertet", der vertritt.
+*   **Bote:** Ist nur eine „menschliche Briefpost“, überbringt eine fremde, fertige Willenserklärung ohne eigenen Spielraum (z.B. „Sag ihm, ich kaufe das Auto für 5.000 Euro“).
+
+> **Merksatz:** Der Vertreter gibt ab, der Bote überbringt. 
+
+Das folgende Tool hilft Ihnen, die feinen Unterschiede in der Praxis zu erkennen. Testen Sie, wie sich Entscheidungsspielraum und Geschäftsfähigkeit auf die rechtliche Einordnung auswirken.
+
+<iframe src="widgets/kapitel-10/widget-bote-vertreter.html" 
+        width="100%" height="400px" frameborder="0"
+        title="Bote vs. Vertreter Vergleich">
+</iframe>
+
+::: {.details}
+#### Die Sache mit der Geschäftsfähigkeit
+Ein Stellvertreter muss mindestens **beschränkt geschäftsfähig** sein ([§ 165 BGB](https://www.gesetze-im-internet.de/bgb/__165.html){target="_blank"}) – schließlich trifft er eigene Entscheidungen. Ein Bote muss dagegen gar nicht geschäftsfähig sein; selbst ein 6-jähriges Kind kann als Bote fungieren, da es nur eine Nachricht transportiert wie ein USB-Stick mit Beinen.
+:::
+
+## Prüfungsschema der Stellvertretung
+
+Damit die Delegation von rechtsgeschäftlichem Handeln mittels Stellvertretung gelingt, prüfen wir vier Voraussetzungen:
+
+1.  **Zulässigkeit:** Grundsätzlich bei jedem Rechtsgeschäft möglich. *Ausnahme:* Höchstpersönliche Geschäfte (z.B. Eheschließung oder Testament – man kann niemanden schicken, der für einen "Ja" sagt).
+2.  **Eigene Willenserklärung:** Der Handelnde muss einen eigenen Entscheidungsspielraum haben (Abgrenzung zum Boten).
+3.  **Offenkundigkeitsprinzip:** Der Vertreter muss deutlich machen, dass er nicht für sich selbst handelt ([§ 164 Abs. 1 BGB](https://www.gesetze-im-internet.de/bgb/__164.html){target="_blank"}). Wer das verschweigt, wird selbst Vertragspartner ([§ 164 Abs. 2 BGB](https://www.gesetze-im-internet.de/bgb/__164.html){target="_blank"}) – und kann das Geschäft nicht wegen Irrtums anfechten!
+    *   *Ausnahme:* „Geschäft für den, den es angeht“ (Bargeschäfte des täglichen Lebens - z.B. im Supermarkt, bei denen es dem Verkäufer egal ist, wer hinter dem Geld steht).
+4.  **Vertretungsmacht:** Das „rechtliche Können“. Wer ohne Macht handelt, ist ein *falsus procurator*. Hier kann der scheinbar Vertretene das Geschäft nachträglich genehmigen ([§ 177 BGB](https://www.gesetze-im-internet.de/bgb/__177.html){target="_blank"}), ansonsten haftet der falsus procurator dem Dritten auf Erfüllung oder Schadensersatz ([§ 179 BGB](https://www.gesetze-im-internet.de/bgb/__179.html){target="_blank"}).
+
+## Quellen der Vertretungsmacht
+
+1.  **Gesetzlich:** z.B. Eltern für ihre Kinder ([§ 1629 BGB](https://www.gesetze-im-internet.de/bgb/__1629.html){target="_blank"}), der Geschäftsführer für die GmbH.
+2.  **Rechtsgeschäftlich (Vollmacht):** Durch eine einseitige Erklärung des Vertretenen. Man unterscheidet hierbei zwischen der **Innenvollmacht** (Erklärung gegenüber dem Vertreter) und der **Außenvollmacht** (Erklärung gegenüber dem Dritten).
+3.  **Rechtsschein:** Wenn der Vertretene zwar keine Vollmacht erteilt hat, aber den Anschein erweckt, der Dritte dürfe darauf vertrauen (Duldungs- und Anscheinsvollmacht).
+
+::: {.case-study}
+#### Der falsus procurator
+Ein Angestellter bestellt ohne Absprache einen teuren Firmenwagen für seinen Chef. 
+1. Der Chef kann das Geschäft **genehmigen** ([§ 177 BGB](https://www.gesetze-im-internet.de/bgb/__177.html){target="_blank"}), dann wird er Vertragspartner.
+2. Verweigert er die Genehmigung, haftet der Angestellte dem Verkäufer nach dessen Wahl auf **Erfüllung oder Schadensersatz** ([§ 179 BGB](https://www.gesetze-im-internet.de/bgb/__179.html){target="_blank"}).
+
+::: {.solution}
+Wer ohne Macht handelt, spielt mit dem Feuer. Der Dritte ist geschützt, da er auf die Identität des Vertragspartners vertraut hat.
+:::
+:::
+
+# Formvorschriften ([§§ 125 ff. BGB](https://www.gesetze-im-internet.de/bgb/__125.html){target="_blank"})
+
+Grundsatz im deutschen Recht: **Formfreiheit**. Sie können Verträge über Millionenbeträge per Handschlag schließen. Warum verlangt das Gesetz dann manchmal doch die Schriftform oder einen Notar?
+
+## Funktionen der Form
+
+1.  **Warnfunktion:** Schutz vor Übereilung (z.B. bei der Bürgschaft – wer unterschreibt, soll den Ernst der Lage spüren).
+2.  **Beweisfunktion:** Klare Dokumentation, was genau vereinbart wurde.
+3.  **Beratungsfunktion:** Der Notar muss die Beteiligten über die rechtlichen Risiken belehren.
+
+Mit dem folgenden Form-Explorer können Sie verschiedene Alltagsszenarien durchspielen und die jeweils geforderte Form sowie deren Zweck entdecken.
+
+<iframe src="widgets/kapitel-10/widget-form-explorer.html" 
+        width="100%" height="400px" frameborder="0"
+        title="Interaktiver Form-Explorer">
+</iframe>
+
+## Wichtige Formarten
+
+*   **Schriftform ([§ 126 BGB](https://www.gesetze-im-internet.de/bgb/__126.html){target="_blank"}):** Eigenhändige Unterschrift auf Papier.
+*   **Textform ([§ 126b BGB](https://www.gesetze-im-internet.de/bgb/__126b.html){target="_blank"}):** Lesbare Erklärung auf dauerhaftem Datenträger (z.B. E-Mail). Keine Unterschrift nötig.
+*   **Notarielle Beurkundung ([§ 128 BGB](https://www.gesetze-im-internet.de/bgb/__128.html){target="_blank"}):** Der "Goldstandard" (z.B. beim Grundstückskauf, [§ 311b BGB](https://www.gesetze-im-internet.de/bgb/__311b.html){target="_blank"}).
+
+::: {.drag-exercise}
+Die *Schriftform* erfordert eine Unterschrift, die *Textform* reicht bei E-Mails aus, die *Beurkundung* findet beim Notar statt.
+:::
+
+# Verbraucherschutz & AGB
+
+Das ursprüngliche BGB von 1900 ging ganz im Sinne des Liberalismus davon aus, dass jeder Vertragspartner grundsätzlich gleich gut informiert sein kann und mit allen anderen Wirtschaftsakteuren auf Augenhöhe verhandelt. Heute hat sich die Erkenntnis durchgesetzt, dass dies in der Realität nicht zutrifft: Der Verbraucher (§ 13) ist gegenüber dem Unternehmer (§ 14) oft strukturell unterlegen. Daher greift der Gesetzgeber ein.
+
+## Das Widerrufsrecht ([§§ 312g, 355 BGB](https://www.gesetze-im-internet.de/bgb/__312g.html){target="_blank"})
+
+Bei Fernabsatzverträgen (Online-Shopping) oder Haustürgeschäften hat der Verbraucher ein **14-tägiges Widerrufsrecht**. Er kann sich ohne Angabe von Gründen vom Vertrag lösen. Warum? Weil er die Ware im Web nicht vorab prüfen oder in der Haustürsituation überrumpelt werden kann.
+
+## Digitale Produkte ([§§ 327 ff. BGB](https://www.gesetze-im-internet.de/bgb/__327.html){target="_blank"})
+
+Ganz neu im BGB: Wer mit seinen **Daten bezahlt**, genießt nun denselben Schutz wie bei Geldzahlungen ([§ 327 Abs. 3 BGB](https://www.gesetze-im-internet.de/bgb/__327.html){target="_blank"}). Zudem gibt es eine **Update-Pflicht**: Der Verkäufer einer Smartwatch oder Software muss Sicherheitsupdates liefern, sonst ist das Produkt mangelhaft.
+
+## Allgemeine Geschäftsbedingungen (AGB)
+
+Das "Kleingedruckte", dass wir alle nie lesen. Sie dienen der Effizienz bei Massengeschäften. Da sie einseitig gestellt und in der Regel gerade nicht ausgehandelt werden, prüft das Gericht sie streng:
+
+1.  **Einbeziehung:** Wurde der Kunde deutlich darauf hingewiesen? Hatte er die Möglichkeit zur Kenntnisnahme?
+2.  **Überraschungsverbot ([§ 305c BGB](https://www.gesetze-im-internet.de/bgb/__305c.html){target="_blank"}):** Klauseln, die so ungewöhnlich sind, dass der Kunde nicht mit ihnen rechnen muss, werden erst gar nicht Vertragsbestandteil.
+3.  **Inhaltskontrolle ([§§ 307-309 BGB](https://www.gesetze-im-internet.de/bgb/__307.html){target="_blank"}):** Klauseln, die den Kunden unangemessen benachteiligen, sind **nichtig**.
+
+Gehen Sie die drei Stufen der AGB-Prüfung im Simulator durch, um das Schema zu festigen.
+
+<iframe src="widgets/kapitel-10/widget-agb-check.html" 
+        width="100%" height="400px" frameborder="0"
+        title="AGB-Prüfungsschema">
+</iframe>
+
+::: {.quick-check}
+Welche Folge hat ein Verstoß gegen eine gesetzliche Formvorschrift?
+
+- Der Vertrag bleibt gültig, kostet aber ein Bußgeld.
+- **Der Vertrag ist gemäß [§ 125 BGB](https://www.gesetze-im-internet.de/bgb/__125.html){target="_blank"} nichtig.**
+- Der Vertrag kann innerhalb von 14 Tagen widerrufen werden.
+:::
+
+::: {.quick-check}
+Wann ist eine AGB-Klausel nach [§ 305c BGB](https://www.gesetze-im-internet.de/bgb/__305c.html){target="_blank"} unwirksam?
+
+- Wenn sie in kleinerer Schrift gedruckt ist.
+- **Wenn sie so überraschend ist, dass der Vertragspartner nicht mit ihr zu rechnen braucht.**
+- Wenn der Kunde sie nicht gelesen hat.
+:::
+
+# Wiederholungsfragen
+1. Warum ist die Unterscheidung zwischen Bote und Stellvertreter für die Wirksamkeit einer Erklärung bei Minderjährigen entscheidend?
+2. Welchen Zweck erfüllt die "Warnfunktion" bei Grundstücksverträgen?
+3. Was bedeutet "Bezahlen mit Daten" im Kontext des modernen Verbraucherschutzes?
+4. Inwiefern schützt das Offenkundigkeitsprinzip den Rechtsverkehr?

@@ -1,0 +1,204 @@
+---
+title: "Institutionen des Rechts II – Rechtsprechung"
+subtitle: "Wer spricht das Recht? Von Würzburg bis Luxemburg"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: handout-typst
+---
+
+# Einleitung und Verortung
+
+Nachdem wir uns intensiv mit der Entstehung von Gesetzen durch die Legislative befasst haben, wechseln wir nun die Perspektive: Was geschieht, wenn Gesetze im echten Leben auf Widerstand stoßen, missverstanden werden, Streitigkeiten entstehen oder sie schlicht ignoriert werden? Hier tritt die **Judikative** (Rechtsprechung) auf den Plan.
+
+In einem Rechtsstaat ist die Existenz unabhängiger Gerichte kein "Nice-to-have", sondern die conditio sine qua non. Ohne eine Instanz, die verbindlich klärt, was im Einzelfall Recht ist, bliebe ein Gesetz nur Papier. Wir betrachten heute, wie das System der Judikative in Deutschland und der EU strukturiert ist, um den Rechtsfrieden zu sichern.
+
+::: {.drag-exercise}
+Die Judikative sorgt für den *Rechtsfrieden* und dient der *Kontrolle* von Legislative und Exekutive.
+:::
+
+# Grundprinzipien der Rechtsprechung
+
+Die Qualität einer Rechtsordnung bemisst sich nicht nur an den Paragraphen, sondern vor allem an der Integrität derjenigen, die sie anwenden. Unsere Verfassung hat daher Schutzmechanismen eingezogen, die verhindern sollen, dass Gerichte zum verlängerten Arm der Politik werden.
+
+## Die Säulen der richterlichen Integrität
+
+Das Grundgesetz verankert mehrere Prinzipien, die jedes Gerichtsverfahren prägen müssen.
+
+### Richterliche Unabhängigkeit ([Art. 97 GG](https://www.gesetze-im-internet.de/gg/art_97.html){target="_blank"})
+
+Dies ist das Herzstück der Judikative. Richter sind nur dem Gesetz unterworfen. Wir unterscheiden dabei zwei Dimensionen:
+
+1. **Sachliche Unabhängigkeit:** Keine Regierung, kein Minister und auch keine Gerichtspräsidentin darf einem Richter vorschreiben, wie er zu entscheiden hat. Weisungen sind absolut unzulässig.
+
+2. **Persönliche Unabhängigkeit:** Um zu verhindern, dass Richter/-innen durch die Angst um ihren Job korrumpiert werden, sind sie grundsätzlich unkündbar und können nicht gegen ihren Willen versetzt werden.
+
+::: {.details}
+#### Exkurs: [Art. 97 Abs. 1 GG](https://www.gesetze-im-internet.de/gg/art_97.html){target="_blank"} im Detail
+„Die Richter sind unabhängig und nur dem Gesetz unterworfen.“ – Dieser kurze Satz schützt die gesamte Rechtsstaatlichkeit. Er bedeutet auch, dass ein Richter eine Entscheidung treffen darf, die der aktuellen Regierung missfällt, ohne berufliche Konsequenzen fürchten zu müssen.
+:::
+
+### Der gesetzliche Richter ([Art. 101 GG](https://www.gesetze-im-internet.de/gg/art_101.html){target="_blank"})
+
+Niemand darf seinem gesetzlichen Richter entzogen werden. Was klangvoll klingt, hat einen sehr praktischen Hintergrund: Es darf nicht erst bei Prozessbeginn ausgewürfelt werden, wer den Fall übernimmt. Durch einen im Voraus feststehenden **Geschäftsverteilungsplan** wird innerhalb eines Gerichts sichergestellt, dass man sich seinen Richter nicht "aussuchen" kann – und der Staat ihn nicht "zuteilen" kann, um ein bestimmtes Ergebnis herbeizuführen.
+
+### Rechtliches Gehör ([Art. 103 Abs. 1 GG](https://www.gesetze-im-internet.de/gg/art_103.html){target="_blank"})
+
+Ein Verfahren, in dem eine Partei nicht zu Wort kommt, ist kein faires Verfahren. Jeder Beteiligte hat das Recht, sich vor einer Entscheidung zu den entscheidungserheblichen Tatsachen zu äußern.
+
+::: {.quick-check}
+Welches Prinzip verhindert die Beinflussung der Rechtsprechung durch die Exekutive?
+
+- Rechtliches Gehör
+- **Gesetzlicher Richter ([Art. 101 GG](https://www.gesetze-im-internet.de/gg/art_101.html){target="_blank"})**
+- Öffentlichkeit der Verhandlung
+:::
+
+### Transparenz und Prozessmaximen
+
+Verhandlungen sind grundsätzlich **öffentlich**. Dies dient der Kontrolle der Justiz durch die Bürger. Niemand soll im Geheimen abgeurteilt werden. Ausnahmen sind eng (etwa zum Schutz der Privatsphäre, beispielsweise im Familienrecht oder bei jugendlichen Angeklagten im Strafverfahren).
+
+Interessant ist zudem die Frage, wer das Verfahren eigentlich "steuert":
+
+- **Zivilrecht:** Hier gilt die *Dispositionsmaxime*. „Wo kein Kläger, da kein Richter“. Die Parteien entscheiden selbst, ob sie klagen und worüber gestritten wird.
+
+- **Straf- und Verwaltungsrecht:** Hier herrscht in der Regel der *Amtsermittlungsgrundsatz*. Das Gericht muss den Sachverhalt von sich aus erforschen, da ein öffentliches Interesse an der richtigen Entscheidung besteht.
+
+---
+
+# Der Aufbau der Gerichtsbarkeit in Deutschland
+
+Anders als in den USA, wo ein Supreme Court über allem thront, pflegt Deutschland eine Kultur der Spezialisierung. Wir haben fünf Fachgerichtsbarkeiten, die jeweils über einen eigenen Instanzenzug verfügen.
+
+## Die fünf Fachgerichtsbarkeiten
+
+Stellen Sie sich das System als fünf Säulen vor, die jeweils für spezifische Lebensbereiche zuständig sind:
+
+::: {.drag-exercise}
+Die *Ordentliche Gerichtsbarkeit* ist für Zivil- und Strafrecht zuständig, während die *Arbeitsgerichtsbarkeit* Streitigkeiten zwischen Arbeitgebern und Arbeitnehmern regelt.
+:::
+
+Die spezialisierte Struktur der deutschen Justiz lässt sich am besten als ein System aus fünf Säulen visualisieren:
+
+<iframe src="widgets/kapitel-08/widget-fachgerichtsbarkeiten.html" 
+        width="100%" height="500px" frameborder="0"
+        title="Interaktive Übersicht der 5 Fachgerichtsbarkeiten">
+</iframe>
+
+| Gerichtsbarkeit | Zuständigkeit | Oberstes Bundesgericht |
+|-----------------|---------------|-------------------------|
+| **Ordentliche** | Zivilrecht & Strafrecht | Bundesgerichtshof (BGH) |
+| **Verwaltungs-**| Bürger vs. Staat | Bundesverwaltungsgericht (BVerwG) |
+| **Arbeits-**    | Arbeitsrecht | Bundesarbeitsgericht (BAG) |
+| **Sozial-**     | Sozialversicherung, BAföG | Bundessozialgericht (BSG) |
+| **Finanz-**     | Steuern | Bundesfinanzhof (BFH) |
+
+## Der Weg durch die Instanzen
+
+Ein Rechtsstreit endet selten dort, wo er begonnen hat. Der Instanzenzug stellt sicher, dass Fehler korrigiert werden können. In der Regel durchläuft ein Fall bis zu zwei Instanzen, bevor er eventuell vor dem obersten Gericht des jeweiligen Fachbereichs landet. Beachten Sie dabei den entscheidenden Unterschied zwischen der Tatsachenprüfung und der reinen Rechtsprüfung:
+
+<iframe src="widgets/kapitel-08/widget-instanzenzug.html" 
+        width="100%" height="450px" frameborder="0"
+        title="Simulator des Instanzenzugs: Berufung vs. Revision">
+</iframe>
+
+Wir unterscheiden dabei zwei Arten von Rechtsmitteln:
+
+::: {.flip-card}
+#### Berufung
+In der Berufung wird der Fall erneut geprüft – sowohl **rechtlich** als auch **tatsächlich** (erneute Vernehmung von Zeugen und Erhebung von anderen Beweisen).
+:::
+
+::: {.flip-card}
+#### Revision
+In der Revision wird das Urteil nur noch auf **Rechtsfehler** geprüft. Der Sachverhalt wird nicht neu aufgerollt. Wird auf die Berufung verzichtet und direkt Revision eingelegt, spricht man von einer **Sprungrevision**. 
+:::
+
+---
+
+# Die Verfassungsgerichtsbarkeit
+
+Das **Bundesverfassungsgericht (BVerfG)** in Karlsruhe ist keine "Superrevisionsinstanz". Wer dort klagt, kann nicht einfach behaupten, das Amtsgericht habe die Zeugin falsch verstanden. Man muss rügen, dass eine Entscheidung gegen spezifisches *Verfassungsrecht* (z.B. Grundrechte) verstößt.
+
+Das Bundesverfassungsgericht agiert als "Hüter der Verfassung". Alle anderen Staatsgewalten sind an seine Urteile gebunden.
+
+### Wichtige Verfahrensarten am BVerfG
+
+1.  **Verfassungsbeschwerde:** Der "Notanker" für den Bürger. Jeder kann sie erheben, wenn er sich durch den Staat unmittelbar in seinen Grundrechten verletzt sieht.
+2.  **Normenkontrolle:** Prüfung, ob ein Gesetz mit dem Grundgesetz vereinbar ist. Hierbei wird unterschieden zwischen der abstrakten und der konkreten Normenkontrolle. Die konkrete Normenkontrolle steht Instanzgerichten offen, wenn sie ein Gesetz für verfassungswidrig halten, auf dessen Gültigkeit es bei der Entscheidung ankommt. Die Abstrakte Normenkontrolle dient der verfassungsrechtlichen Prüfung von Bundes- oder Landesrecht unabhängig von einem konkreten Rechtsstreit und kann nur von bestimmten staatlichen Organen (Bundesregierung, Landesregierung oder einem Viertel der Mitglieder des Bundestages) beantragt werden.
+3.  **Organstreit:** Wenn sich die Verfassungsorgane des GG miteinander streiten (z.B. Bundestag gegen Bundesregierung).
+
+::: {.quick-check}
+Darf das Bundesverfassungsgericht ein Urteil des BGH aufheben, nur weil es den Sachverhalt anders bewertet?
+
+- Ja, es ist die oberste Instanz für alles.
+- **Nein, nur bei Verletzung von spezifischem Verfassungsrecht.**
+:::
+
+---
+
+# Die Gerichtsbarkeit der Europäischen Union
+
+Da wir uns in der Europäischen Union in einem gemeinsamen Rechtsraum bewegen, muss das EU-Recht überall gleich angewendet werden. Dafür sorgt der **EuGH** in Luxemburg.
+
+::: {.flip-card}
+#### Vorabentscheidungsverfahren
+Nationale Gerichte legen dem EuGH Fragen zur Auslegung von EU-Recht vor. Die Antwort des EuGH ist bindend für das nationale Verfahren.
+:::
+
+Der Prozess der Zusammenarbeit zwischen nationalen Gerichten und dem EuGH folgt einem festen Ablauf:
+
+<iframe src="widgets/kapitel-08/widget-eugh-vorlage.html" 
+        width="100%" height="400px" frameborder="0"
+        title="Ablauf des Vorabentscheidungsverfahrens am EuGH">
+</iframe>
+
+Dieses Instrument (Art. 267 AEUV) ist ein wichtiger Motor der europäischen Integration. Wenn ein deutsches Gericht zweifelt, ob eine EU-Richtlinie richtig angewendet wird, stoppt es das Verfahren und fragt in Luxemburg nach.
+
+---
+
+# Übung zur Anwendung: Welches Gericht ist zuständig?
+
+Prüfen Sie Ihr Verständnis anhand der folgenden Fälle:
+
+::: {.case-study}
+#### Fall: Der Rempler (Zivilrecht)
+Ein Fußgänger wird auf dem Gehweg von einem Radfahrer angerempelt. Es geht um einen Schadenersatz von 2.500 €. Wo beginnt der Prozess?
+
+::: {.solution}
+Die ordentliche Gerichtsbarkeit ist zuständig. Da der Streitwert unter 5.000 € liegt, beginnt das Verfahren beim **Amtsgericht (AG)**. Die nächste Instanz wäre das **Landgericht (LG)**.
+:::
+:::
+
+::: {.case-study}
+#### Fall: Der Bauantrag
+Ein Bauherr beantragt eine Baugenehmigung. Die Gemeinde lehnt den Antrag ab, da das geplante Gebäude zu hoch sei. Dagegen möchte der Bauherr klagen.
+
+::: {.solution}
+Hier geht es um eine Auseinandersetzung zwischen Bürger und Staat. Zuständig ist die **Verwaltungsgerichtsbarkeit**. 
+:::
+:::
+
+---
+
+# Checkliste: Was Sie nach der Einheit wissen sollten
+
+- [ ] Können Sie die fünf obersten Gerichtshöfe des Bundes den Fachgerichtsbarkeiten zuordnen?
+- [ ] Kennen Sie den Unterschied zwischen sachlicher und persönlicher Unabhängigkeit der Richter?
+- [ ] Wissen Sie, was eine Revision von einer Berufung unterscheidet?
+- [ ] Können Sie erklären, warum der EuGH für die Einheitlichkeit des Rechts in der EU zentral ist?
+
+Wissen Sie eigentlich, warum Richter in Deutschland rote oder schwarze Roben tragen? Es geht um die Neutralität – die Person tritt hinter das Amt zurück. Sie sehen: Unabhängigkeit und Neutralität sind die Grundpfeiler der Judikative.

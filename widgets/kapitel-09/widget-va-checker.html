@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verwaltungsakt-Checker</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+
+        h2 {
+            color: #ff6a00;
+            font-size: 1.2rem;
+            margin-top: 0;
+        }
+
+        .checklist-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background 0.3s;
+            cursor: pointer;
+            border: 1px solid transparent;
+        }
+
+        .checklist-item:hover {
+            background: #fff5f0;
+            border-color: #ff6a00;
+        }
+
+        .checklist-item.active {
+            background: #fff5f0;
+            border-color: #ff6a00;
+            font-weight: 600;
+        }
+
+        .checkbox {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ff6a00;
+            border-radius: 4px;
+            margin-right: 12px;
+            flex-shrink: 0;
+            position: relative;
+        }
+
+        .checkbox.checked::after {
+            content: '✓';
+            position: absolute;
+            top: -2px;
+            left: 2px;
+            color: #ff6a00;
+            font-weight: bold;
+        }
+
+        .content {
+            font-size: 0.9rem;
+            color: #333;
+        }
+
+        .details {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #ff6a00;
+            font-size: 0.85rem;
+            display: none;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+            border-radius: 8px;
+            display: none;
+        }
+
+        .is-va {
+            background: #e6f4ea;
+            color: #1e7e34;
+        }
+
+        .not-va {
+            background: #fce8e8;
+            color: #c62828;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>VA-Prüfungsassistent (§ 35 VwVfG)</h2>
+        <div id="items">
+            <div class="checklist-item" onclick="toggleItem(0)">
+                <div class="checkbox" id="cb-0"></div>
+                <div class="content">1. Hoheitliche Maßnahme (einseitig)</div>
+            </div>
+            <div class="checklist-item" onclick="toggleItem(1)">
+                <div class="checkbox" id="cb-1"></div>
+                <div class="content">2. Von einer Behörde</div>
+            </div>
+            <div class="checklist-item" onclick="toggleItem(2)">
+                <div class="checkbox" id="cb-2"></div>
+                <div class="content">3. Auf dem Gebiet des öffentlichen Rechts</div>
+            </div>
+            <div class="checklist-item" onclick="toggleItem(3)">
+                <div class="checkbox" id="cb-3"></div>
+                <div class="content">4. Zur Regelung (Rechtsfolge)</div>
+            </div>
+            <div class="checklist-item" onclick="toggleItem(4)">
+                <div class="checkbox" id="cb-4"></div>
+                <div class="content">5. Eines Einzelfalls (konkret-individuell)</div>
+            </div>
+            <div class="checklist-item" onclick="toggleItem(5)">
+                <div class="checkbox" id="cb-5"></div>
+                <div class="content">6. Mit Außenwirkung</div>
+            </div>
+        </div>
+        <div id="desc" class="details">Klicken Sie auf ein Merkmal, um es zu prüfen.</div>
+        <div id="result" class="result"></div>
+    </div>
+
+    <script>
+        const states = [false, false, false, false, false, false];
+        const descriptions = [
+            "Handelt der Staat einseitig (Über-/Unterordnung)? Ein Vertrag wäre keine hoheitliche Maßnahme.",
+            "Wird die Aufgabe von einer Stelle der öffentlichen Verwaltung wahrgenommen?",
+            "Basiert die Maßnahme auf einer Norm des öffentlichen Rechts (z.B. VwVfG, GemO)?",
+            "Soll eine verbindliche Rechtsfolge gesetzt werden (Gebot, Verbot)? Eine reine Info reicht nicht.",
+            "Richtet sich die Maßnahme an eine bestimmte Person in einer bestimmten Situation?",
+            "Geht die Wirkung über den innerdienstlichen Bereich hinaus an einen Bürger?"
+        ];
+
+        function toggleItem(index) {
+            states[index] = !states[index];
+            document.getElementById(`cb-${index}`).classList.toggle('checked');
+            document.getElementById('desc').style.display = 'block';
+            document.getElementById('desc').textContent = descriptions[index];
+
+            checkResult();
+        }
+
+        function checkResult() {
+            const resultBox = document.getElementById('result');
+            const allChecked = states.every(s => s === true);
+            const anyChecked = states.some(s => s === true);
+
+            if (allChecked) {
+                resultBox.style.display = 'block';
+                resultBox.className = 'result is-va';
+                resultBox.textContent = 'Glückwunsch! Alle Merkmale erfüllt. Es handelt sich um einen Verwaltungsakt.';
+            } else if (anyChecked) {
+                resultBox.style.display = 'block';
+                resultBox.className = 'result not-va';
+                resultBox.textContent = 'Noch nicht alle Merkmale erfüllt...';
+            } else {
+                resultBox.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interaktive Normenpyramide</title>
+    <style>
+        :root {
+            --thws-blue: #005A9B;
+            --thws-orange: #F39100;
+            --thws-light: #f4f6f8;
+            --thws-dark: #333;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: transparent;
+        }
+
+        .widget-container {
+            width: 100%;
+            max-width: 600px;
+            background: var(--white);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .pyramid {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            margin-bottom: 25px;
+        }
+
+        .layer {
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-align: center;
+            clip-path: polygon(10% 0, 90% 0, 100% 100%, 0 100%);
+            font-size: 0.9rem;
+        }
+
+        .layer:hover {
+            filter: brightness(1.1);
+            transform: scale(1.02);
+        }
+
+        .layer.active {
+            border: 3px solid var(--thws-orange);
+            box-shadow: 0 0 10px rgba(243, 145, 0, 0.5);
+        }
+
+        /* Pyramid Widths */
+        #layer-1 {
+            width: 40%;
+            background: #003366;
+            clip-path: polygon(50% 0, 50% 0, 100% 100%, 0 100%);
+        }
+
+        #layer-2 {
+            width: 55%;
+            background: var(--thws-blue);
+        }
+
+        #layer-3 {
+            width: 70%;
+            background: #0077cc;
+        }
+
+        #layer-4 {
+            width: 85%;
+            background: #3399ff;
+        }
+
+        #layer-5 {
+            width: 100%;
+            background: #66b2ff;
+            clip-path: polygon(0 0, 100% 0, 95% 100%, 5% 100%);
+        }
+
+        .info-card {
+            background: var(--thws-light);
+            border-left: 5px solid var(--thws-orange);
+            padding: 20px;
+            border-radius: 0 8px 8px 0;
+            min-height: 120px;
+        }
+
+        .info-title {
+            color: var(--thws-blue);
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .info-content {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            color: #444;
+        }
+
+        .tip {
+            font-size: 0.8rem;
+            color: #888;
+            margin-top: 15px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="widget-container">
+        <div class="pyramid">
+            <div class="layer" id="layer-1" onclick="showInfo(0)">EU-Recht</div>
+            <div class="layer" id="layer-2" onclick="showInfo(1)">Grundgesetz</div>
+            <div class="layer" id="layer-3" onclick="showInfo(2)">Parlamentsgesetze</div>
+            <div class="layer" id="layer-4" onclick="showInfo(3)">Rechtsverordnungen</div>
+            <div class="layer" id="layer-5" onclick="showInfo(4)">Satzungen</div>
+        </div>
+
+        <div class="info-card">
+            <div class="info-title" id="info-title">EU-Recht</div>
+            <div class="info-content" id="info-content">Das Recht der Europäischen Union genießt nach dem EuGH einen
+                Anwendungsvorrang vor nationalem Recht. Es bildet die oberste Stufe der Hierarchie.</div>
+        </div>
+
+        <div class="tip">Klicken Sie auf die Stufen der Pyramide für Details.</div>
+    </div>
+
+    <script>
+        const levels = [
+            {
+                title: "EU-Recht (Supranational)",
+                content: "Primärrecht (Verträge wie EUV/AEUV) und Sekundärrecht (Verordnungen/Richtlinien). Genießt Anwendungsvorrang vor nationalem Recht, auch vor dem Grundgesetz (Solange-Rechtsprechung des BVerfG)."
+            },
+            {
+                title: "Verfassung (Grundgesetz)",
+                content: "Die oberste nationale Norm. Bindet alle Staatsgewalten. Änderungen von Kernprinzpien sind durch die Ewigkeitsgarantie (Art. 79 Abs. 3 GG) erschwert und in ihrem Kern geschützt."
+            },
+            {
+                title: "Formelle Gesetze",
+                content: "Vom Bundestag oder den Landtagen in einem ordnungsgemäßen Gesetzgebungsverfahren verabschiedet (z. B. BGB, StGB, GewO). Sie müssen verfassungskonform sein."
+            },
+            {
+                title: "Rechtsverordnungen",
+                content: "Von der Regierung oder Ministerien erlassen. Benötigen eine gesetzliche Ermächtigungsgrundlage im formellen Gesetz, die Inhalt, Zweck und Ausmaß bestimmt."
+            },
+            {
+                title: "Satzungen",
+                content: "Von Selbstverwaltungskörperschaften (z. B. Kommunen, THWS) zur Regelung ihrer eigenen Angelegenheiten erlassen (z. B. Prüfungsordnung, Abfallsatzung)."
+            }
+        ];
+
+        function showInfo(index) {
+            document.querySelectorAll('.layer').forEach(l => l.classList.remove('active'));
+            document.getElementById('layer-' + (index + 1)).classList.add('active');
+
+            document.getElementById('info-title').innerText = levels[index].title;
+            document.getElementById('info-content').innerText = levels[index].content;
+        }
+
+        // Init with first level
+        showInfo(0);
+    </script>
+
+</body>
+
+</html>

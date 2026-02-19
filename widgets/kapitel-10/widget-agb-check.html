@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGB-Prüfung</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .widget-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .step-container {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            position: relative;
+        }
+
+        .step-container::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #eee;
+            z-index: 0;
+        }
+
+        .step {
+            width: 30px;
+            height: 30px;
+            background: #fff;
+            border: 2px solid #eee;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.8rem;
+            z-index: 1;
+            transition: all 0.3s;
+            cursor: pointer;
+        }
+
+        .step.active {
+            border-color: #ff6a00;
+            background: #ff6a00;
+            color: white;
+            box-shadow: 0 0 10px rgba(255, 106, 0, 0.3);
+        }
+
+        .info-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            border-left: 4px solid #ff6a00;
+            min-height: 150px;
+        }
+
+        .info-card h4 {
+            margin: 0 0 10px 0;
+            color: #ff6a00;
+        }
+
+        .info-card p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        .checklist {
+            list-style: none;
+            padding: 0;
+            margin-top: 15px;
+        }
+
+        .checklist li {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .checklist li::before {
+            content: '☐';
+            color: #ff6a00;
+        }
+
+        .nav-btns {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #ff6a00;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        button:disabled {
+            background: #ccc;
+            cursor: default;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <div class="step-container">
+            <div class="step active" onclick="setStep(1)">1</div>
+            <div class="step" onclick="setStep(2)">2</div>
+            <div class="step" onclick="setStep(3)">3</div>
+        </div>
+
+        <div id="card" class="info-card">
+            <h4 id="title">Anwendungsbereich</h4>
+            <p id="desc">Zuerst klären wir, ob überhaupt AGB vorliegen. Es müssen für eine Vielzahl von Verträgen
+                vorformulierte Bedingungen sein, die einseitig gestellt werden.</p>
+            <ul id="list" class="checklist">
+                <li>Vorformuliert? (§ 305 I BGB)</li>
+                <li>Vielzahl von Verträgen?</li>
+                <li>Einseitig gestellt?</li>
+            </ul>
+        </div>
+
+        <div class="nav-btns">
+            <button id="prev" onclick="move(-1)" disabled>Zurück</button>
+            <button id="next" onclick="move(1)">Weiter</button>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        const steps = [
+            {
+                title: "1. Anwendungsbereich",
+                desc: "Liegen überhaupt AGB vor? Die Klauseln müssen für eine Vielzahl von Verträgen vorformuliert und vom Verwender einseitig gestellt worden sein.",
+                items: ["Vorformuliert? (§ 305 I BGB)", "Vielzahl von Verträgen?", "Vom Unternehmer gestellt?"]
+            },
+            {
+                title: "2. Einbeziehung",
+                desc: "Sind die AGB Teil des konkreten Vertrags geworden? Der Kunde muss darauf hingewiesen worden sein und die Chance zur Kenntnisnahme gehabt haben.",
+                items: ["Ausdrücklicher Hinweis?", "Möglichkeit der Kenntnisnahme?", "Keine überraschende Klausel? (§ 305c BGB)"]
+            },
+            {
+                title: "3. Inhaltskontrolle",
+                desc: "Jetzt prüfen wir, ob die Klausel fair ist. Wir arbeiten uns von der spezifischen Verbotsliste zur allgemeinen Generalklausel vor.",
+                items: ["Verstoß gegen § 309? (Blacklist)", "Verstoß gegen § 308? (Greylist)", "Generalklausel: Unangemessene Benachteiligung? (§ 307)"]
+            }
+        ];
+
+        function setStep(s) {
+            currentStep = s;
+            update();
+        }
+
+        function move(dir) {
+            currentStep += dir;
+            update();
+        }
+
+        function update() {
+            const s = steps[currentStep - 1];
+            document.getElementById('title').textContent = s.title;
+            document.getElementById('desc').textContent = s.desc;
+
+            const list = document.getElementById('list');
+            list.innerHTML = s.items.map(i => `<li>${i}</li>`).join('');
+
+            document.querySelectorAll('.step').forEach((el, idx) => {
+                el.classList.toggle('active', idx + 1 === currentStep);
+            });
+
+            document.getElementById('prev').disabled = currentStep === 1;
+            document.getElementById('next').disabled = currentStep === 3;
+        }
+    </script>
+</body>
+
+</html>

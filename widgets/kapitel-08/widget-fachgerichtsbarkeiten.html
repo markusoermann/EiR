@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Die 5 Säulen der Fachgerichtsbarkeit</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #ffffff;
+            color: #333;
+            display: flex;
+            justify-content: center;
+        }
+        .widget-container {
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+        .columns-container {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 10px;
+            margin-top: 20px;
+            height: 300px;
+            align-items: end;
+        }
+        .column {
+            background: #f0f0f0;
+            border: 2px solid #ddd;
+            border-radius: 8px 8px 0 0;
+            padding: 10px 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
+            box-sizing: border-box;
+        }
+        .column:hover {
+            transform: translateY(-5px);
+            border-color: #ff6a00;
+        }
+        .column.active {
+            background: rgba(255, 106, 0, 0.1);
+            border-color: #ff6a00;
+            box-shadow: 0 4px 15px rgba(255, 106, 0, 0.2);
+        }
+        .column-title {
+            font-weight: bold;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+        .court-icon {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+        .top-court {
+            font-weight: 800;
+            color: #ff6a00;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .column.active .top-court {
+            opacity: 1;
+        }
+        .info-box {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            min-height: 80px;
+            border-left: 5px solid #ff6a00;
+            transition: opacity 0.3s ease;
+            text-align: left;
+        }
+        .branch-name {
+            font-weight: bold;
+            color: #ff6a00;
+            display: block;
+            margin-bottom: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="widget-container">
+        <div class="columns-container">
+            <div class="column" onclick="showInfo(0)" id="col-0">
+                <div class="column-title">Ordentliche</div>
+                <div class="court-icon">⚖️</div>
+                <div class="top-court">BGH</div>
+            </div>
+            <div class="column" onclick="showInfo(1)" id="col-1">
+                <div class="column-title">Verwaltung</div>
+                <div class="court-icon">🏛️</div>
+                <div class="top-court">BVerwG</div>
+            </div>
+            <div class="column" onclick="showInfo(2)" id="col-2">
+                <div class="column-title">Arbeit</div>
+                <div class="court-icon">💼</div>
+                <div class="top-court">BAG</div>
+            </div>
+            <div class="column" onclick="showInfo(3)" id="col-3">
+                <div class="column-title">Sozial</div>
+                <div class="court-icon">🏥</div>
+                <div class="top-court">BSG</div>
+            </div>
+            <div class="column" onclick="showInfo(4)" id="col-4">
+                <div class="column-title">Finanz</div>
+                <div class="court-icon">💰</div>
+                <div class="top-court">BFH</div>
+            </div>
+        </div>
+        <div class="info-box" id="info-box">
+            Wählen Sie eine Gerichtsbarkeit aus, um mehr über die Zuständigkeit und den obersten Gerichtshof zu erfahren.
+        </div>
+    </div>
+
+    <script>
+        const info = [
+            {
+                name: "Ordentliche Gerichtsbarkeit",
+                text: "Zuständig für Zivilrecht (Bürger vs. Bürger) und Strafrecht. Der Bundesgerichtshof (BGH) in Karlsruhe/Leipzig ist das oberste Gericht.",
+                court: "BGH"
+            },
+            {
+                name: "Verwaltungsgerichtsbarkeit",
+                text: "Zuständig für Streitigkeiten des Bürgers gegen den Staat (außer Sozial- und Finanzrecht). Das Bundesverwaltungsgericht (BVerwG) sitzt in Leipzig.",
+                court: "BVerwG"
+            },
+            {
+                name: "Arbeitsgerichtsbarkeit",
+                text: "Regelt Streitigkeiten zwischen Arbeitnehmern und Arbeitgebern sowie Tarifpartnern. Das Bundesarbeitsgericht (BAG) hat seinen Sitz in Erfurt.",
+                court: "BAG"
+            },
+            {
+                name: "Sozialgerichtsbarkeit",
+                text: "Zuständig für Belange der Sozialversicherung (Rente, Krankenversicherung, Arbeitslosigkeit). Das Bundessozialgericht (BSG) sitzt in Kassel.",
+                court: "BSG"
+            },
+            {
+                name: "Finanzgerichtsbarkeit",
+                text: "Zuständig für Steuer- und Zollangelegenheiten (Bürger vs. Finanzamt). Der Bundesfinanzhof (BFH) sitzt in München. Besonderheit: Nur zwei Instanzen!",
+                court: "BFH"
+            }
+        ];
+
+        function showInfo(index) {
+            const infoBox = document.getElementById('info-box');
+            const data = info[index];
+            
+            // Highlight column
+            document.querySelectorAll('.column').forEach(c => c.classList.remove('active'));
+            document.getElementById(`col-${index}`).classList.add('active');
+
+            // Update text
+            infoBox.innerHTML = `<span class="branch-name">${data.name}</span>${data.text}`;
+        }
+    </script>
+</body>
+</html>

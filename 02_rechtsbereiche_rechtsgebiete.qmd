@@ -1,0 +1,168 @@
+---
+title: "Rechtsbereiche – Rechtsgebiete: Die Architektur der Rechtsordnung"
+subtitle: "Einführung in das Recht – Einheit 2: Rechtsbereiche - Rechtsgebiete"
+date: last-modified
+lang: de
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: moodle-html
+---
+
+# Der Bauplan des Rechts
+
+Nachdem wir uns in der letzten Einheit mit dem "Warum" und dem Wesen des Rechts beschäftigt haben, schauen wir uns in dieser Einheit das "Wie" der Organisation an. Stellen Sie sich die Rechtsordnung nicht als einen ungeordneten Haufen von Regeln vor, sondern als ein sorgfältig konstruiertes Gebäude. Wer durch die falsche Tür geht (also den falschen Rechtsweg wählt), landet zwar vielleicht in einem Gerichtssaal, aber nicht bei dem Richter, der für das Problem zuständig ist.
+
+In dieser Sitzung vermessen wir dieses Gebäude und legen einen grundlegenden Lageplan an, sodass Sie sich zurecht finden können. Wir klären, warum es einen Unterschied macht, ob Sie sich mit Ihrem Nachbarn um einen Zaun streiten oder ob der Staat Ihnen ein Bußgeld wegen Falschparkens aufbrummt.
+
+### Unsere Etappenziele für heute
+
+Am Ende dieser Einheit werden Sie:
+
+1.  Die fundamentale **Einteilung der Rechtsordnung** in Privatrecht und Öffentliches Recht (einschließlich Strafrecht) verstanden haben.
+
+2.  Wissen, nach welchen **Theorien** Jurist/-innen diese Abgrenzung vornehmen.
+
+3.  In der Lage sein, lebensnahe Fälle dem richtigen **Rechtsweg** zuzuordnen.
+
+4.  Einen Überblick über die wichtigsten **Rechtsgebiete** und deren Platz im System gewonnen haben.
+
+# Der „Eisbrecher-Fall“: Empörung an der Haustür
+
+Starten wir direkt mit einer Situation, wie sie sich täglich auf Plattformen wie vinted oder Kleinanzeigen abspielen könnte.
+
+::: {.case-study}
+#### Fall: Die Winterjacke
+V verkauft an K über ein Online-Portal eine gebrauchte Winterjacke für 50 Euro. Bei der Übergabe an der Haustür stellt sich heraus, dass K nur 48 Euro passend dabei hat. K verspricht, die restlichen 2 Euro "morgen per PayPal" zu schicken. V ist jedoch ein Prinzipienreiter. Er verweigert die Herausgabe der Jacke, es kommt zum lautstarken Wortgefecht. V droht schließlich damit, die Polizei zu rufen, „um die Sache ordnungsrechtlich klären zu lassen“, und will zudem beim Bürgeramt Beschwerde einlegen, damit K „wegen unzuverlässigen Geschäftsgebarens“ gesperrt wird.
+
+**Frage:** Hat V recht? Ist das ein Fall für die Polizei oder das Bürgeramt?
+:::
+
+Was glauben Sie? Ist das "ordnungsrechtlich" relevant?
+
+Die Antwort ist **Nein** - und am Ende dieser Einheit werden Sie wissen, warum.
+
+> **Intuition vs. Architektur:** In der Hitze des Gefechts rufen Menschen oft nach "dem Staat" oder "der Polizei". Aber das Recht unterscheidet genau, wann der Staat als ordnende Macht eingreifen darf und wann es sich um eine rein private Streitigkeit zwischen zwei Personen handelt, die „auf Augenhöhe“ miteinander verhandeln.
+
+# Die drei Säulen des Rechtssystems
+
+Jurist/-innen teilen die gesamte Rechtsordnung traditionell in drei große Bereiche ein. Diese Einteilung ist keine bloße Theorie, sondern bestimmt unter anderem, welches Gericht am Ende entscheidet.
+
+### Privatrecht (Zivilrecht)
+
+Das Privatrecht ist das Recht der **Gleichordnung**. Hier stehen sich Bürger/-innen (oder Unternehmen) gegenüber. Niemand ist dem anderen weisungsbefugt. Wenn Sie ein Brötchen kaufen oder eine Wohnung mieten, bewegen Sie sich im Privatrecht.
+
+::: {.flip-card}
+#### Privatrecht
+Regelt die Rechtsbeziehungen zwischen einzelnen, einander gleichgeordneten rechtlich unselbstständigen Personen (z.B. Käufer und Verkäufer). Leitprinzip ist die **Privatautonomie**.
+:::
+
+### Öffentliches Recht
+
+Hier ist das Verhältnis ein anderes: Es herrscht ein **Über- und Unterordnungsverhältnis**. Auf der einen Seite steht der Staat (als Träger hoheitlicher Gewalt), auf der anderen der/die Bürger/-in. Der Staat handelt hier unter anderen durch Verwaltungsakte (z.B. Baugenehmigungen, Steuerbescheide oder Platzverweise).
+
+::: {.flip-card}
+#### Öffentliches Recht
+Regelt das Verhältnis zwischen dem Staat und den einzelnen Bürger/-innen sowie die Organisation des Staates selbst. Der Staat tritt hier mit **hoheitlicher Gewalt** auf.
+:::
+
+### Strafrecht
+
+Das Strafrecht ist systematisch eigentlich ein Teil des Öffentlichen Rechts, da auch hier der Staat dem Bürger gegenübertritt. Wegen seiner enormen Bedeutung und der besonderen Eingriffsintensität (bis zur Freiheitsentziehung!) wird es jedoch meist als eigenständige dritte Säule behandelt.
+
+# Woher wissen wir das? Die Abgrenzungstheorien
+
+Wie entscheiden wir im Zweifel, ob eine Regel zum Privatrecht oder zum Öffentlichen Recht gehört? Jurist/-innen nutzen dafür verschiedene Theorien. Die wichtigste (und diejenige, die Sie sich merken sollten) ist die modifizierte Subjektstheorie.
+
+::: {.details}
+#### Die modifizierte Subjektstheorie (Sonderrechtstheorie)
+Eine Rechtsnorm ist dann dem **Öffentlichen Recht** zuzuordnen, wenn sie **ausschließlich einen Hoheitsträger** (also den Staat oder eine staatliche Behörde) in seiner Funktion als solchen berechtigt oder verpflichtet.
+
+Gegenprobe: Kann *jeder* Subjekt dieser Norm sein? Falls ja (z.B. "Wer einen Vertrag schließt..."), handelt es sich um Privatrecht. Falls nur der Staat betroffen ist (z.B. "Die Polizei kann zur Gefahrenabwehr..."), ist es Öffentliches Recht.
+:::
+
+::: {.drag-exercise}
+Das *Privatrecht* dient dem Schutz privater Interessen, das *Öffentliche Recht* dient primär dem Gemeinwohl und der staatlichen Organisation.
+:::
+
+# Materielles vs. Formelles Recht
+
+Bevor wir in die Praxis gehen, müssen wir noch ein Werkzeugpaar verstehen:
+
+*   **Materielles Recht:** Das ist der Inhalt. Was steht mir zu? Welche Pflichten habe ich? (z.B. "Durch den Kaufvertrag wird der Verkäufer einer Sache verpflichtet, dem Käufer die Sache zu übergeben und das Eigentum an der Sache zu verschaffen", [§ 433 Abs. 1 S. 1 BGB](https://www.gesetze-im-internet.de/bgb/__433.html){target="_blank"}).
+*   **Formelles Recht:** Das ist der Weg. Wie bekomme ich mein Recht? Es regelt die Verfahren vor den Behörden und Gerichten (z.B. die Zivilprozessordnung - ZPO oder die Strafprozessordnung - StPO).
+
+# Praxis-Workshop: Jetzt sind Sie gefragt!
+
+Zeit, die Theorie am lebenden Objekt zu testen. Jetzt analysieren wir reale (oder fast reale) Ereignisse.
+
+::: {.case-study}
+#### Fall: „Der Fahrradunfall“
+A fährt mit seinem Fahrrad unvorsichtig aus einer Einfahrt und rempelt den Fußgänger B an. B stürzt, sein Smartphone geht kaputt und er bricht sich den Arm. Die Polizei kommt zur Unfallaufnahme.
+
+**Aufgabe:** Sortieren Sie das Geschehen.
+
+1. B möchte Schadensersatz für das Handy und Schmerzensgeld.
+
+2. Der Staat leitet ein Verfahren wegen fahrlässiger Körperverletzung gegen A ein.
+
+3. Die Polizei erteilt A einen Bußgeldbescheid wegen eines Verstoßes gegen die Straßenverkehrsordnung.
+
+::: {.solution}
+
+1. **Privatrecht:** B gegen A (Schadenersatz nach [§ 823 BGB](https://www.gesetze-im-internet.de/bgb/__823.html){target="_blank"}). Weg: Zivilgericht.
+
+2. **Strafrecht:** Staat gegen A ([§ 229 StGB](https://www.gesetze-im-internet.de/stgb/__229.html){target="_blank"}). Weg: Strafgericht.
+
+3. **Öffentliches Recht (Verwaltungsrecht/Ordnungswidrigkeiten):** Staat gegen A. Weg: Verwaltungsbehörde / ggf. Amtsgericht.
+:::
+:::
+
+# Rechtsgebiete-Mapping: Wo gehört was hin?
+
+Die Architektur steht, jetzt füllen wir sie mit Leben. Viele Rechtsgebiete lassen sich klar zuordnen, manche sind "Mischlinge".
+
+| Bereich | Beispiel-Rechtsgebiete | Zentrale Normen |
+| :--- | :--- | :--- |
+| **Privatrecht** | Bürgerliches Recht, Arbeitsrecht, Handelsrecht | BGB, HGB, ArbG |
+| **Öffentliches Recht** | Verfassungsrecht, Baurecht, Steuerrecht | GG, BauGB, AO |
+| **Strafrecht** | Kernstrafrecht, Betäubungsmittelstrafrecht | StGB, BtMG |
+
+
+#### Interaktiver Lerncheck: Ordnen Sie die Rechtsgebiete zu
+
+Testen Sie Ihr bisher erworbenes Wissen und ordnen Sie die folgenden Gebiete den drei Hauptbereichen zu:
+
+<iframe src="widgets/kapitel-02/widget-zuordnung-rechtsgebiete.html" 
+        width="100%" height="650px" frameborder="0"
+        title="Zuordnung von Rechtsgebieten">
+</iframe>
+
+> **Besonderheit Digitalisierung:** Wo ordnen wir die Datenschutzgrundverordnung (DSGVO) ein? Sie enthält sowohl öffentlich-rechtliche Pflichten gegenüber Aufsichtsbehörden als auch privatrechtliche Ansprüche auf Schadenersatz. Solche Querschnittsmaterien prägen unsere digitale Gesellschaft.
+
+# Abschluss & Ausblick
+
+Warum beschäftigen wir uns so intensiv mit dieser Einteilung? Weil sie in der digitalen Gesellschaft über Handlungsfähigkeit entscheidet. Wenn Ihr Account gesperrt wird, müssen Sie wissen: Klagt man gegen eine "Behörde" (Öffentliches Recht) oder eine "Plattform" (Privatrecht)? Die Spielregeln und die zuständigen Richter sind völlig andere.
+
+::: {.quick-check}
+Ein Student möchte gegen die Ablehnung seines BAföG-Bescheids vorgehen. In welchen Rechtsbereich gehört dieser Streit?
+
+- Privatrecht
+- **Öffentliches Recht**
+- Strafrecht
+- Völkerrecht
+:::
+
+In der nächsten Einheit schauen wir uns an, wie eine einzelne Rechtsnorm eigentlich aufgebaut ist. Wir lernen die Anatomie von "Wenn-Dann-Sätzen" kennen. Bis dahin: Augen auf im Alltag – ist das gerade Privatrecht oder will der Staat was von Ihnen?
+

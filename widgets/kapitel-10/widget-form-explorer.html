@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form-Explorer</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            font-family: 'Inter', sans-serif;
+            background: #ffffff;
+            color: #333;
+        }
+
+        .widget-container {
+            max-width: 600px;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            border: 2px solid #eee;
+            margin-bottom: 20px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        select:focus {
+            border-color: #ff6a00;
+        }
+
+        .form-card {
+            background: #fdfdfd;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            padding: 20px;
+            display: none;
+        }
+
+        .form-card.active {
+            display: block;
+        }
+
+        .form-type {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #ff6a00;
+            margin-bottom: 10px;
+        }
+
+        .norm {
+            font-size: 0.8rem;
+            background: #eee;
+            padding: 2px 6px;
+            border-radius: 4px;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+
+        .function-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .func-tag {
+            font-size: 0.75rem;
+            text-align: center;
+            padding: 8px;
+            border-radius: 4px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            opacity: 0.3;
+        }
+
+        .func-tag.active {
+            opacity: 1;
+            background: #fff3e0;
+            border-color: #ff6a00;
+            color: #ff6a00;
+            font-weight: bold;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-top: 15px;
+            color: #555;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="widget-container">
+        <label style="display:block; margin-bottom:8px; font-weight:600; font-size: 0.9rem;">Wählen Sie ein
+            Rechtsgeschäft:</label>
+        <select id="scenario" onchange="update()">
+            <option value="none" selected disabled>Bitte wählen...</option>
+            <option value="kauf">Kauf einer Kaffeemaschine</option>
+            <option value="miete">Mietvertrag für eine Wohnung</option>
+            <option value="buerge">Bürgschaftsverpflichtung</option>
+            <option value="grund">Grundstückskaufvertrag</option>
+            <option value="kuend">Kündigung Arbeitsverhältnis</option>
+        </select>
+
+        <div id="result" class="form-card">
+            <div id="type" class="form-type">Schriftform</div>
+            <div id="norm" class="norm">§ 126 BGB</div>
+            <div class="function-grid">
+                <div id="f-warn" class="func-tag">Warnfunktion</div>
+                <div id="f-beweis" class="func-tag">Beweisfunktion</div>
+                <div id="f-berat" class="func-tag">Beratungsfunktion</div>
+            </div>
+            <p id="desc" class="description"></p>
+        </div>
+    </div>
+
+    <script>
+        const data = {
+            kauf: {
+                type: "Formfreiheit",
+                norm: "Grundsatz im BGB",
+                funcs: [],
+                desc: "Die meisten Alltagsgeschäfte sind formfrei. Ein mündlicher Vertrag oder konkludentes Handeln (Ware aufs Band legen) reicht völlig aus."
+            },
+            miete: {
+                type: "Schriflich (§ 126) empfohlen",
+                norm: "§ 550 BGB (für > 1 Jahr)",
+                funcs: ["beweis"],
+                desc: "Wohnraummietverträge über mehr als ein Jahr müssen schriftlich fixiert werden, sonst gelten sie als auf unbestimmte Zeit geschlossen."
+            },
+            buerge: {
+                type: "Schriftform",
+                norm: "§ 766 BGB",
+                funcs: ["warn", "beweis"],
+                desc: "Die Bürgschaft ist riskant. Die Form soll den Bürgen vor Übereilung schützen (Warnfunktion) und den Inhalt klären."
+            },
+            grund: {
+                type: "Notarielle Beurkundung",
+                norm: "§ 311b Abs. 1 BGB",
+                funcs: ["warn", "beweis", "berat"],
+                desc: "Wegen der enormen wirtschaftlichen Bedeutung und rechtlichen Komplexität ist hier der volle Formzwang inkl. Notarberatung nötig."
+            },
+            kuend: {
+                type: "Schriftform",
+                norm: "§ 623 BGB",
+                funcs: ["warn", "beweis"],
+                desc: "Die Kündigung eines Arbeitsverhältnisses bedarf zwingend der Schriftform. Eine E-Mail oder WhatsApp reicht hier nicht aus!"
+            }
+        };
+
+        function update() {
+            const val = document.getElementById('scenario').value;
+            if (val === "none") return;
+
+            const card = document.getElementById('result');
+            const item = data[val];
+
+            card.classList.add('active');
+            document.getElementById('type').textContent = item.type;
+            document.getElementById('norm').textContent = item.norm;
+            document.getElementById('desc').textContent = item.desc;
+
+            ['warn', 'beweis', 'berat'].forEach(f => {
+                document.getElementById('f-' + f).classList.toggle('active', item.funcs.includes(f));
+            });
+        }
+    </script>
+</body>
+
+</html>
