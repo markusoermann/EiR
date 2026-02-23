@@ -1,1 +1,7 @@
+# Editor-Konfigurationen
+.vscode/
+.idea/
+
+# Betriebssystem-Dateien
 .DS_Store
+Thumbs.db
