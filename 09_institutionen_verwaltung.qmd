@@ -17,7 +17,7 @@ course: "Einführung in das Recht"
 version: "1.0"
 
 # --- Ausgabe-Formate ---
-format: handout-typst
+format: moodle-html
 ---
 
 # Einleitung und Verortung
@@ -46,9 +46,9 @@ Dank [Art. 20 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_20.html){targ
 Früher (im Absolutismus) durfte die dem Monarchen unterstellte Verwaltung alles tun, was nicht verboten war. Heute ist es umgekehrt: Ohne gesetzliches "Go" darf eine Behörde nicht in Ihre Freiheit oder Ihr Eigentum eingreifen und darf Sie zudem nicht ohne zureichenden sachliuchen Grund anders behandeln als andere Bürgerinnen und Bürger. Das schützt uns vor staatlicher Willkür.
 :::
 
-## Die unmittelbare Grundrechtsbindung
+## Die Grundrechtsbindung
 
-Anders als wir Privatpersonen, die sich im Rahmen der von Gesetzen definierten Leitplanken fast alles gegenseitig versprechen oder antun können, ist die Verwaltung gemäß [Art. 1 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_1.html){target="_blank"} unmittelbar an die Grundrechte gebunden.
+Anders als wir Privatpersonen, die sich im Rahmen der von Gesetzen definierten Leitplanken fast alles gegenseitig versprechen oder antun können, ist die Verwaltung gemäß [Art. 1 Abs. 3 GG](https://www.gesetze-im-internet.de/gg/art_1.html){target="_blank"} unmittelbar an die Grundrechte gebunden. Man unterscheidet dabei mehrere Dimensionen bzw. Wirkungsweisen, von denen wir uns zwei kurz näher anschauen:
 
 -   **Abwehrrechte:** Sie können sich wehren, wenn die Behörde Ihnen ein Verhalten untersagt oder erschwert. Ist ihr Verhalten nicht gesetzlich geregelt, muss die Behörde Ihnen das Verhalten gestatten. Denn zu Ihren Gunsten greift jedenfalls die allgemeine Handlungsfreiheit aus [Art. 2 Abs. 1 GG](https://www.gesetze-im-internet.de/gg/art_2.html){target="_blank"}. In unserer liberalen Rechtsordnung gilt: "Was nicht verboten ist, ist erlaubt".
 
