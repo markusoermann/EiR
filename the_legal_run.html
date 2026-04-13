@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Legal Run: Zivilrecht</title>
+<style>
+/* === RESET & BASE === */
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background: #000;
+  overflow: hidden;
+  user-select: none;
+}
+
+/* === HUD === */
+#hud {
+  position: fixed; top: 0; left: 0; right: 0;
+  height: 56px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(0,0,0,0.85);
+  border-bottom: 2px solid #333;
+  z-index: 100;
+}
+#hud-hearts { display: flex; gap: 6px; }
+.heart { font-size: 22px; transition: opacity 0.3s; }
+.heart-active { color: #ff3366; text-shadow: 0 0 8px #ff0044; }
+.heart-lost { color: #444; filter: grayscale(1); opacity: 0.4; }
+#hud-boxes { display: flex; gap: 8px; align-items: center; }
+.box-indicator {
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 30px; height: 30px;
+  border: 2px solid #555; border-radius: 6px;
+  color: #888; font-size: 14px; font-weight: bold;
+  transition: all 0.3s;
+}
+.box-done {
+  border-color: #00ff88; color: #00ff88;
+  background: rgba(0,255,136,0.1);
+  box-shadow: 0 0 8px rgba(0,255,136,0.4);
+}
+#hud-right { display: flex; align-items: center; gap: 16px; }
+#hud-level { color: #ccc; font-size: 14px; font-weight: bold; }
+#hud-portal { font-size: 20px; transition: all 0.4s; }
+.portal-ind-locked { color: #cc2200; text-shadow: 0 0 6px #ff0000; }
+.portal-ind-open { color: #00ff88; text-shadow: 0 0 10px #00ff88; animation: pulse-glow 1s ease-in-out infinite; }
+@keyframes pulse-glow {
+  0%,100% { text-shadow: 0 0 10px #00ff88; }
+  50% { text-shadow: 0 0 20px #00ff88, 0 0 40px #00aa55; }
+}
+
+/* === VIEWPORT & WORLD === */
+#viewport {
+  position: fixed; top: 56px; left: 0; right: 0; bottom: 0;
+  overflow: hidden;
+}
+#world {
+  position: absolute; top: 0; left: 0;
+  width: 3200px; height: 100%;
+  will-change: transform;
+}
+
+/* === PLAYER === */
+.player {
+  position: absolute;
+  width: 36px; height: 48px;
+  z-index: 10;
+}
+.player-body {
+  width: 36px; height: 30px;
+  background: linear-gradient(180deg, #3399ff 0%, #1155cc 100%);
+  border-radius: 4px 4px 2px 2px;
+  position: absolute; bottom: 0;
+}
+.player-head {
+  font-size: 28px; line-height: 1;
+  position: absolute; top: -4px; left: 50%;
+  transform: translateX(-50%);
+  display: block;
+}
+
+/* === PLATFORMS === */
+.platform {
+  position: absolute;
+  background: linear-gradient(180deg, #8b6040 0%, #5a3010 100%);
+  border-top: 4px solid #c8904a;
+}
+
+/* === QUESTION BOXES === */
+.qbox {
+  position: absolute;
+  width: 48px; height: 48px;
+  background: linear-gradient(135deg, #ffcc00, #ff8800);
+  border: 3px solid #cc6600;
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px; font-weight: bold; color: #fff;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+  box-shadow: 0 0 14px rgba(255,160,0,0.7);
+  z-index: 5;
+  animation: float 2.4s ease-in-out infinite;
+}
+.qbox-answered {
+  background: linear-gradient(135deg, #00cc66, #006633);
+  border-color: #009944;
+  box-shadow: 0 0 18px rgba(0,255,136,0.8);
+  animation: none;
+}
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
+}
+
+/* === ENEMIES === */
+.enemy {
+  position: absolute; z-index: 5;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 22px;
+}
+.enemy-bug    { width: 32px; height: 32px; background: #cc2200; border-radius: 50% 50% 40% 40%; box-shadow: 0 0 8px rgba(255,0,0,0.4); }
+.enemy-bias   { width: 34px; height: 44px; background: linear-gradient(135deg, #440088, #aa00ff); clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%); }
+.enemy-datenkrake { width: 44px; height: 40px; background: #770099; border-radius: 50% 50% 30% 30%; }
+.enemy-verzoegerer { width: 52px; height: 52px; background: #3a1a00; border: 3px solid #cc6600; border-radius: 50%; }
+.enemy-defeated { transform: scale(0) !important; opacity: 0; transition: all 0.25s; }
+
+/* === PORTAL === */
+.portal {
+  position: absolute;
+  width: 64px; height: 96px;
+  border-radius: 32px 32px 0 0;
+  z-index: 5;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 32px;
+}
+.portal-locked {
+  background: linear-gradient(180deg, #cc0000 0%, #660000 100%);
+  box-shadow: 0 0 20px rgba(255,0,0,0.5), inset 0 0 20px rgba(0,0,0,0.3);
+}
+.portal-open {
+  background: linear-gradient(180deg, #00ff88 0%, #00aa44 100%);
+  box-shadow: 0 0 30px rgba(0,255,136,0.8), 0 0 60px rgba(0,200,80,0.4);
+  animation: portal-pulse 1.2s ease-in-out infinite;
+}
+@keyframes portal-pulse {
+  0%,100% { box-shadow: 0 0 20px rgba(0,255,136,0.6); }
+  50% { box-shadow: 0 0 50px rgba(0,255,136,1), 0 0 80px rgba(0,200,80,0.5); }
+}
+
+/* === MODAL === */
+#modal {
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.88);
+  z-index: 200;
+  display: flex; align-items: center; justify-content: center;
+  backdrop-filter: blur(4px);
+  transition: background 0.25s;
+}
+#modal.hidden { display: none; }
+#modal.flash-green { background: rgba(0,180,80,0.35); }
+#modal.flash-red   { background: rgba(200,0,0,0.35); }
+#modal-content {
+  background: linear-gradient(160deg, #12122a, #1e1e40);
+  border: 2px solid #3a3a7a;
+  border-radius: 18px;
+  padding: 36px 40px;
+  max-width: 640px; width: 92%;
+  box-shadow: 0 0 50px rgba(80,80,255,0.25);
+}
+#modal-question {
+  font-weight: 700; font-size: 18px; color: #fff;
+  line-height: 1.6; margin-bottom: 26px;
+}
+#modal-options { display: flex; flex-direction: column; gap: 10px; }
+.answer-btn {
+  background: #1e1e3e;
+  border: 2px solid #44448a;
+  border-radius: 10px;
+  padding: 14px 18px;
+  color: #ddd; font-size: 15px;
+  cursor: pointer; text-align: left;
+  transition: background 0.15s, border-color 0.15s, transform 0.1s;
+  display: flex; align-items: center; gap: 12px;
+}
+.answer-btn:hover { background: #2e2e5e; border-color: #8888cc; transform: translateX(5px); }
+.answer-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+.answer-label {
+  display: inline-flex; align-items: center; justify-content: center;
+  background: #5555aa; border-radius: 50%;
+  width: 26px; height: 26px; min-width: 26px;
+  font-weight: bold; font-size: 13px; color: #fff;
+}
+
+/* === SCREENS === */
+.screen {
+  position: fixed; inset: 0;
+  background: rgba(0,0,10,0.97);
+  z-index: 300;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  color: #fff; text-align: center;
+  padding: 20px;
+}
+.screen.hidden { display: none; }
+.screen h1 { font-size: 46px; margin-bottom: 16px; line-height: 1.2; }
+.screen .subtitle { font-size: 17px; color: #aaa; margin-bottom: 8px; max-width: 520px; line-height: 1.7; }
+.screen-btn {
+  margin-top: 32px; padding: 16px 48px;
+  font-size: 20px; font-weight: bold;
+  background: linear-gradient(135deg, #3355ff, #0088ff);
+  border: none; border-radius: 14px; color: #fff;
+  cursor: pointer; letter-spacing: 0.5px;
+  box-shadow: 0 0 24px rgba(0,100,255,0.5);
+  transition: transform 0.1s, box-shadow 0.15s;
+}
+.screen-btn:hover { transform: scale(1.06); box-shadow: 0 0 36px rgba(0,120,255,0.8); }
+.instructions { font-size: 14px; color: #666; margin-top: 20px; line-height: 2; }
+.instructions kbd {
+  background: #222; border: 1px solid #555; border-radius: 4px;
+  padding: 2px 7px; font-size: 13px; color: #ccc;
+}
+.level-end-summary { font-size: 15px; color: #00ff88; margin-top: 12px; font-style: italic; }
+.win-emoji { font-size: 60px; margin-bottom: 10px; }
+
+/* === THEMES === */
+body.theme-digital #viewport {
+  background: radial-gradient(ellipse at top, #1a0050 0%, #050015 60%);
+}
+body.theme-digital .platform {
+  background: linear-gradient(180deg, #0088cc 0%, #004488 100%);
+  border-top-color: #00ccff;
+  box-shadow: 0 0 12px rgba(0,150,255,0.3);
+}
+
+body.theme-fortress #viewport {
+  background: linear-gradient(180deg, #080e18 0%, #101c2e 100%);
+}
+body.theme-fortress .platform {
+  background: linear-gradient(180deg, #3a4a5a 0%, #1e2c3a 100%);
+  border-top-color: #5a7a9a;
+  box-shadow: 0 0 8px rgba(60,100,140,0.3);
+}
+
+body.theme-parliament #viewport {
+  background: linear-gradient(180deg, #000833 0%, #000f55 60%);
+}
+body.theme-parliament .platform {
+  background: linear-gradient(180deg, #b8901e 0%, #7a5c08 100%);
+  border-top-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255,200,0,0.25);
+}
+</style>
+</head>
+<body>
+
+<!-- HUD -->
+<div id="hud">
+  <div id="hud-hearts"></div>
+  <div id="hud-boxes"></div>
+  <div id="hud-right">
+    <span id="hud-level"></span>
+    <span id="hud-portal">🔴</span>
+  </div>
+</div>
+
+<!-- Game Viewport -->
+<div id="viewport">
+  <div id="world"></div>
+</div>
+
+<!-- Question Modal -->
+<div id="modal" class="hidden">
+  <div id="modal-content">
+    <p id="modal-question"></p>
+    <div id="modal-options"></div>
+  </div>
+</div>
+
+<!-- Screens -->
+<div id="screen-start" class="screen">
+  <div class="win-emoji">⚖️</div>
+  <h1 style="color:#00ccff;">The Legal Run</h1>
+  <p style="color:#5588ff;font-size:20px;margin-bottom:4px;">THWS · Einführung ins Recht · Einheiten 10.1 – 10.3</p>
+  <p class="subtitle">Navigiere durch 3 Welten des Zivilrechts. Beantworte die Fragen zu Willenserklärung, Stellvertretung und Schuldrecht, um das Zielportal zu öffnen!</p>
+  <div class="instructions">
+    Bewegen: <kbd>← →</kbd> oder <kbd>A D</kbd><br>
+    Springen: <kbd>↑</kbd>, <kbd>W</kbd> oder <kbd>Leertaste</kbd>
+  </div>
+  <button class="screen-btn" onclick="Game.start()">⚖️ Spielen</button>
+</div>
+
+<div id="screen-levelend" class="screen hidden">
+  <div class="win-emoji">✅</div>
+  <h1 id="levelend-title" style="color:#00ff88;"></h1>
+  <p class="level-end-summary" id="levelend-summary"></p>
+  <button class="screen-btn" onclick="Game.nextLevel()">Weiter →</button>
+</div>
+
+<div id="screen-win" class="screen hidden">
+  <div class="win-emoji">🎉</div>
+  <h1 style="color:#ffd700;">Bestanden!</h1>
+  <p class="subtitle">Glückwunsch! Du hast alle 3 Level abgeschlossen und die Grundlagen des Zivilrechts gemeistert.</p>
+  <p class="subtitle" style="color:#00ff88;">Du kennst jetzt Willenserklärung, Stellvertretung, AGB und Leistungsstörungen. ⚖️</p>
+  <button class="screen-btn" onclick="Game.start()">🔄 Nochmal spielen</button>
+</div>
+
+<div id="screen-gameover" class="screen hidden">
+  <div class="win-emoji">💔</div>
+  <h1 style="color:#ff3344;">Game Over</h1>
+  <p class="subtitle">Du hast alle Leben verloren. Das Zivilrecht hat dich eingeholt – starte neu und versuche es noch einmal!</p>
+  <button class="screen-btn" onclick="Game.restart()">🔄 Neu starten</button>
+</div>
+
+<script>
+/* ==========================================
+   TASK 2 — CONSTANTS + INPUT + UTILITIES
+   ========================================== */
+const GRAVITY    = 0.55;
+const JUMP_FORCE = -13;
+const MOVE_SPEED = 4.5;
+const BOX_SIZE   = 48;
+const PORTAL_W   = 64;
+const PORTAL_H   = 96;
+
+const keys = {};
+window.addEventListener('keydown', e => {
+  keys[e.code] = true;
+  if (['Space','ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.code)) {
+    e.preventDefault();
+  }
+});
+window.addEventListener('keyup', e => { keys[e.code] = false; });
+
+function $(id) { return document.getElementById(id); }
+
+function showScreen(name) {
+  ['start','levelend','win','gameover'].forEach(s => {
+    $('screen-' + s).classList.toggle('hidden', s !== name);
+  });
+}
+function hideAllScreens() {
+  ['start','levelend','win','gameover'].forEach(s => $('screen-' + s).classList.add('hidden'));
+}
+
+function aabb(a, b) {
+  const bw = b.width  || BOX_SIZE;
+  const bh = b.height || BOX_SIZE;
+  return a.x < b.x + bw      &&
+         a.x + a.width  > b.x &&
+         a.y < b.y + bh      &&
+         a.y + a.height > b.y;
+}
+
+/* ==========================================
+   TASK 4 — QUESTIONS DATA
+   ========================================== */
+const QUESTIONS = {
+  L1Q1: {
+    question: 'E10.1 · Was versteht man unter einer „Invitatio ad offerendum"?',
+    options: [
+      { text: 'Ein verbindliches Angebot, das sofort angenommen werden kann.',                                                           correct: false },
+      { text: 'Eine Aufforderung zur Abgabe eines Angebots, die selbst noch kein bindendes Angebot darstellt (z. B. Schaufensterauslage).', correct: true  },
+      { text: 'Die schriftliche Bestätigung eines geschlossenen Vertrages.',                                                              correct: false }
+    ]
+  },
+  L1Q2: {
+    question: 'E10.1 · Welche Rechtsfolge tritt bei einer wirksamen Anfechtung nach § 142 Abs. 1 BGB ein?',
+    options: [
+      { text: 'Der Vertrag wird mit Wirkung für die Zukunft (ex nunc) aufgehoben.',            correct: false },
+      { text: 'Der Vertrag gilt als von Anfang an nichtig (ex tunc).',                          correct: true  },
+      { text: 'Der Vertrag bleibt wirksam, der Anfechtende muss aber Schadensersatz zahlen.',  correct: false }
+    ]
+  },
+  L1Q3: {
+    question: 'E10.1 · Wann gilt eine Willenserklärung unter Abwesenden gemäß § 130 BGB als zugegangen?',
+    options: [
+      { text: 'Sobald die Erklärung vom Absender abgeschickt wurde.',                                                                                  correct: false },
+      { text: 'Sobald der Empfänger die Erklärung tatsächlich gelesen hat.',                                                                           correct: false },
+      { text: 'Sobald sie so in den Machtbereich des Empfängers gelangt ist, dass dieser unter normalen Umständen Kenntnis nehmen kann.', correct: true  }
+    ]
+  },
+  L2Q1: {
+    question: 'E10.2 · Was ist die Rechtsfolge, wenn gegen eine gesetzliche Formvorschrift (z. B. Schriftform) verstoßen wird?',
+    options: [
+      { text: 'Der Vertrag ist wirksam, aber anfechtbar.',                               correct: false },
+      { text: 'Der Vertrag ist nichtig (§ 125 BGB).',                                    correct: true  },
+      { text: 'Der Vertrag muss innerhalb von 14 Tagen schriftlich bestätigt werden.',   correct: false }
+    ]
+  },
+  L2Q2: {
+    question: 'E10.2 · Was ist der entscheidende Unterschied zwischen einem Stellvertreter und einem Boten?',
+    options: [
+      { text: 'Der Stellvertreter handelt immer schriftlich, der Bote mündlich.',                                                          correct: false },
+      { text: 'Der Stellvertreter gibt eine eigene Willenserklärung ab; der Bote übermittelt nur eine fertige fremde Erklärung.', correct: true  },
+      { text: 'Der Bote haftet für Fehler, der Stellvertreter nicht.',                                                                     correct: false }
+    ]
+  },
+  L2Q3: {
+    question: 'E10.2 · Was regelt das Überraschungsverbot des § 305c BGB bei Allgemeinen Geschäftsbedingungen?',
+    options: [
+      { text: 'AGB dürfen keine Preiserhöhungen enthalten.',                                                                                              correct: false },
+      { text: 'Ungewöhnliche Klauseln, mit denen der Vertragspartner vernünftigerweise nicht rechnen musste, werden nicht Vertragsbestandteil.', correct: true  },
+      { text: 'AGB müssen dem Kunden mindestens 14 Tage vor Vertragsschluss übersandt werden.',                                                          correct: false }
+    ]
+  },
+  L3Q1: {
+    question: 'E10.3 · Durch welchen Vorgang erlischt ein Schuldverhältnis nach § 362 BGB?',
+    options: [
+      { text: 'Durch Kündigung des Gläubigers.',                         correct: false },
+      { text: 'Durch Erfüllung – d. h. Bewirken der geschuldeten Leistung.', correct: true  },
+      { text: 'Durch Ablauf der Verjährungsfrist.',                      correct: false }
+    ]
+  },
+  L3Q2: {
+    question: 'E10.3 · In welchem Fall ist eine Fristsetzung zur Nacherfüllung nach § 275 Abs. 1 BGB entbehrlich?',
+    options: [
+      { text: 'Wenn der Schuldner die Leistung einfach nur vergessen hat.',                             correct: false },
+      { text: 'Wenn die Leistung unmöglich geworden ist (z. B. die verkaufte Sache ist zerstört).',    correct: true  },
+      { text: 'Wenn der Gläubiger mehr als drei Mahnungen verschickt hat.',                            correct: false }
+    ]
+  },
+  L3Q3: {
+    question: 'E10.3 · Welchen Sorgfaltsmaßstab legt § 276 Abs. 2 BGB für die Fahrlässigkeit fest?',
+    options: [
+      { text: 'Das Außer-Acht-Lassen der im Verkehr erforderlichen Sorgfalt.',      correct: true  },
+      { text: 'Jedes noch so geringe Versehen, also absolute Sorgfalt.',             correct: false },
+      { text: 'Nur grob fahrlässiges Verhalten, das jedermann auffallen würde.',     correct: false }
+    ]
+  }
+};
+
+/* ==========================================
+   TASK 4 — LEVELS DATA
+   ========================================== */
+const LEVELS = [
+  {
+    id: 1,
+    name: 'Willenserklärung & Vertragsschluss',
+    theme: 'digital',
+    worldWidth: 3200,
+    platforms: [
+      { x: 0,    y: 512, width: 380,  height: 48 },
+      { x: 420,  y: 460, width: 130,  height: 20 },
+      { x: 560,  y: 440, width: 100,  height: 20 },
+      { x: 620,  y: 512, width: 340,  height: 48 },
+      { x: 700,  y: 390, width: 140,  height: 20 },
+      { x: 980,  y: 512, width: 280,  height: 48 },
+      { x: 1020, y: 440, width: 110,  height: 20 },
+      { x: 1100, y: 370, width: 110,  height: 20 },
+      { x: 1280, y: 512, width: 420,  height: 48 },
+      { x: 1400, y: 400, width: 160,  height: 20 },
+      { x: 1760, y: 512, width: 360,  height: 48 },
+      { x: 1860, y: 390, width: 130,  height: 20 },
+      { x: 2140, y: 512, width: 500,  height: 48 },
+      { x: 2300, y: 400, width: 160,  height: 20 },
+      { x: 2700, y: 512, width: 500,  height: 48 }
+    ],
+    questionBoxes: [
+      { x: 450,  y: 392, questionId: 'L1Q1', answered: false, el: null },
+      { x: 1116, y: 322, questionId: 'L1Q2', answered: false, el: null },
+      { x: 2316, y: 352, questionId: 'L1Q3', answered: false, el: null }
+    ],
+    enemies: [
+      { x: 700,  y: 362, startX: 700,  range: 120, speed: 1.5, type: 'bug',  dir: 1, el: null, defeated: false, width: 32, height: 28 },
+      { x: 1400, y: 356, startX: 1400, range: 140, speed: 2.0, type: 'bias', dir: 1, el: null, defeated: false, width: 34, height: 44 }
+    ],
+    portal: { x: 3060, y: 416, el: null }
+  },
+  {
+    id: 2,
+    name: 'Stellvertretung, Form & AGB',
+    theme: 'fortress',
+    worldWidth: 3200,
+    platforms: [
+      { x: 0,    y: 512, width: 420,  height: 48 },
+      { x: 280,  y: 450, width: 110,  height: 20 },
+      { x: 400,  y: 380, width: 110,  height: 20 },
+      { x: 560,  y: 512, width: 340,  height: 48 },
+      { x: 660,  y: 430, width: 160,  height: 20 },
+      { x: 940,  y: 512, width: 460,  height: 48 },
+      { x: 1020, y: 410, width: 120,  height: 20 },
+      { x: 1180, y: 340, width: 120,  height: 20 },
+      { x: 1440, y: 512, width: 440,  height: 48 },
+      { x: 1600, y: 430, width: 130,  height: 20 },
+      { x: 1940, y: 512, width: 420,  height: 48 },
+      { x: 2060, y: 400, width: 150,  height: 20 },
+      { x: 2260, y: 460, width: 150,  height: 20 },
+      { x: 2480, y: 512, width: 500,  height: 48 }
+    ],
+    questionBoxes: [
+      { x: 416,  y: 332, questionId: 'L2Q1', answered: false, el: null },
+      { x: 676,  y: 382, questionId: 'L2Q2', answered: false, el: null },
+      { x: 1616, y: 382, questionId: 'L2Q3', answered: false, el: null }
+    ],
+    enemies: [
+      { x: 1020, y: 370, startX: 1020, range: 200, speed: 1.6, type: 'datenkrake',       dir: 1, el: null, defeated: false, width: 44, height: 40 },
+      { x: 1780, y: 472, startX: 1780, range: 180, speed: 2.0, type: 'datenkrake',       dir: 1, el: null, defeated: false, width: 44, height: 40 }
+    ],
+    portal: { x: 2840, y: 416, el: null }
+  },
+  {
+    id: 3,
+    name: 'Schuldrecht & Leistungsstörungen',
+    theme: 'parliament',
+    worldWidth: 3200,
+    platforms: [
+      { x: 0,    y: 512, width: 360,  height: 48 },
+      { x: 240,  y: 450, width: 90,   height: 20 },
+      { x: 360,  y: 380, width: 90,   height: 20 },
+      { x: 500,  y: 512, width: 380,  height: 48 },
+      { x: 580,  y: 440, width: 220,  height: 20 },
+      { x: 920,  y: 512, width: 420,  height: 48 },
+      { x: 980,  y: 440, width: 100,  height: 20 },
+      { x: 1120, y: 370, width: 100,  height: 20 },
+      { x: 1380, y: 512, width: 600,  height: 48 },
+      { x: 1520, y: 390, width: 180,  height: 20 },
+      { x: 2040, y: 490, width: 200,  height: 70  },
+      { x: 2280, y: 465, width: 200,  height: 95  },
+      { x: 2520, y: 440, width: 200,  height: 120 },
+      { x: 2760, y: 512, width: 440,  height: 48  }
+    ],
+    questionBoxes: [
+      { x: 376,  y: 332, questionId: 'L3Q1', answered: false, el: null },
+      { x: 644,  y: 392, questionId: 'L3Q2', answered: false, el: null },
+      { x: 1536, y: 342, questionId: 'L3Q3', answered: false, el: null }
+    ],
+    enemies: [
+      { x: 580,  y: 388, startX: 580,  range: 160, speed: 1.2, type: 'verzoegerer', dir: 1, el: null, defeated: false, width: 52, height: 52 },
+      { x: 1800, y: 472, startX: 1800, range: 200, speed: 1.8, type: 'verzoegerer', dir: 1, el: null, defeated: false, width: 52, height: 52 }
+    ],
+    portal: { x: 3060, y: 416, el: null }
+  }
+];
+
+/* ==========================================
+   TASK 3 — PLAYER
+   ========================================== */
+const Player = {
+  x: 80, y: 400,
+  vx: 0, vy: 0,
+  width: 36, height: 48,
+  onGround: false,
+  spawnX: 80, spawnY: 460,
+  el: null,
+
+  init() {
+    if (this.el && this.el.parentNode) this.el.remove();
+    const el = document.createElement('div');
+    el.className = 'player';
+    el.innerHTML = '<span class="player-head">👩‍⚖️</span><div class="player-body"></div>';
+    $('world').appendChild(el);
+    this.el = el;
+    this.respawn();
+  },
+
+  respawn() {
+    this.x  = this.spawnX;
+    this.y  = this.spawnY;
+    this.vx = 0;
+    this.vy = 0;
+    this.onGround = false;
+    this._updateDOM();
+  },
+
+  update() {
+    // Horizontal input
+    this.vx = 0;
+    if (keys['ArrowLeft']  || keys['KeyA']) this.vx = -MOVE_SPEED;
+    if (keys['ArrowRight'] || keys['KeyD']) this.vx =  MOVE_SPEED;
+
+    // Jump
+    if ((keys['ArrowUp'] || keys['KeyW'] || keys['Space']) && this.onGround) {
+      this.vy = JUMP_FORCE;
+      this.onGround = false;
+    }
+
+    // Gravity (cap fall speed)
+    this.vy = Math.min(this.vy + GRAVITY, 16);
+
+    // Move X
+    this.x += this.vx;
+    if (this.x < 0) this.x = 0;
+    if (this.x > Level.current.worldWidth - this.width)
+      this.x = Level.current.worldWidth - this.width;
+
+    // Move Y
+    this.y += this.vy;
+    this.onGround = false;
+    this._resolvePlatforms();
+
+    // Fall into void
+    const worldH = $('viewport').clientHeight;
+    if (this.y > worldH + 60) {
+      Game.loseHeart('void');
+      return;
+    }
+
+    this._updateDOM();
+  },
+
+  _resolvePlatforms() {
+    for (const p of Level.current.platforms) {
+      if (this.x + this.width <= p.x || this.x >= p.x + p.width) continue;
+
+      // Landing on top
+      if (this.vy >= 0) {
+        const prevBottom = this.y + this.height - this.vy;
+        const currBottom = this.y + this.height;
+        if (prevBottom <= p.y + 2 && currBottom >= p.y) {
+          this.y      = p.y - this.height;
+          this.vy     = 0;
+          this.onGround = true;
+        }
+      }
+      // Hitting underside
+      if (this.vy < 0) {
+        const prevTop = this.y - this.vy;
+        const currTop = this.y;
+        if (prevTop >= p.y + p.height - 2 && currTop <= p.y + p.height) {
+          this.y  = p.y + p.height;
+          this.vy = 0;
+        }
+      }
+    }
+  },
+
+  _updateDOM() {
+    this.el.style.left = this.x + 'px';
+    this.el.style.top  = this.y + 'px';
+    const head = this.el.querySelector('.player-head');
+    if (head) head.style.transform =
+      this.vx < 0 ? 'translateX(-50%) scaleX(-1)' : 'translateX(-50%)';
+  }
+};
+
+/* ==========================================
+   TASK 5 — LEVEL MODULE
+   ========================================== */
+const Level = {
+  current: null,
+  _spawnedEls: [],
+
+  load(data) {
+    this._spawnedEls.forEach(el => el.remove());
+    this._spawnedEls = [];
+    $('world').innerHTML = '';
+
+    // Deep-clone so we can mutate .answered, .el, .defeated
+    this.current = JSON.parse(JSON.stringify(data));
+
+    const world = $('world');
+    document.body.className = 'theme-' + this.current.theme;
+
+    // Platforms
+    for (const p of this.current.platforms) {
+      const el = document.createElement('div');
+      el.className = 'platform';
+      el.style.cssText = `left:${p.x}px;top:${p.y}px;width:${p.width}px;height:${p.height}px`;
+      world.appendChild(el);
+      this._spawnedEls.push(el);
+    }
+
+    // Question boxes
+    for (const b of this.current.questionBoxes) {
+      const el = document.createElement('div');
+      el.className = 'qbox';
+      el.textContent = '?';
+      el.style.cssText = `left:${b.x}px;top:${b.y}px`;
+      world.appendChild(el);
+      b.el = el;
+      this._spawnedEls.push(el);
+    }
+
+    // Enemies
+    for (const e of this.current.enemies) {
+      const el = document.createElement('div');
+      el.className = 'enemy enemy-' + e.type;
+      el.textContent = e.type === 'bug'              ? '🐛' :
+                       e.type === 'bias'             ? '🔮' :
+                       e.type === 'datenkrake'       ? '🐙' :
+                       e.type === 'verzoegerer'      ? '⏳' : '❓';
+      el.style.cssText = `left:${e.x}px;top:${e.y}px`;
+      world.appendChild(el);
+      e.el = el;
+      this._spawnedEls.push(el);
+    }
+
+    // Portal
+    const portalEl = document.createElement('div');
+    portalEl.className = 'portal portal-locked';
+    portalEl.textContent = '🚫';
+    const p = this.current.portal;
+    portalEl.style.cssText = `left:${p.x}px;top:${p.y}px`;
+    world.appendChild(portalEl);
+    this.current.portal.el = portalEl;
+    this._spawnedEls.push(portalEl);
+
+    // Spawn player
+    Player.spawnX = 80;
+    Player.spawnY = 460;
+    Player.init();
+
+    HUD.update();
+  },
+
+  updateCamera() {
+    const viewW = $('viewport').clientWidth;
+    const camX  = Math.max(0, Math.min(
+      Player.x - viewW / 2,
+      this.current.worldWidth - viewW
+    ));
+    $('world').style.transform = `translateX(${-camX}px)`;
+  },
+
+  checkPortalUnlock() {
+    const allDone = this.current.questionBoxes.every(b => b.answered);
+    if (allDone) {
+      this.current.portal.el.className = 'portal portal-open';
+      this.current.portal.el.textContent = '✨';
+      HUD.updatePortal(true);
+    }
+  }
+};
+
+/* ==========================================
+   TASK 6 — ENEMY SYSTEM
+   ========================================== */
+function updateEnemies() {
+  if (!Level.current) return;
+  for (const e of Level.current.enemies) {
+    if (e.defeated) continue;
+
+    e.x += e.speed * e.dir;
+    if (e.x >= e.startX + e.range) e.dir = -1;
+    if (e.x <= e.startX - e.range) e.dir =  1;
+    e.el.style.left      = e.x + 'px';
+    e.el.style.transform = e.dir < 0 ? 'scaleX(-1)' : '';
+
+    // Skip if player is briefly invincible
+    if (Player.el && parseFloat(Player.el.style.opacity || 1) < 1) continue;
+
+    if (!aabb(Player, e)) continue;
+
+    const playerBottom = Player.y + Player.height;
+    const enemyMid     = e.y + (e.height || 40) / 2;
+
+    if (Player.vy > 1 && playerBottom < enemyMid + 10) {
+      // Stomp
+      e.defeated = true;
+      e.el.classList.add('enemy-defeated');
+      Player.vy = -9;
+      setTimeout(() => { if (e.el) e.el.remove(); }, 300);
+    } else {
+      Game.loseHeart('enemy');
+    }
+  }
+}
+
+/* ==========================================
+   TASK 7 — QUESTION BOX COLLISION
+   ========================================== */
+function checkBoxCollisions() {
+  if (!Level.current) return;
+  for (const b of Level.current.questionBoxes) {
+    if (b.answered) continue;
+
+    const hitFromBelow =
+      Player.vy < 0 &&
+      Player.x + Player.width  > b.x &&
+      Player.x                 < b.x + BOX_SIZE &&
+      Player.y                 <= b.y + BOX_SIZE &&
+      Player.y + Player.height >= b.y;
+
+    if (hitFromBelow) {
+      Player.vy = 3;
+      QuestionModal.open(b);
+      return;
+    }
+  }
+}
+
+/* ==========================================
+   TASK 7 — QUESTION MODAL
+   ========================================== */
+const QuestionModal = {
+  _box: null,
+
+  open(box) {
+    this._box = box;
+    Game.setState('PAUSED');
+
+    const q = QUESTIONS[box.questionId];
+    $('modal-question').textContent  = q.question;
+
+    const optsEl = $('modal-options');
+    optsEl.innerHTML = '';
+    ['A', 'B', 'C'].forEach((label, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'answer-btn';
+      btn.innerHTML =
+        `<span class="answer-label">${label}</span><span>${q.options[i].text}</span>`;
+      btn.addEventListener('click', () => this._answer(q.options[i].correct));
+      optsEl.appendChild(btn);
+    });
+
+    $('modal').classList.remove('hidden');
+  },
+
+  _answer(correct) {
+    const modal = $('modal');
+    modal.querySelectorAll('.answer-btn').forEach(b => b.disabled = true);
+
+    if (correct) {
+      modal.classList.add('flash-green');
+      setTimeout(() => {
+        modal.classList.remove('flash-green');
+        modal.classList.add('hidden');
+        this._box.answered = true;
+        this._box.el.className  = 'qbox qbox-answered';
+        this._box.el.textContent = '✓';
+        Level.checkPortalUnlock();
+        HUD.update();
+        Game.setState('PLAYING');
+        this._box = null;
+      }, 700);
+    } else {
+      modal.classList.add('flash-red');
+      Game.loseHeart('wrong-answer');
+      setTimeout(() => {
+        modal.classList.remove('flash-red');
+        modal.classList.add('hidden');
+        if (Game.state !== 'GAME_OVER') Game.setState('PLAYING');
+        this._box = null;
+      }, 700);
+    }
+  }
+};
+
+/* ==========================================
+   TASK 8 — HUD
+   ========================================== */
+const HUD = {
+  update() {
+    this.updateHearts();
+    this.updateBoxes();
+    this.updateLevel();
+    this.updatePortal(
+      Level.current && Level.current.questionBoxes.every(b => b.answered)
+    );
+  },
+
+  updateHearts() {
+    const el = $('hud-hearts');
+    el.innerHTML = '';
+    for (let i = 0; i < 3; i++) {
+      const h = document.createElement('span');
+      h.className  = 'heart ' + (i < Game.hearts ? 'heart-active' : 'heart-lost');
+      h.textContent = '♥';
+      el.appendChild(h);
+    }
+  },
+
+  updateBoxes() {
+    if (!Level.current) return;
+    const el = $('hud-boxes');
+    el.innerHTML = '';
+    Level.current.questionBoxes.forEach((b, i) => {
+      const ind = document.createElement('span');
+      ind.className  = 'box-indicator' + (b.answered ? ' box-done' : '');
+      ind.textContent = b.answered ? '✓' : (i + 1);
+      el.appendChild(ind);
+    });
+  },
+
+  updateLevel() {
+    if (!Level.current) return;
+    $('hud-level').textContent = `Level ${Level.current.id} / 3`;
+  },
+
+  updatePortal(unlocked) {
+    const el = $('hud-portal');
+    el.textContent = unlocked ? '🟢' : '🔴';
+    el.className   = unlocked ? 'portal-ind-open' : 'portal-ind-locked';
+  }
+};
+
+/* ==========================================
+   TASK 8 — PORTAL COLLISION + LEVEL END
+   ========================================== */
+function checkPortalCollision() {
+  if (!Level.current) return;
+  const p = Level.current.portal;
+  if (!p.el || !p.el.classList.contains('portal-open')) return;
+
+  if (Player.x + Player.width  > p.x      &&
+      Player.x                 < p.x + PORTAL_W &&
+      Player.y + Player.height > p.y      &&
+      Player.y                 < p.y + PORTAL_H) {
+    Game.setState('LEVEL_END');
+    _showLevelEnd();
+  }
+}
+
+function _showLevelEnd() {
+  const lvl    = Level.current;
+  const isLast = Game.currentLevelIndex >= LEVELS.length - 1;
+  if (isLast) {
+    Game.setState('WIN');
+    showScreen('win');
+    return;
+  }
+  $('levelend-title').textContent   = `Level ${lvl.id} abgeschlossen! ✅`;
+  $('levelend-summary').textContent =
+    `"${lvl.name}" — alle Fragen richtig beantwortet. Weiter zur nächsten Welt!`;
+  showScreen('levelend');
+}
+
+/* ==========================================
+   TASK 2 — GAME STATE MACHINE
+   ========================================== */
+const Game = {
+  state: 'MENU',
+  currentLevelIndex: 0,
+  hearts: 3,
+  _raf: null,
+
+  setState(s) { this.state = s; },
+
+  start() {
+    this.currentLevelIndex = 0;
+    this.hearts = 3;
+    hideAllScreens();
+    Level.load(LEVELS[this.currentLevelIndex]);
+    this.setState('PLAYING');
+    if (this._raf) cancelAnimationFrame(this._raf);
+    this._raf = requestAnimationFrame(loop);
+  },
+
+  restart() {
+    // Restart current level (keep level progress), reset hearts
+    this.hearts = 3;
+    hideAllScreens();
+    Level.load(LEVELS[this.currentLevelIndex]);
+    this.setState('PLAYING');
+    if (this._raf) cancelAnimationFrame(this._raf);
+    this._raf = requestAnimationFrame(loop);
+  },
+
+  nextLevel() {
+    this.currentLevelIndex++;
+    hideAllScreens();
+    if (this.currentLevelIndex >= LEVELS.length) {
+      this.setState('WIN');
+      showScreen('win');
+      return;
+    }
+    Level.load(LEVELS[this.currentLevelIndex]);
+    this.setState('PLAYING');
+    if (this._raf) cancelAnimationFrame(this._raf);
+    this._raf = requestAnimationFrame(loop);
+  },
+
+  loseHeart(reason) {
+    if (this.state !== 'PLAYING') return;
+    this.hearts--;
+    HUD.updateHearts();
+    if (this.hearts <= 0) {
+      this.setState('GAME_OVER');
+      showScreen('gameover');
+    } else {
+      // Brief invincibility flash
+      if (Player.el) Player.el.style.opacity = '0.3';
+      setTimeout(() => {
+        if (Player.el) Player.el.style.opacity = '1';
+        Player.respawn();
+      }, 700);
+    }
+  }
+};
+
+/* ==========================================
+   TASK 2 — MAIN LOOP
+   ========================================== */
+function loop() {
+  if (Game.state === 'PLAYING') {
+    Player.update();
+    updateEnemies();
+    checkBoxCollisions();
+    checkPortalCollision();
+    Level.updateCamera();
+  }
+  Game._raf = requestAnimationFrame(loop);
+}
+</script>
+</body>
+</html>
