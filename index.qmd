@@ -1,0 +1,94 @@
+---
+title: "Einführung in das Recht"
+subtitle: "Kursstartseite & Inhaltsverzeichnis"
+date: last-modified
+lang: de
+toc: false
+number-sections: false
+
+# Autoren-Daten
+author:
+  - name: Prof. Dr. Markus Oermann
+    email: markus.oermann@thws.de
+    role: Dozent
+    affiliation: THWS FIW
+
+# Semester-Daten
+semester: "SoSe 26"
+course: "Einführung in das Recht"
+version: "1.0"
+
+# --- Ausgabe-Formate ---
+format: moodle-html
+---
+
+Willkommen bei **Einführung in das Recht**, einem Modul des Studiengangs Digitale Gesellschaft an der THWS. In elf Lerneinheiten erschließen wir das Recht als „Sourcecode der Gesellschaft": von den Grundbegriffen über die Technik der Rechtsanwendung und den staatlichen Institutionen bis zu den ersten praktischen Schritten im Zivil- und Strafrecht. Vorkenntnisse in der Rechtswissenschaft werden nicht vorausgesetzt; vorausgesetzt wird Neugier auf die Regeln, die Ihren Alltag weit öfter prägen, als Sie vermuten.
+
+Jede Einheit unten ist ein eigenständiges, interaktives Skript: Lesen Sie es im Browser, arbeiten Sie die eingebetteten Quick-Checks, Fallstudien und Widgets durch, und nutzen Sie den Reader zur Vertiefung oder als Klausurvorbereitung.
+
+## Kursdaten
+
+| | |
+|---|---|
+| **Studiengang** | Digitale Gesellschaft (B.Sc.), THWS FIW |
+| **Semester** | Sommersemester 2026 |
+| **Dozent** | Prof. Dr. iur. Markus Oermann, M.A. (THWS FIW) |
+| **Format** | 11 Lerneinheiten, Single Source Publishing (interaktives Skript + PDF) |
+| **Prüfung** | Klausur (90 Min.) |
+| **Sprache** | Deutsch |
+
+## So nutzen Sie diese Seite
+
+- **11 chronologische Lerneinheiten** (unten), jede ein eigenständiges Quarto-Skript entlang des Semesterverlaufs.
+- **Interaktive Elemente** sind direkt im Text eingebettet: Flip-Cards für Definitionen, Quick-Checks zur Selbstkontrolle, Fallstudien und Widgets, mit denen Sie juristische Prüfungsschemata selbst durchspielen können.
+- **Reader.** Jede Einheit steht zusätzlich als PDF zum Download bereit, zum Lesen ohne Browser oder zur Klausurvorbereitung.
+
+## Inhaltsverzeichnis
+
+### Teil I · Grundlagen der Rechtswissenschaft
+
+Der Einstieg: Was ist Recht überhaupt, und wie ist die Rechtsordnung als Ganzes aufgebaut?
+
+| Nr | Einheit | Was Sie lernen | Reader |
+|----|------|------|------|
+| 1 | [Grundlagen des Rechts: Sourcecode der Gesellschaft](01_grundlagen_des_rechts.html) | Rechtsbegriff, Naturrecht vs. Rechtspositivismus (Radbruch'sche Formel), Abgrenzung zu anderen sozialen Normen, Merkmale und Funktionen des Rechts, Rechtskritik | [PDF](01_grundlagen_des_rechts.pdf) |
+| 2 | [Rechtsbereiche – Rechtsgebiete: Die Architektur der Rechtsordnung](02_rechtsbereiche_rechtsgebiete.html) | Die drei Säulen des Rechtssystems (Privatrecht, öffentliches Recht, Strafrecht), Abgrenzungstheorien (modifizierte Subjektstheorie), materielles vs. formelles Recht | [PDF](02_rechtsbereiche_rechtsgebiete.pdf) |
+
+### Teil II · Rechtsnormen und ihre Anwendung
+
+Das juristische Handwerkszeug: wie Normen aufgebaut sind, wie man sie auf einen Sachverhalt anwendet und auslegt, und wie sich Normkonflikte auflösen lassen.
+
+| Nr | Einheit | Was Sie lernen | Reader |
+|----|------|------|------|
+| 3 | [Die Grundstruktur von Rechtsnormen](03_grundstruktur_rechtsnormen.html) | Aufbau einer Rechtsnorm: Tatbestand (Voraussetzungen) und Rechtsfolge (Konsequenz) | [PDF](03_grundstruktur_rechtsnormen.pdf) |
+| 4 | [Methoden der Rechtsanwendung: Die Subsumtion](04_subsumtion.html) | Der juristische Syllogismus, Subsumtionstechnik, Gutachtenstil vs. Urteilsstil | [PDF](04_subsumtion.pdf) |
+| 5 | [Methoden der Rechtsanwendung: Die Auslegung](05_auslegung.html) | Die vier klassischen Auslegungsmethoden (Wortlaut, Systematik, Historie, Telos), Analogie und Umkehrschluss, teleologische Reduktion, Prüfungsschemata | [PDF](05_auslegung.pdf) |
+| 6 | [Die Normenhierarchie: Der Stufenbau des Rechts](06_normenhierarchie.html) | Stufenbau der Rechtsordnung, Vorrang des EU-Rechts, das Grundgesetz als Fundament, Kollisionsregeln (lex superior/specialis/posterior) | [PDF](06_normenhierarchie.pdf) |
+
+### Teil III · Institutionen des Rechts
+
+Wer macht das Recht, wer spricht es, und wer setzt es um? Die drei Gewalten von Berlin bis Brüssel, von Würzburg bis Luxemburg.
+
+| Nr | Einheit | Was Sie lernen | Reader |
+|----|------|------|------|
+| 7 | [Institutionen des Rechts I – Gesetzgebung](07_institutionen_gesetzgebung.html) | Verfassungsprinzipien, Akteure und Ablauf des Gesetzgebungsverfahrens (Art. 76 ff. GG), EU-Kompetenzverteilung und Subsidiarität, Instrumente des EU-Sekundärrechts | [PDF](07_institutionen_gesetzgebung.pdf) |
+| 8 | [Institutionen des Rechts II – Rechtsprechung](08_institutionen_rechtsprechung.html) | Richterliche Unabhängigkeit, die fünf Fachgerichtsbarkeiten, Instanzenzug von Würzburg bis Luxemburg | [PDF](08_institutionen_rechtsprechung.pdf) |
+| 9 | [Institutionen des Rechts III – Die Verwaltung](09_institutionen_verwaltung.html) | Gesetzmäßigkeit der Verwaltung (Art. 20 Abs. 3 GG), Grundrechtsbindung, Verwaltungsaufbau, Ermessen, Widerspruchsverfahren, Klagearten vor dem Verwaltungsgericht | [PDF](09_institutionen_verwaltung.pdf) |
+
+### Teil IV · Zivilrecht und Strafrecht im Überblick
+
+Die Theorie wird konkret: erste Schritte in den beiden Rechtsgebieten, mit denen Sie im Alltag am häufigsten in Berührung kommen.
+
+| Nr | Einheit | Was Sie lernen | Reader |
+|----|------|------|------|
+| 10.1 | [Zivilrecht – Basics: Willenserklärung, Vertragsschluss und Anfechtung](10_1_zivilrecht_WE.html) | Willenserklärung, Vertragsschluss (Angebot/Annahme, § 145 BGB), Anfechtung und ihre Rechtsfolgen (§ 122 BGB) | [PDF](10_1_zivilrecht_WE.pdf) |
+| 10.2 | [Zivilrecht – Basics: Stellvertretung, Form, Verbraucherschutz & AGB](10_2_zivilrecht_StV-AGB.html) | Stellvertretung und Vertretungsmacht, Formvorschriften, Verbraucherschutz (Widerrufsrecht, digitale Produkte), AGB-Kontrolle | [PDF](10_2_zivilrecht_StV-AGB.pdf) |
+| 10.3 | [Zivilrecht – Schuldrecht: Schuldverhältnisse und Leistungsstörungen](10_3_zivilrecht_schuldrecht.html) | Schuldverhältnisse und ihre Entstehung, Haupt- und Nebenpflichten (§ 241 BGB), Leistungsstörungsrecht | [PDF](10_3_zivilrecht_schuldrecht.pdf) |
+| 11 | [Grundstrukturen des Strafrechts: Von Schuld und Strafe](11_strafrecht.html) | Rechtsgüterlehre, Strafzwecke, Vorsatz und Fahrlässigkeit (§ 15 StGB), Täterschaft/Teilnahme/Versuch, Ablauf des Strafverfahrens | [PDF](11_strafrecht.pdf) |
+
+## Dozent
+
+**Prof. Dr. iur. Markus Oermann, M.A.**
+Fakultät Informatik und Wirtschaftsinformatik
+Technische Hochschule Würzburg-Schweinfurt (THWS)
+[markus.oermann@thws.de](mailto:markus.oermann@thws.de)
