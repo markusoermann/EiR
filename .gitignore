@@ -4,6 +4,10 @@
 # Betriebssystem-Dateien
 .DS_Store
 
-
 # Quarto / Render-Artefakte
 *_files
+
+# Lernspiele
+lawman.html
+legal_kong.html
+the_legal_run.html
