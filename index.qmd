@@ -36,6 +36,7 @@ Jede Einheit unten ist ein eigenständiges, interaktives Skript: Lesen Sie es im
 | **Format** | 11 Lerneinheiten, Single Source Publishing (interaktives Skript + PDF) |
 | **Prüfung** | Klausur (90 Min.) |
 | **Sprache** | Deutsch |
+| **DOI** | [![DOI](media/zenodo-doi-badge.svg)](https://doi.org/10.5281/zenodo.22932556) |
 
 ## So nutzen Sie diese Seite
 
@@ -85,6 +86,15 @@ Die Theorie wird konkret: erste Schritte in den beiden Rechtsgebieten, mit denen
 | 10.2 | [Zivilrecht – Basics: Stellvertretung, Form, Verbraucherschutz & AGB](10_2_zivilrecht_StV-AGB.html) | Stellvertretung und Vertretungsmacht, Formvorschriften, Verbraucherschutz (Widerrufsrecht, digitale Produkte), AGB-Kontrolle | [PDF](10_2_zivilrecht_StV-AGB.pdf) |
 | 10.3 | [Zivilrecht – Schuldrecht: Schuldverhältnisse und Leistungsstörungen](10_3_zivilrecht_schuldrecht.html) | Schuldverhältnisse und ihre Entstehung, Haupt- und Nebenpflichten (§ 241 BGB), Leistungsstörungsrecht | [PDF](10_3_zivilrecht_schuldrecht.pdf) |
 | 11 | [Grundstrukturen des Strafrechts: Von Schuld und Strafe](11_strafrecht.html) | Rechtsgüterlehre, Strafzwecke, Vorsatz und Fahrlässigkeit (§ 15 StGB), Täterschaft/Teilnahme/Versuch, Ablauf des Strafverfahrens | [PDF](11_strafrecht.pdf) |
+
+## Zitation
+
+Dieser Kurs ist auf Zenodo archiviert und über eine DOI zitierfähig. Der Badge oben verweist auf die *Concept-DOI*, die immer auf die jeweils neueste Version auflöst.
+
+- **Concept-DOI (alle Versionen):** [10.5281/zenodo.22932556](https://doi.org/10.5281/zenodo.22932556)
+- **Diese Version (SoSe 26, v1.0.0):** [10.5281/zenodo.22932557](https://doi.org/10.5281/zenodo.22932557)
+
+> Oermann, M. (2026). *Einführung in das Recht: Kursmaterialien* (Version 1.0.0) [Lehrmaterial]. Zenodo. <https://doi.org/10.5281/zenodo.22932556>
 
 ## Dozent
 
